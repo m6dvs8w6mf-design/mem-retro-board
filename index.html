@@ -2,186 +2,591 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>MEM Retro Flight Board</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>MEM Solari Flight Board</title>
 
   <style>
+    :root {
+      --background: #080806;
+      --frame-dark: #2a2113;
+      --frame-light: #7a6036;
+      --panel: #11100b;
+      --panel-edge: #3e3421;
+      --flap-top: #1d1c18;
+      --flap-bottom: #11110e;
+      --flap-border: #3b3931;
+      --text: #f1ead1;
+      --muted: #9a9070;
+      --amber: #d5b85d;
+      --green: #b7d58d;
+      --red: #e38c72;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      background: #090806;
-      color: #f0c65a;
-      font-family: "Courier New", monospace;
-    }
-
-    .board {
-      max-width: 1100px;
-      margin: 30px auto;
-      background: #15120b;
-      border: 10px solid #49391f;
-      box-shadow: 0 0 30px black;
-    }
-
-    header {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, #211b11 0%, #090806 58%),
+        var(--background);
+      color: var(--text);
+      font-family: "Courier New", Courier, monospace;
       padding: 24px;
-      text-align: center;
-      border-bottom: 2px solid #49391f;
     }
 
-    h1 {
+    .terminal {
+      max-width: 1400px;
+      margin: 0 auto;
+      border: 12px solid var(--frame-dark);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow:
+        0 22px 60px rgba(0, 0, 0, 0.8),
+        inset 0 0 0 3px var(--frame-light);
+      overflow: hidden;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 24px 28px;
+      border-bottom: 2px solid var(--panel-edge);
+      background:
+        linear-gradient(
+          to bottom,
+          #17150f,
+          #0f0e0a
+        );
+    }
+
+    .airport-name {
       margin: 0;
-      letter-spacing: 5px;
-      font-size: 34px;
+      color: var(--amber);
+      font-size: clamp(24px, 3vw, 42px);
+      letter-spacing: 0.16em;
+      line-height: 1.15;
     }
 
-    .subtitle {
-      margin-top: 10px;
-      color: #9d8145;
-      letter-spacing: 4px;
+    .airport-code {
+      margin-top: 8px;
+      color: var(--muted);
+      letter-spacing: 0.28em;
+      font-size: 14px;
     }
 
-    #clock {
-      margin-top: 18px;
-      font-size: 24px;
-      color: #f6e7b0;
+    .clock {
+      min-width: 245px;
+      text-align: right;
+      color: var(--amber);
+    }
+
+    #time {
+      font-size: clamp(24px, 2.5vw, 34px);
+      letter-spacing: 0.08em;
+    }
+
+    #date {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--panel-edge);
+      background: #0d0c08;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+    }
+
+    button {
+      border: 1px solid #5e5133;
+      background: #1c1910;
+      color: var(--text);
+      font-family: inherit;
+      letter-spacing: 0.12em;
+      padding: 10px 14px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    button:hover {
+      background: #292317;
+    }
+
+    button.active {
+      background: #6c5832;
+      color: #fff8df;
+    }
+
+    .mode-label {
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.13em;
+    }
+
+    .board-scroll {
+      overflow-x: auto;
     }
 
     table {
       width: 100%;
+      min-width: 1040px;
       border-collapse: collapse;
     }
 
-    th,
-    td {
-      padding: 14px;
-      text-align: left;
-      border-bottom: 1px solid #332a17;
+    thead {
+      background: #0b0a07;
     }
 
     th {
-      color: #9d8145;
-      font-size: 14px;
-      letter-spacing: 2px;
+      padding: 13px 12px;
+      text-align: left;
+      color: var(--muted);
+      font-size: 13px;
+      letter-spacing: 0.18em;
+      border-bottom: 1px solid var(--panel-edge);
     }
 
     td {
-      font-size: 20px;
-      letter-spacing: 1px;
+      padding: 11px 10px;
+      border-bottom: 1px solid #282319;
+      vertical-align: middle;
     }
 
-    tr:nth-child(even) {
-      background: #100e09;
+    tbody tr:nth-child(even) {
+      background: #0d0c08;
     }
 
-    .on-time {
-      color: #a8d87b;
+    tbody tr:hover {
+      background: #18150d;
     }
 
-    .boarding {
-      color: #8fd8c2;
+    .flap-line {
+      display: flex;
+      gap: 2px;
+      min-height: 34px;
+      align-items: center;
     }
 
-    .delayed {
-      color: #ff8b72;
+    .flap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 23px;
+      height: 34px;
+      padding: 0 4px;
+      background:
+        linear-gradient(
+          to bottom,
+          var(--flap-top) 0%,
+          var(--flap-top) 49%,
+          #090907 50%,
+          var(--flap-bottom) 51%,
+          var(--flap-bottom) 100%
+        );
+      border: 1px solid var(--flap-border);
+      border-radius: 2px;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.05),
+        inset 0 -1px 0 rgba(0,0,0,0.9);
+      color: var(--text);
+      font-size: 19px;
+      line-height: 1;
+      text-shadow: 0 1px 2px #000;
+      overflow: hidden;
     }
 
-    footer {
-      padding: 14px;
-      color: #786538;
-      font-size: 12px;
+    .flap::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 1px;
+      background: rgba(0, 0, 0, 0.85);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.03);
+    }
+
+    .flap.flip {
+      animation: flip 0.48s ease-in-out;
+    }
+
+    @keyframes flip {
+      0% {
+        transform: rotateX(0deg);
+        filter: brightness(1);
+      }
+
+      45% {
+        transform: rotateX(-88deg);
+        filter: brightness(0.55);
+      }
+
+      55% {
+        transform: rotateX(88deg);
+        filter: brightness(0.75);
+      }
+
+      100% {
+        transform: rotateX(0deg);
+        filter: brightness(1);
+      }
+    }
+
+    .status-on-time .flap,
+    .status-arrived .flap,
+    .status-boarding .flap {
+      color: var(--green);
+    }
+
+    .status-delayed .flap,
+    .status-cancelled .flap {
+      color: var(--red);
+    }
+
+    .status-final-call .flap {
+      color: var(--amber);
+    }
+
+    .footer {
+      padding: 12px 18px;
+      border-top: 1px solid var(--panel-edge);
+      color: #72694f;
       text-align: center;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 6px;
+      }
+
+      .terminal {
+        border-width: 6px;
+      }
+
+      .header {
+        align-items: flex-start;
+        padding: 18px;
+      }
+
+      .clock {
+        min-width: auto;
+        text-align: left;
+      }
+
+      .flap {
+        min-width: 21px;
+        height: 31px;
+        font-size: 17px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="board">
+  <div class="terminal">
 
-    <header>
-      <h1>MEMPHIS INTERNATIONAL AIRPORT</h1>
-      <div class="subtitle">DEPARTURES · MEM</div>
-      <div id="clock"></div>
-    </header>
+    <div class="header">
+      <div>
+        <h1 class="airport-name">
+          MEMPHIS INTERNATIONAL AIRPORT
+        </h1>
 
-    <table>
-      <thead>
-        <tr>
-          <th>TIME</th>
-          <th>FLIGHT</th>
-          <th>AIRLINE</th>
-          <th>DESTINATION</th>
-          <th>GATE</th>
-          <th>STATUS</th>
-        </tr>
-      </thead>
+        <div class="airport-code">
+          MEM · TENNESSEE
+        </div>
+      </div>
 
-      <tbody>
-        <tr>
-          <td>3:20 PM</td>
-          <td>DL 2478</td>
-          <td>DELTA</td>
-          <td>ATLANTA</td>
-          <td>B17</td>
-          <td class="on-time">ON TIME</td>
-        </tr>
+      <div class="clock">
+        <div id="time"></div>
+        <div id="date"></div>
+      </div>
+    </div>
 
-        <tr>
-          <td>3:45 PM</td>
-          <td>AA 1834</td>
-          <td>AMERICAN</td>
-          <td>CHARLOTTE</td>
-          <td>B06</td>
-          <td class="boarding">BOARDING</td>
-        </tr>
+    <div class="controls">
+      <div class="tabs">
+        <button id="departuresButton" class="active">
+          DEPARTURES
+        </button>
 
-        <tr>
-          <td>4:05 PM</td>
-          <td>WN 1928</td>
-          <td>SOUTHWEST</td>
-          <td>DALLAS</td>
-          <td>A24</td>
-          <td class="delayed">DELAYED</td>
-        </tr>
+        <button id="arrivalsButton">
+          ARRIVALS
+        </button>
+      </div>
 
-        <tr>
-          <td>4:25 PM</td>
-          <td>UA 5412</td>
-          <td>UNITED</td>
-          <td>CHICAGO</td>
-          <td>B18</td>
-          <td class="on-time">ON TIME</td>
-        </tr>
-      </tbody>
-    </table>
+      <div class="mode-label" id="modeLabel">
+        SAMPLE DISPLAY · SOLARI MODE
+      </div>
+    </div>
 
-    <footer>
-      Prototype display using sample flight information
-    </footer>
+    <div class="board-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>TIME</th>
+            <th>FLIGHT</th>
+            <th>AIRLINE</th>
+            <th id="cityHeading">DESTINATION</th>
+            <th>GATE</th>
+            <th>STATUS</th>
+          </tr>
+        </thead>
+
+        <tbody id="flightRows"></tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      DECORATIVE DISPLAY · VERIFY FLIGHT INFORMATION WITH MEM OR THE AIRLINE
+    </div>
 
   </div>
 
   <script>
+    const departures = [
+      {
+        time: "3:20 PM",
+        flight: "DL 2478",
+        airline: "DELTA",
+        city: "ATLANTA",
+        gate: "B17",
+        status: "ON TIME"
+      },
+      {
+        time: "3:45 PM",
+        flight: "AA 1834",
+        airline: "AMERICAN",
+        city: "CHARLOTTE",
+        gate: "B06",
+        status: "BOARDING"
+      },
+      {
+        time: "4:05 PM",
+        flight: "WN 1928",
+        airline: "SOUTHWEST",
+        city: "DALLAS LOVE",
+        gate: "A24",
+        status: "DELAYED"
+      },
+      {
+        time: "4:25 PM",
+        flight: "UA 5412",
+        airline: "UNITED",
+        city: "CHICAGO",
+        gate: "B18",
+        status: "ON TIME"
+      },
+      {
+        time: "4:50 PM",
+        flight: "G4 176",
+        airline: "ALLEGIANT",
+        city: "ORLANDO",
+        gate: "C03",
+        status: "FINAL CALL"
+      }
+    ];
+
+    const arrivals = [
+      {
+        time: "3:12 PM",
+        flight: "DL 2081",
+        airline: "DELTA",
+        city: "ATLANTA",
+        gate: "B15",
+        status: "ARRIVED"
+      },
+      {
+        time: "3:38 PM",
+        flight: "AA 1640",
+        airline: "AMERICAN",
+        city: "DALLAS",
+        gate: "B08",
+        status: "ON TIME"
+      },
+      {
+        time: "4:02 PM",
+        flight: "WN 2810",
+        airline: "SOUTHWEST",
+        city: "HOUSTON",
+        gate: "A21",
+        status: "ON TIME"
+      },
+      {
+        time: "4:30 PM",
+        flight: "UA 4371",
+        airline: "UNITED",
+        city: "DENVER",
+        gate: "B20",
+        status: "DELAYED"
+      },
+      {
+        time: "4:55 PM",
+        flight: "NK 221",
+        airline: "SPIRIT",
+        city: "LAS VEGAS",
+        gate: "A09",
+        status: "ON TIME"
+      }
+    ];
+
+    let currentMode = "departures";
+
     function updateClock() {
       const now = new Date();
 
-      document.getElementById("clock").textContent =
+      document.getElementById("time").textContent =
+        now.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit"
+        });
+
+      document.getElementById("date").textContent =
         now.toLocaleDateString([], {
           weekday: "long",
           month: "long",
           day: "numeric",
           year: "numeric"
-        }).toUpperCase()
-        + " · "
-        + now.toLocaleTimeString([], {
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit"
-        });
+        }).toUpperCase();
     }
+
+    function makeFlaps(text) {
+      const container = document.createElement("div");
+      container.className = "flap-line";
+
+      String(text).split("").forEach((character, index) => {
+        const flap = document.createElement("span");
+
+        flap.className = "flap";
+        flap.textContent = character === " " ? "\u00A0" : character;
+
+        flap.style.animationDelay = `${index * 35}ms`;
+
+        container.appendChild(flap);
+      });
+
+      return container;
+    }
+
+    function statusClass(status) {
+      return "status-" +
+        status
+          .toLowerCase()
+          .replaceAll(" ", "-");
+    }
+
+    function animateRow(row) {
+      const flaps = row.querySelectorAll(".flap");
+
+      flaps.forEach((flap, index) => {
+        setTimeout(() => {
+          flap.classList.add("flip");
+
+          setTimeout(() => {
+            flap.classList.remove("flip");
+          }, 520);
+        }, index * 24);
+      });
+    }
+
+    function renderBoard() {
+      const flights =
+        currentMode === "departures"
+          ? departures
+          : arrivals;
+
+      const rows = document.getElementById("flightRows");
+
+      rows.innerHTML = "";
+
+      document.getElementById("cityHeading").textContent =
+        currentMode === "departures"
+          ? "DESTINATION"
+          : "ORIGIN";
+
+      flights.forEach((flight, rowIndex) => {
+        const row = document.createElement("tr");
+
+        const values = [
+          flight.time,
+          flight.flight,
+          flight.airline,
+          flight.city,
+          flight.gate,
+          flight.status
+        ];
+
+        values.forEach((value, columnIndex) => {
+          const cell = document.createElement("td");
+
+          if (columnIndex === 5) {
+            cell.className = statusClass(flight.status);
+          }
+
+          cell.appendChild(makeFlaps(value));
+          row.appendChild(cell);
+        });
+
+        rows.appendChild(row);
+
+        setTimeout(() => {
+          animateRow(row);
+        }, rowIndex * 170);
+      });
+    }
+
+    const departuresButton =
+      document.getElementById("departuresButton");
+
+    const arrivalsButton =
+      document.getElementById("arrivalsButton");
+
+    departuresButton.addEventListener("click", () => {
+      currentMode = "departures";
+
+      departuresButton.classList.add("active");
+      arrivalsButton.classList.remove("active");
+
+      renderBoard();
+    });
+
+    arrivalsButton.addEventListener("click", () => {
+      currentMode = "arrivals";
+
+      arrivalsButton.classList.add("active");
+      departuresButton.classList.remove("active");
+
+      renderBoard();
+    });
 
     updateClock();
     setInterval(updateClock, 1000);
+
+    renderBoard();
   </script>
 
 </body>
