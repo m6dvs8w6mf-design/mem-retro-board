@@ -31,6 +31,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      background: var(--background);
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
@@ -40,6 +44,10 @@
       color: var(--text);
       font-family: "Courier New", Courier, monospace;
       padding: 24px;
+    }
+
+    body.fullscreen-mode {
+      padding: 0;
     }
 
     .terminal {
@@ -52,6 +60,12 @@
         0 22px 60px rgba(0, 0, 0, 0.8),
         inset 0 0 0 3px var(--frame-light);
       overflow: hidden;
+    }
+
+    body.fullscreen-mode .terminal {
+      max-width: none;
+      min-height: 100vh;
+      border-radius: 0;
     }
 
     .header {
@@ -113,9 +127,10 @@
       background: #0d0c08;
     }
 
-    .tabs {
+    .button-group {
       display: flex;
       gap: 8px;
+      flex-wrap: wrap;
     }
 
     button {
@@ -208,13 +223,14 @@
       border: 1px solid var(--flap-border);
       border-radius: 2px;
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.05),
-        inset 0 -1px 0 rgba(0,0,0,0.9);
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.9);
       color: var(--text);
       font-size: 19px;
       line-height: 1;
       text-shadow: 0 1px 2px #000;
       overflow: hidden;
+      transform-style: preserve-3d;
     }
 
     .flap::after {
@@ -225,7 +241,7 @@
       top: 50%;
       height: 1px;
       background: rgba(0, 0, 0, 0.85);
-      box-shadow: 0 1px 0 rgba(255,255,255,0.03);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03);
     }
 
     .flap.flip {
@@ -289,6 +305,7 @@
 
       .header {
         align-items: flex-start;
+        flex-direction: column;
         padding: 18px;
       }
 
@@ -328,7 +345,8 @@
     </div>
 
     <div class="controls">
-      <div class="tabs">
+
+      <div class="button-group">
         <button id="departuresButton" class="active">
           DEPARTURES
         </button>
@@ -338,9 +356,20 @@
         </button>
       </div>
 
+      <div class="button-group">
+        <button id="cycleButton">
+          AUTO CYCLE: OFF
+        </button>
+
+        <button id="fullscreenButton">
+          FULL SCREEN
+        </button>
+      </div>
+
       <div class="mode-label" id="modeLabel">
         SAMPLE DISPLAY · SOLARI MODE
       </div>
+
     </div>
 
     <div class="board-scroll">
@@ -454,6 +483,20 @@
     ];
 
     let currentMode = "departures";
+    let autoCycleEnabled = false;
+    let autoCycleTimer = null;
+
+    const departuresButton =
+      document.getElementById("departuresButton");
+
+    const arrivalsButton =
+      document.getElementById("arrivalsButton");
+
+    const cycleButton =
+      document.getElementById("cycleButton");
+
+    const fullscreenButton =
+      document.getElementById("fullscreenButton");
 
     function updateClock() {
       const now = new Date();
@@ -482,7 +525,8 @@
         const flap = document.createElement("span");
 
         flap.className = "flap";
-        flap.textContent = character === " " ? "\u00A0" : character;
+        flap.textContent =
+          character === " " ? "\u00A0" : character;
 
         flap.style.animationDelay = `${index * 35}ms`;
 
@@ -513,6 +557,16 @@
       });
     }
 
+    function updateModeButtons() {
+      if (currentMode === "departures") {
+        departuresButton.classList.add("active");
+        arrivalsButton.classList.remove("active");
+      } else {
+        arrivalsButton.classList.add("active");
+        departuresButton.classList.remove("active");
+      }
+    }
+
     function renderBoard() {
       const flights =
         currentMode === "departures"
@@ -527,6 +581,8 @@
         currentMode === "departures"
           ? "DESTINATION"
           : "ORIGIN";
+
+      updateModeButtons();
 
       flights.forEach((flight, rowIndex) => {
         const row = document.createElement("tr");
@@ -559,28 +615,94 @@
       });
     }
 
-    const departuresButton =
-      document.getElementById("departuresButton");
+    function switchMode(mode) {
+      currentMode = mode;
+      renderBoard();
+    }
 
-    const arrivalsButton =
-      document.getElementById("arrivalsButton");
+    function toggleAutoCycle() {
+      autoCycleEnabled = !autoCycleEnabled;
+
+      if (autoCycleEnabled) {
+        cycleButton.textContent = "AUTO CYCLE: ON";
+        cycleButton.classList.add("active");
+
+        autoCycleTimer = setInterval(() => {
+          currentMode =
+            currentMode === "departures"
+              ? "arrivals"
+              : "departures";
+
+          renderBoard();
+        }, 15000);
+      } else {
+        cycleButton.textContent = "AUTO CYCLE: OFF";
+        cycleButton.classList.remove("active");
+
+        clearInterval(autoCycleTimer);
+        autoCycleTimer = null;
+      }
+    }
+
+    async function toggleFullscreen() {
+      try {
+        if (!document.fullscreenElement) {
+          await document.documentElement.requestFullscreen();
+        } else {
+          await document.exitFullscreen();
+        }
+      } catch (error) {
+        alert(
+          "Full-screen mode was blocked by the browser. You can also press F11."
+        );
+      }
+    }
 
     departuresButton.addEventListener("click", () => {
-      currentMode = "departures";
-
-      departuresButton.classList.add("active");
-      arrivalsButton.classList.remove("active");
-
-      renderBoard();
+      switchMode("departures");
     });
 
     arrivalsButton.addEventListener("click", () => {
-      currentMode = "arrivals";
+      switchMode("arrivals");
+    });
 
-      arrivalsButton.classList.add("active");
-      departuresButton.classList.remove("active");
+    cycleButton.addEventListener("click", toggleAutoCycle);
 
-      renderBoard();
+    fullscreenButton.addEventListener(
+      "click",
+      toggleFullscreen
+    );
+
+    document.addEventListener("fullscreenchange", () => {
+      const isFullscreen = Boolean(document.fullscreenElement);
+
+      document.body.classList.toggle(
+        "fullscreen-mode",
+        isFullscreen
+      );
+
+      fullscreenButton.textContent =
+        isFullscreen
+          ? "EXIT FULL SCREEN"
+          : "FULL SCREEN";
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key.toLowerCase() === "a") {
+        toggleAutoCycle();
+      }
+
+      if (event.key.toLowerCase() === "f") {
+        toggleFullscreen();
+      }
+
+      if (event.key === "ArrowLeft") {
+        switchMode("departures");
+      }
+
+      if (event.key === "ArrowRight") {
+        switchMode("arrivals");
+      }
     });
 
     updateClock();
