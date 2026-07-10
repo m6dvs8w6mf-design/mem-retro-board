@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MEM Retro Flight Board</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #090806;
+      color: #f0c65a;
+      font-family: "Courier New", monospace;
+    }
+
+    .board {
+      max-width: 1100px;
+      margin: 30px auto;
+      background: #15120b;
+      border: 10px solid #49391f;
+      box-shadow: 0 0 30px black;
+    }
+
+    header {
+      padding: 24px;
+      text-align: center;
+      border-bottom: 2px solid #49391f;
+    }
+
+    h1 {
+      margin: 0;
+      letter-spacing: 5px;
+      font-size: 34px;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      color: #9d8145;
+      letter-spacing: 4px;
+    }
+
+    #clock {
+      margin-top: 18px;
+      font-size: 24px;
+      color: #f6e7b0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 14px;
+      text-align: left;
+      border-bottom: 1px solid #332a17;
+    }
+
+    th {
+      color: #9d8145;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    td {
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    tr:nth-child(even) {
+      background: #100e09;
+    }
+
+    .on-time {
+      color: #a8d87b;
+    }
+
+    .boarding {
+      color: #8fd8c2;
+    }
+
+    .delayed {
+      color: #ff8b72;
+    }
+
+    footer {
+      padding: 14px;
+      color: #786538;
+      font-size: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="board">
+
+    <header>
+      <h1>MEMPHIS INTERNATIONAL AIRPORT</h1>
+      <div class="subtitle">DEPARTURES · MEM</div>
+      <div id="clock"></div>
+    </header>
+
+    <table>
+      <thead>
+        <tr>
+          <th>TIME</th>
+          <th>FLIGHT</th>
+          <th>AIRLINE</th>
+          <th>DESTINATION</th>
+          <th>GATE</th>
+          <th>STATUS</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>3:20 PM</td>
+          <td>DL 2478</td>
+          <td>DELTA</td>
+          <td>ATLANTA</td>
+          <td>B17</td>
+          <td class="on-time">ON TIME</td>
+        </tr>
+
+        <tr>
+          <td>3:45 PM</td>
+          <td>AA 1834</td>
+          <td>AMERICAN</td>
+          <td>CHARLOTTE</td>
+          <td>B06</td>
+          <td class="boarding">BOARDING</td>
+        </tr>
+
+        <tr>
+          <td>4:05 PM</td>
+          <td>WN 1928</td>
+          <td>SOUTHWEST</td>
+          <td>DALLAS</td>
+          <td>A24</td>
+          <td class="delayed">DELAYED</td>
+        </tr>
+
+        <tr>
+          <td>4:25 PM</td>
+          <td>UA 5412</td>
+          <td>UNITED</td>
+          <td>CHICAGO</td>
+          <td>B18</td>
+          <td class="on-time">ON TIME</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <footer>
+      Prototype display using sample flight information
+    </footer>
+
+  </div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+
+      document.getElementById("clock").textContent =
+        now.toLocaleDateString([], {
+          weekday: "long",
+          month: "long",
+          day: "numeric",
+          year: "numeric"
+        }).toUpperCase()
+        + " · "
+        + now.toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit"
+        });
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+
+</body>
+</html>
