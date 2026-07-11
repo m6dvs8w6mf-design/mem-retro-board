@@ -1,90 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090907">
   <title>MEM Solari Flight Board</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <main class="terminal">
-
+  <main class="terminal" aria-label="Memphis International Airport flight board">
     <header class="header">
       <div>
-        <h1 class="airport-name">
-          MEMPHIS INTERNATIONAL AIRPORT
-        </h1>
-
-        <div class="airport-code">
-          MEM · TENNESSEE
-        </div>
+        <p class="eyebrow">CITY OF MEMPHIS · TENNESSEE</p>
+        <h1 class="airport-name">MEMPHIS INTERNATIONAL AIRPORT</h1>
+        <p class="airport-code">MEM · FLIGHT INFORMATION</p>
       </div>
-
-      <div class="clock">
-        <div id="time"></div>
-        <div id="date"></div>
+      <div class="clock" aria-live="off">
+        <div id="time">--:--:--</div>
+        <div id="date">LOADING LOCAL TIME</div>
       </div>
     </header>
 
-    <section class="controls">
-
-      <div class="button-group">
-        <button id="departuresButton" class="active">
-          DEPARTURES
-        </button>
-
-        <button id="arrivalsButton">
-          ARRIVALS
-        </button>
+    <section class="controls" aria-label="Board controls">
+      <div class="button-group" role="group" aria-label="Flight direction">
+        <button id="departuresButton" class="active" type="button" aria-pressed="true">DEPARTURES</button>
+        <button id="arrivalsButton" type="button" aria-pressed="false">ARRIVALS</button>
       </div>
-
-      <div class="button-group">
-        <button id="cycleButton">
-          AUTO CYCLE: OFF
-        </button>
-
-        <button id="fullscreenButton">
-          FULL SCREEN
-        </button>
+      <div class="board-title" id="boardTitle">DEPARTURES</div>
+      <div class="button-group" role="group" aria-label="Display options">
+        <button id="cycleButton" type="button" aria-pressed="false">AUTO CYCLE: OFF</button>
+        <button id="soundButton" type="button" aria-pressed="false">SOUND: OFF</button>
+        <button id="fullscreenButton" type="button">FULL SCREEN</button>
       </div>
-
-      <div class="mode-label">
-        SAMPLE DISPLAY · SOLARI MODE
-      </div>
-
     </section>
 
-    <section class="board-scroll">
+    <section class="board-scroll" aria-label="Flights">
       <table>
         <thead>
           <tr>
-            <th>TIME</th>
-            <th>FLIGHT</th>
-            <th>AIRLINE</th>
-            <th id="cityHeading">DESTINATION</th>
-            <th>GATE</th>
-            <th>STATUS</th>
+            <th>TIME</th><th>FLIGHT</th><th>AIRLINE</th>
+            <th id="cityHeading">DESTINATION</th><th>GATE</th><th>STATUS</th>
           </tr>
         </thead>
-
         <tbody id="flightRows"></tbody>
       </table>
     </section>
 
     <footer class="footer">
-      DECORATIVE DISPLAY · VERIFY FLIGHT INFORMATION WITH MEM OR THE AIRLINE
+      <span>SAMPLE FLIGHT DISPLAY</span>
+      <span>VERIFY INFORMATION WITH MEM OR YOUR AIRLINE</span>
+      <span>SHORTCUTS: ← → BOARD · A AUTO · S SOUND · F FULL SCREEN</span>
     </footer>
-
   </main>
-
   <script src="script.js"></script>
 </body>
 </html>
