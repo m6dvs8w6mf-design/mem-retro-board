@@ -1,332 +1,153 @@
-const departures = [
-  {
-    time: "3:20 PM",
-    flight: "DL 2478",
-    airline: "DELTA",
-    city: "ATLANTA",
-    gate: "B17",
-    status: "ON TIME"
-  },
-  {
-    time: "3:45 PM",
-    flight: "AA 1834",
-    airline: "AMERICAN",
-    city: "CHARLOTTE",
-    gate: "B06",
-    status: "BOARDING"
-  },
-  {
-    time: "4:05 PM",
-    flight: "WN 1928",
-    airline: "SOUTHWEST",
-    city: "DALLAS LOVE",
-    gate: "A24",
-    status: "DELAYED"
-  },
-  {
-    time: "4:25 PM",
-    flight: "UA 5412",
-    airline: "UNITED",
-    city: "CHICAGO",
-    gate: "B18",
-    status: "ON TIME"
-  },
-  {
-    time: "4:50 PM",
-    flight: "G4 176",
-    airline: "ALLEGIANT",
-    city: "ORLANDO",
-    gate: "C03",
-    status: "FINAL CALL"
-  }
-];
+const flights = {
+  departures: [
+    ["3:20 PM", "DL 2478", "DELTA", "ATLANTA", "B17", "ON TIME"],
+    ["3:45 PM", "AA 1834", "AMERICAN", "CHARLOTTE", "B06", "BOARDING"],
+    ["4:05 PM", "WN 1928", "SOUTHWEST", "DALLAS LOVE", "A24", "DELAYED"],
+    ["4:25 PM", "UA 5412", "UNITED", "CHICAGO", "B18", "ON TIME"],
+    ["4:50 PM", "G4 176", "ALLEGIANT", "ORLANDO", "C03", "FINAL CALL"]
+  ],
+  arrivals: [
+    ["3:12 PM", "DL 2081", "DELTA", "ATLANTA", "B15", "ARRIVED"],
+    ["3:38 PM", "AA 1640", "AMERICAN", "DALLAS", "B08", "ON TIME"],
+    ["4:02 PM", "WN 2810", "SOUTHWEST", "HOUSTON", "A21", "ON TIME"],
+    ["4:30 PM", "UA 4371", "UNITED", "DENVER", "B20", "DELAYED"],
+    ["4:55 PM", "NK 221", "SPIRIT", "LAS VEGAS", "A09", "ON TIME"]
+  ]
+};
 
-const arrivals = [
-  {
-    time: "3:12 PM",
-    flight: "DL 2081",
-    airline: "DELTA",
-    city: "ATLANTA",
-    gate: "B15",
-    status: "ARRIVED"
-  },
-  {
-    time: "3:38 PM",
-    flight: "AA 1640",
-    airline: "AMERICAN",
-    city: "DALLAS",
-    gate: "B08",
-    status: "ON TIME"
-  },
-  {
-    time: "4:02 PM",
-    flight: "WN 2810",
-    airline: "SOUTHWEST",
-    city: "HOUSTON",
-    gate: "A21",
-    status: "ON TIME"
-  },
-  {
-    time: "4:30 PM",
-    flight: "UA 4371",
-    airline: "UNITED",
-    city: "DENVER",
-    gate: "B20",
-    status: "DELAYED"
-  },
-  {
-    time: "4:55 PM",
-    flight: "NK 221",
-    airline: "SPIRIT",
-    city: "LAS VEGAS",
-    gate: "A09",
-    status: "ON TIME"
-  }
-];
+const $ = id => document.getElementById(id);
+const ui = {
+  departures: $("departuresButton"), arrivals: $("arrivalsButton"),
+  cycle: $("cycleButton"), sound: $("soundButton"), fullscreen: $("fullscreenButton"),
+  rows: $("flightRows"), city: $("cityHeading"), title: $("boardTitle")
+};
 
-let currentMode = "departures";
-let autoCycleEnabled = false;
-let autoCycleTimer = null;
-
-const departuresButton =
-  document.getElementById("departuresButton");
-
-const arrivalsButton =
-  document.getElementById("arrivalsButton");
-
-const cycleButton =
-  document.getElementById("cycleButton");
-
-const fullscreenButton =
-  document.getElementById("fullscreenButton");
-
-const flightRows =
-  document.getElementById("flightRows");
+let mode = "departures";
+let cycleOn = localStorage.getItem("mem-cycle") === "on";
+let soundOn = localStorage.getItem("mem-sound") === "on";
+let cycleTimer = null;
+let audio = null;
 
 function updateClock() {
   const now = new Date();
-
-  document.getElementById("time").textContent =
-    now.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit"
-    });
-
-  document.getElementById("date").textContent =
-    now.toLocaleDateString([], {
-      weekday: "long",
-      month: "long",
-      day: "numeric",
-      year: "numeric"
-    }).toUpperCase();
+  $("time").textContent = now.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", second: "2-digit" });
+  $("date").textContent = now.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" }).toUpperCase();
 }
 
-function makeFlaps(text) {
-  const container = document.createElement("div");
+function clickSound() {
+  if (!soundOn) return;
+  audio ||= new (window.AudioContext || window.webkitAudioContext)();
+  if (audio.state === "suspended") audio.resume();
+  const oscillator = audio.createOscillator();
+  const gain = audio.createGain();
+  oscillator.type = "square";
+  oscillator.frequency.setValueAtTime(105 + Math.random() * 55, audio.currentTime);
+  gain.gain.setValueAtTime(.018, audio.currentTime);
+  gain.gain.exponentialRampToValueAtTime(.001, audio.currentTime + .035);
+  oscillator.connect(gain).connect(audio.destination);
+  oscillator.start();
+  oscillator.stop(audio.currentTime + .04);
+}
 
-  container.className = "flap-line";
-
-  String(text).split("").forEach(character => {
+function flapLine(value) {
+  const line = document.createElement("div");
+  line.className = "flap-line";
+  [...String(value)].forEach(character => {
     const flap = document.createElement("span");
-
     flap.className = "flap";
-    flap.textContent =
-      character === " " ? "\u00A0" : character;
-
-    container.appendChild(flap);
+    flap.textContent = character === " " ? "\u00a0" : character;
+    line.append(flap);
   });
-
-  return container;
+  return line;
 }
 
-function getStatusClass(status) {
-  return "status-" +
-    status
-      .toLowerCase()
-      .replaceAll(" ", "-");
-}
+function statusClass(value) { return `status-${value.toLowerCase().replaceAll(" ", "-")}`; }
 
-function animateRow(row) {
-  const flaps = row.querySelectorAll(".flap");
-
-  flaps.forEach((flap, index) => {
+function animate(row, rowIndex) {
+  row.querySelectorAll(".flap").forEach((flap, index) => {
     setTimeout(() => {
       flap.classList.add("flip");
-
-      setTimeout(() => {
-        flap.classList.remove("flip");
-      }, 520);
-    }, index * 22);
+      if (index % 2 === 0) clickSound();
+      setTimeout(() => flap.classList.remove("flip"), 460);
+    }, rowIndex * 95 + index * 18);
   });
 }
 
-function updateModeButtons() {
-  const showingDepartures =
-    currentMode === "departures";
+function render() {
+  ui.rows.replaceChildren();
+  const departing = mode === "departures";
+  ui.city.textContent = departing ? "DESTINATION" : "ORIGIN";
+  ui.title.textContent = mode.toUpperCase();
+  ui.departures.classList.toggle("active", departing);
+  ui.arrivals.classList.toggle("active", !departing);
+  ui.departures.setAttribute("aria-pressed", departing);
+  ui.arrivals.setAttribute("aria-pressed", !departing);
 
-  departuresButton.classList.toggle(
-    "active",
-    showingDepartures
-  );
-
-  arrivalsButton.classList.toggle(
-    "active",
-    !showingDepartures
-  );
-}
-
-function renderBoard() {
-  const flights =
-    currentMode === "departures"
-      ? departures
-      : arrivals;
-
-  flightRows.innerHTML = "";
-
-  document.getElementById("cityHeading").textContent =
-    currentMode === "departures"
-      ? "DESTINATION"
-      : "ORIGIN";
-
-  updateModeButtons();
-
-  flights.forEach((flight, rowIndex) => {
+  flights[mode].forEach((values, rowIndex) => {
     const row = document.createElement("tr");
-
-    const values = [
-      flight.time,
-      flight.flight,
-      flight.airline,
-      flight.city,
-      flight.gate,
-      flight.status
-    ];
-
     values.forEach((value, columnIndex) => {
       const cell = document.createElement("td");
-
-      if (columnIndex === 5) {
-        cell.className =
-          getStatusClass(flight.status);
-      }
-
-      cell.appendChild(makeFlaps(value));
-      row.appendChild(cell);
+      if (columnIndex === 5) cell.className = statusClass(value);
+      cell.append(flapLine(value));
+      row.append(cell);
     });
-
-    flightRows.appendChild(row);
-
-    setTimeout(() => {
-      animateRow(row);
-    }, rowIndex * 160);
+    ui.rows.append(row);
+    animate(row, rowIndex);
   });
 }
 
-function switchMode(mode) {
-  currentMode = mode;
-  renderBoard();
+function setMode(next) { mode = next; render(); }
+
+function setCycle(next) {
+  cycleOn = next;
+  localStorage.setItem("mem-cycle", next ? "on" : "off");
+  ui.cycle.textContent = `AUTO CYCLE: ${next ? "ON" : "OFF"}`;
+  ui.cycle.classList.toggle("active", next);
+  ui.cycle.setAttribute("aria-pressed", next);
+  clearInterval(cycleTimer);
+  cycleTimer = next ? setInterval(() => setMode(mode === "departures" ? "arrivals" : "departures"), 15000) : null;
 }
 
-function toggleAutoCycle() {
-  autoCycleEnabled = !autoCycleEnabled;
-
-  cycleButton.textContent =
-    autoCycleEnabled
-      ? "AUTO CYCLE: ON"
-      : "AUTO CYCLE: OFF";
-
-  cycleButton.classList.toggle(
-    "active",
-    autoCycleEnabled
-  );
-
-  if (autoCycleEnabled) {
-    autoCycleTimer = setInterval(() => {
-      currentMode =
-        currentMode === "departures"
-          ? "arrivals"
-          : "departures";
-
-      renderBoard();
-    }, 15000);
-  } else {
-    clearInterval(autoCycleTimer);
-    autoCycleTimer = null;
-  }
+function setSound(next) {
+  soundOn = next;
+  localStorage.setItem("mem-sound", next ? "on" : "off");
+  ui.sound.textContent = `SOUND: ${next ? "ON" : "OFF"}`;
+  ui.sound.classList.toggle("active", next);
+  ui.sound.setAttribute("aria-pressed", next);
+  if (next) clickSound();
 }
 
 async function toggleFullscreen() {
   try {
-    if (!document.fullscreenElement) {
-      await document.documentElement.requestFullscreen();
-    } else {
-      await document.exitFullscreen();
-    }
-  } catch {
-    alert(
-      "Full-screen mode was blocked. You can also press F11."
-    );
-  }
+    if (document.fullscreenElement) await document.exitFullscreen();
+    else await document.documentElement.requestFullscreen();
+  } catch { alert("Full-screen mode was blocked. You can also press F11."); }
 }
 
-departuresButton.addEventListener("click", () => {
-  switchMode("departures");
+ui.departures.addEventListener("click", () => setMode("departures"));
+ui.arrivals.addEventListener("click", () => setMode("arrivals"));
+ui.cycle.addEventListener("click", () => setCycle(!cycleOn));
+ui.sound.addEventListener("click", () => setSound(!soundOn));
+ui.fullscreen.addEventListener("click", toggleFullscreen);
+
+document.addEventListener("fullscreenchange", () => {
+  const active = Boolean(document.fullscreenElement);
+  document.body.classList.toggle("fullscreen-mode", active);
+  ui.fullscreen.textContent = active ? "EXIT FULL SCREEN" : "FULL SCREEN";
 });
-
-arrivalsButton.addEventListener("click", () => {
-  switchMode("arrivals");
-});
-
-cycleButton.addEventListener(
-  "click",
-  toggleAutoCycle
-);
-
-fullscreenButton.addEventListener(
-  "click",
-  toggleFullscreen
-);
-
-document.addEventListener(
-  "fullscreenchange",
-  () => {
-    const isFullscreen =
-      Boolean(document.fullscreenElement);
-
-    document.body.classList.toggle(
-      "fullscreen-mode",
-      isFullscreen
-    );
-
-    fullscreenButton.textContent =
-      isFullscreen
-        ? "EXIT FULL SCREEN"
-        : "FULL SCREEN";
-  }
-);
 
 document.addEventListener("keydown", event => {
+  if (event.target.matches("button")) return;
   const key = event.key.toLowerCase();
-
-  if (key === "a") {
-    toggleAutoCycle();
-  }
-
-  if (key === "f") {
-    toggleFullscreen();
-  }
-
-  if (event.key === "ArrowLeft") {
-    switchMode("departures");
-  }
-
-  if (event.key === "ArrowRight") {
-    switchMode("arrivals");
-  }
+  if (key === "a") setCycle(!cycleOn);
+  if (key === "s") setSound(!soundOn);
+  if (key === "f") toggleFullscreen();
+  if (event.key === "ArrowLeft") setMode("departures");
+  if (event.key === "ArrowRight") setMode("arrivals");
 });
 
 updateClock();
 setInterval(updateClock, 1000);
-
-renderBoard();
+setCycle(cycleOn);
+setSound(soundOn);
+render();
