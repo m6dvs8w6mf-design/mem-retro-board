@@ -28,7 +28,10 @@ let soundOn = localStorage.getItem("mem-sound") === "on";
 let cycleTimer = null;
 let audio = null;
 let displayedFlights = null;
+let displayedTitle = "";
 const CHARACTER_WHEEL = " ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789:.-/";
+const FIELD_WIDTHS = [7, 7, 10, 14, 3, 10];
+const STEP_INTERVAL = 76;
 
 function updateClock() {
   const now = new Date();
@@ -41,11 +44,11 @@ function clickSound() {
   audio ||= new (window.AudioContext || window.webkitAudioContext)();
   if (audio.state === "suspended") audio.resume();
   const now = audio.currentTime;
-  const length = Math.ceil(audio.sampleRate * .022);
+  const length = Math.ceil(audio.sampleRate * .034);
   const buffer = audio.createBuffer(1, length, audio.sampleRate);
   const samples = buffer.getChannelData(0);
   for (let i = 0; i < length; i += 1) {
-    samples[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / length, 5);
+    samples[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / length, 4.2);
   }
 
   const impact = audio.createBufferSource();
@@ -53,10 +56,10 @@ function clickSound() {
   const gain = audio.createGain();
   impact.buffer = buffer;
   filter.type = "bandpass";
-  filter.frequency.setValueAtTime(1450 + Math.random() * 350, now);
-  filter.Q.setValueAtTime(.65, now);
-  gain.gain.setValueAtTime(.035, now);
-  gain.gain.exponentialRampToValueAtTime(.001, now + .022);
+  filter.frequency.setValueAtTime(1120 + Math.random() * 240, now);
+  filter.Q.setValueAtTime(.8, now);
+  gain.gain.setValueAtTime(.031, now);
+  gain.gain.exponentialRampToValueAtTime(.001, now + .034);
   impact.connect(filter).connect(gain).connect(audio.destination);
   impact.start(now);
 }
@@ -102,7 +105,7 @@ function spinFlap(flap, from, to, startDelay) {
         clearInterval(timer);
         setTimeout(() => flap.classList.remove("flip"), 150);
       }
-    }, 58);
+    }, STEP_INTERVAL);
   }, startDelay);
 }
 
@@ -122,13 +125,23 @@ function flapLine(value, previousValue = "", rowIndex = 0, columnIndex = 0) {
   return line;
 }
 
+function fixedField(value, width) {
+  return String(value).toUpperCase().slice(0, width).padEnd(width, " ");
+}
+
+function renderTitle() {
+  const target = fixedField(mode, 10);
+  ui.title.replaceChildren(flapLine(target, displayedTitle, 7, 2));
+  displayedTitle = target;
+}
+
 function statusClass(value) { return `status-${value.toLowerCase().replaceAll(" ", "-")}`; }
 
 function render() {
   ui.rows.replaceChildren();
   const departing = mode === "departures";
   ui.city.textContent = departing ? "DESTINATION" : "ORIGIN";
-  ui.title.textContent = mode.toUpperCase();
+  renderTitle();
   ui.departures.classList.toggle("active", departing);
   ui.arrivals.classList.toggle("active", !departing);
   ui.departures.setAttribute("aria-pressed", departing);
@@ -139,13 +152,16 @@ function render() {
     values.forEach((value, columnIndex) => {
       const cell = document.createElement("td");
       if (columnIndex === 5) cell.className = statusClass(value);
+      const fieldValue = fixedField(value, FIELD_WIDTHS[columnIndex]);
       const previousValue = displayedFlights?.[rowIndex]?.[columnIndex] || "";
-      cell.append(flapLine(value, previousValue, rowIndex, columnIndex));
+      cell.append(flapLine(fieldValue, previousValue, rowIndex, columnIndex));
       row.append(cell);
     });
     ui.rows.append(row);
   });
-  displayedFlights = flights[mode].map(row => [...row]);
+  displayedFlights = flights[mode].map(row =>
+    row.map((value, columnIndex) => fixedField(value, FIELD_WIDTHS[columnIndex]))
+  );
 }
 
 function setMode(next) { mode = next; render(); }
