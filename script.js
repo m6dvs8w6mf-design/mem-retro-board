@@ -1,17 +1,17 @@
 const flights = {
   departures: [
-    ["3:20 PM", "DL 2478", "DELTA", "ATLANTA", "B17", "ON TIME"],
-    ["3:45 PM", "AA 1834", "AMERICAN", "CHARLOTTE", "B06", "BOARDING"],
-    ["4:05 PM", "WN 1928", "SOUTHWEST", "DALLAS LOVE", "A24", "DELAYED"],
-    ["4:25 PM", "UA 5412", "UNITED", "CHICAGO", "B18", "ON TIME"],
-    ["4:50 PM", "G4 176", "ALLEGIANT", "ORLANDO", "C03", "FINAL CALL"]
+    ["3:20 PM", "DL2478", "DELTA", "ATLANTA", "B17", "ON TIME"],
+    ["3:45 PM", "AA1834", "AMERICAN", "CHARLOTTE", "B06", "BOARDING"],
+    ["4:05 PM", "WN1928", "SOUTHWEST", "DALLAS LOVE", "A24", "DELAYED"],
+    ["4:25 PM", "UA5412", "UNITED", "CHICAGO", "B18", "ON TIME"],
+    ["4:50 PM", "G4176", "ALLEGIANT", "ORLANDO", "C03", "FINAL CALL"]
   ],
   arrivals: [
-    ["3:12 PM", "DL 2081", "DELTA", "ATLANTA", "B15", "ARRIVED"],
-    ["3:38 PM", "AA 1640", "AMERICAN", "DALLAS", "B08", "ON TIME"],
-    ["4:02 PM", "WN 2810", "SOUTHWEST", "HOUSTON", "A21", "ON TIME"],
-    ["4:30 PM", "UA 4371", "UNITED", "DENVER", "B20", "DELAYED"],
-    ["4:55 PM", "NK 221", "SPIRIT", "LAS VEGAS", "A09", "ON TIME"]
+    ["3:12 PM", "DL2081", "DELTA", "ATLANTA", "B15", "ARRIVED"],
+    ["3:38 PM", "AA1640", "AMERICAN", "DALLAS", "B08", "ON TIME"],
+    ["4:02 PM", "WN2810", "SOUTHWEST", "HOUSTON", "A21", "ON TIME"],
+    ["4:30 PM", "UA4371", "UNITED", "DENVER", "B20", "DELAYED"],
+    ["4:55 PM", "NK221", "SPIRIT", "LAS VEGAS", "A09", "ON TIME"]
   ]
 };
 
@@ -38,15 +38,25 @@ function clickSound() {
   if (!soundOn) return;
   audio ||= new (window.AudioContext || window.webkitAudioContext)();
   if (audio.state === "suspended") audio.resume();
-  const oscillator = audio.createOscillator();
+  const now = audio.currentTime;
+  const length = Math.ceil(audio.sampleRate * .022);
+  const buffer = audio.createBuffer(1, length, audio.sampleRate);
+  const samples = buffer.getChannelData(0);
+  for (let i = 0; i < length; i += 1) {
+    samples[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / length, 5);
+  }
+
+  const impact = audio.createBufferSource();
+  const filter = audio.createBiquadFilter();
   const gain = audio.createGain();
-  oscillator.type = "square";
-  oscillator.frequency.setValueAtTime(105 + Math.random() * 55, audio.currentTime);
-  gain.gain.setValueAtTime(.018, audio.currentTime);
-  gain.gain.exponentialRampToValueAtTime(.001, audio.currentTime + .035);
-  oscillator.connect(gain).connect(audio.destination);
-  oscillator.start();
-  oscillator.stop(audio.currentTime + .04);
+  impact.buffer = buffer;
+  filter.type = "bandpass";
+  filter.frequency.setValueAtTime(1450 + Math.random() * 350, now);
+  filter.Q.setValueAtTime(.65, now);
+  gain.gain.setValueAtTime(.035, now);
+  gain.gain.exponentialRampToValueAtTime(.001, now + .022);
+  impact.connect(filter).connect(gain).connect(audio.destination);
+  impact.start(now);
 }
 
 function flapLine(value) {
