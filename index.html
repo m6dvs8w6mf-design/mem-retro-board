@@ -15,9 +15,21 @@
         <h1 class="airport-name">MEMPHIS INTERNATIONAL AIRPORT</h1>
         <p class="airport-code">MEM · FLIGHT INFORMATION</p>
       </div>
-      <div class="clock" aria-live="off">
-        <div id="time">--:--:--</div>
-        <div id="date">LOADING LOCAL TIME</div>
+      <div class="clock-panel" aria-live="off">
+        <div class="analog-clock" id="analogClock" role="img" aria-label="Memphis local time">
+          <span class="clock-mark mark-12">12</span>
+          <span class="clock-mark mark-3">3</span>
+          <span class="clock-mark mark-6">6</span>
+          <span class="clock-mark mark-9">9</span>
+          <span class="clock-hand hour-hand" id="hourHand"></span>
+          <span class="clock-hand minute-hand" id="minuteHand"></span>
+          <span class="clock-hand second-hand" id="secondHand"></span>
+          <span class="clock-pin"></span>
+        </div>
+        <div class="clock-caption">
+          <div>MEMPHIS LOCAL TIME</div>
+          <div id="date">LOADING DATE</div>
+        </div>
       </div>
     </header>
 
@@ -38,8 +50,8 @@
       <table>
         <thead>
           <tr>
-            <th>TIME</th><th>FLIGHT</th><th>AIRLINE</th>
-            <th id="cityHeading">DESTINATION</th><th>GATE</th><th>STATUS</th>
+            <th>FLIGHT</th><th>CARRIER</th><th>TIME</th>
+            <th id="cityHeading">DESTINATION</th><th>INFORMATION</th>
           </tr>
         </thead>
         <tbody id="flightRows"></tbody>
