@@ -30,12 +30,18 @@ let audio = null;
 let displayedFlights = null;
 let displayedTitle = "";
 const CHARACTER_WHEEL = " ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789:.-/";
-const FIELD_WIDTHS = [7, 7, 10, 14, 3, 10];
+const FIELD_WIDTHS = [7, 2, 7, 14, 19];
 const STEP_INTERVAL = 76;
 
 function updateClock() {
   const now = new Date();
-  $("time").textContent = now.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", second: "2-digit" });
+  const seconds = now.getSeconds();
+  const minutes = now.getMinutes() + seconds / 60;
+  const hours = (now.getHours() % 12) + minutes / 60;
+  $("secondHand").style.transform = `rotate(${seconds * 6}deg)`;
+  $("minuteHand").style.transform = `rotate(${minutes * 6}deg)`;
+  $("hourHand").style.transform = `rotate(${hours * 30}deg)`;
+  $("analogClock").setAttribute("aria-label", `Memphis local time ${now.toLocaleTimeString("en-US")}`);
   $("date").textContent = now.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" }).toUpperCase();
 }
 
@@ -137,6 +143,15 @@ function renderTitle() {
 
 function statusClass(value) { return `status-${value.toLowerCase().replaceAll(" ", "-")}`; }
 
+function carrierCode(flightNumber) {
+  return String(flightNumber).slice(0, 2).padEnd(2, "-");
+}
+
+function displayRow(values) {
+  const [time, flight, , city, gate, status] = values;
+  return [flight, carrierCode(flight), time, city, `GATE ${gate} ${status}`];
+}
+
 function render() {
   ui.rows.replaceChildren();
   const departing = mode === "departures";
@@ -147,11 +162,13 @@ function render() {
   ui.departures.setAttribute("aria-pressed", departing);
   ui.arrivals.setAttribute("aria-pressed", !departing);
 
-  flights[mode].forEach((values, rowIndex) => {
+  const boardRows = flights[mode].map(displayRow);
+  boardRows.forEach((values, rowIndex) => {
     const row = document.createElement("tr");
     values.forEach((value, columnIndex) => {
       const cell = document.createElement("td");
-      if (columnIndex === 5) cell.className = statusClass(value);
+      if (columnIndex === 1) cell.className = "carrier-cell";
+      if (columnIndex === 4) cell.classList.add(statusClass(flights[mode][rowIndex][5]));
       const fieldValue = fixedField(value, FIELD_WIDTHS[columnIndex]);
       const previousValue = displayedFlights?.[rowIndex]?.[columnIndex] || "";
       cell.append(flapLine(fieldValue, previousValue, rowIndex, columnIndex));
@@ -159,7 +176,7 @@ function render() {
     });
     ui.rows.append(row);
   });
-  displayedFlights = flights[mode].map(row =>
+  displayedFlights = boardRows.map(row =>
     row.map((value, columnIndex) => fixedField(value, FIELD_WIDTHS[columnIndex]))
   );
 }
