@@ -147,6 +147,26 @@ function carrierCode(flightNumber) {
   return String(flightNumber).slice(0, 2).padEnd(2, "-");
 }
 
+function carrierModule(code, previousCode, rowIndex) {
+  const module = document.createElement("div");
+  module.className = `carrier-module carrier-${code.trim()}`;
+  module.setAttribute("aria-label", `Carrier ${code.trim()}`);
+  const emblem = document.createElement("span");
+  emblem.className = "carrier-emblem";
+  const label = document.createElement("span");
+  label.className = "carrier-code-text";
+  label.textContent = code.trim();
+  module.append(emblem, label);
+  if (code !== previousCode) {
+    setTimeout(() => {
+      module.classList.add("flip");
+      clickSound();
+      setTimeout(() => module.classList.remove("flip"), 620);
+    }, 80 + rowIndex * 95);
+  }
+  return module;
+}
+
 function displayRow(values) {
   const [time, flight, , city, gate, status] = values;
   return [flight, carrierCode(flight), time, city, `GATE ${gate} ${status}`];
@@ -171,7 +191,9 @@ function render() {
       if (columnIndex === 4) cell.classList.add(statusClass(flights[mode][rowIndex][5]));
       const fieldValue = fixedField(value, FIELD_WIDTHS[columnIndex]);
       const previousValue = displayedFlights?.[rowIndex]?.[columnIndex] || "";
-      cell.append(flapLine(fieldValue, previousValue, rowIndex, columnIndex));
+      cell.append(columnIndex === 1
+        ? carrierModule(fieldValue, previousValue, rowIndex)
+        : flapLine(fieldValue, previousValue, rowIndex, columnIndex));
       row.append(cell);
     });
     ui.rows.append(row);
