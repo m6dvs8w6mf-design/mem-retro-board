@@ -1,4 +1,4 @@
-const flights = {
+const sampleFlights = {
   departures: [
     ["3:20 PM", "DL2478", "DELTA", "ATLANTA", "B17", "ON TIME"],
     ["3:45 PM", "AA1834", "AMERICAN", "CHARLOTTE", "B06", "BOARDING"],
@@ -14,6 +14,8 @@ const flights = {
     ["4:55 PM", "NK221", "SPIRIT", "LAS VEGAS", "A09", "ON TIME"]
   ]
 };
+
+let flights = sampleFlights;
 
 const $ = id => document.getElementById(id);
 const ui = {
@@ -34,7 +36,8 @@ const FIELD_WIDTHS = [7, 2, 7, 14, 19];
 const STEP_INTERVAL = 76;
 const CARRIER_NAMES = {
   DL: "DELTA", AA: "AMERICAN", WN: "SOUTHWEST",
-  UA: "UNITED", G4: "ALLEGIANT", NK: "SPIRIT"
+  UA: "UNITED", G4: "ALLEGIANT", NK: "SPIRIT",
+  F9: "FRONTIER", MX: "BREEZE", SY: "SUN COUNTRY"
 };
 
 function updateClock() {
@@ -47,6 +50,34 @@ function updateClock() {
   $("hourHand").style.transform = `rotate(${hours * 30}deg)`;
   $("analogClock").setAttribute("aria-label", `Memphis local time ${now.toLocaleTimeString("en-US")}`);
   $("date").textContent = now.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" }).toUpperCase();
+}
+
+function liveRow(flight) {
+  const code = String(flight.airlinecode || "").toUpperCase();
+  const number = String(flight.flightnumber || "");
+  return [flight.scheduled || "--:--", `${code}${number}`, CARRIER_NAMES[code] || code,
+    flight.city || "UNKNOWN", flight.gate || "--", String(flight.remarks || "ON TIME").toUpperCase()];
+}
+
+async function loadLiveFlights() {
+  try {
+    const response = await fetch(`flights.json?_=${Date.now()}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+    if (!data.departures?.length || !data.arrivals?.length) throw new Error("Incomplete flight data");
+    flights = {
+      departures: data.departures.map(liveRow),
+      arrivals: data.arrivals.map(liveRow)
+    };
+    const ageMinutes = (Date.now() - new Date(data.updatedAt).getTime()) / 60000;
+    const label = ageMinutes > 60 ? "MEM DATA DELAYED" : "LIVE MEM DATA";
+    $("dataStatus").textContent = `${label} · UPDATED ${new Date(data.updatedAt).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" })}`;
+    render();
+  } catch {
+    flights = sampleFlights;
+    $("dataStatus").textContent = "SAMPLE DATA · LIVE MEM FEED UNAVAILABLE";
+    render();
+  }
 }
 
 function clickSound() {
@@ -268,3 +299,5 @@ setInterval(updateClock, 1000);
 setCycle(cycleOn);
 setSound(soundOn);
 render();
+loadLiveFlights();
+setInterval(loadLiveFlights, 300000);
