@@ -32,6 +32,10 @@ let displayedTitle = "";
 const CHARACTER_WHEEL = " ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789:.-/";
 const FIELD_WIDTHS = [7, 2, 7, 14, 19];
 const STEP_INTERVAL = 76;
+const CARRIER_NAMES = {
+  DL: "DELTA", AA: "AMERICAN", WN: "SOUTHWEST",
+  UA: "UNITED", G4: "ALLEGIANT", NK: "SPIRIT"
+};
 
 function updateClock() {
   const now = new Date();
@@ -153,10 +157,16 @@ function carrierModule(code, previousCode, rowIndex) {
   module.setAttribute("aria-label", `Carrier ${code.trim()}`);
   const emblem = document.createElement("span");
   emblem.className = "carrier-emblem";
+  const details = document.createElement("span");
+  details.className = "carrier-details";
   const label = document.createElement("span");
   label.className = "carrier-code-text";
   label.textContent = code.trim();
-  module.append(emblem, label);
+  const name = document.createElement("span");
+  name.className = "carrier-name";
+  name.textContent = CARRIER_NAMES[code.trim()] || "AIRLINE";
+  details.append(label, name);
+  module.append(emblem, details);
   if (code !== previousCode) {
     setTimeout(() => {
       module.classList.add("flip");
