@@ -27,6 +27,8 @@ let cycleOn = localStorage.getItem("mem-cycle") === "on";
 let soundOn = localStorage.getItem("mem-sound") === "on";
 let cycleTimer = null;
 let audio = null;
+let displayedFlights = null;
+const CHARACTER_WHEEL = " ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789:.-/";
 
 function updateClock() {
   const now = new Date();
@@ -59,29 +61,68 @@ function clickSound() {
   impact.start(now);
 }
 
-function flapLine(value) {
+function wheelCharacter(character) {
+  return CHARACTER_WHEEL.includes(character) ? character : " ";
+}
+
+function nextCharacter(character) {
+  const position = CHARACTER_WHEEL.indexOf(wheelCharacter(character));
+  return CHARACTER_WHEEL[(position + 1) % CHARACTER_WHEEL.length];
+}
+
+function stepsToCharacter(from, to) {
+  const start = CHARACTER_WHEEL.indexOf(wheelCharacter(from));
+  const finish = CHARACTER_WHEEL.indexOf(wheelCharacter(to));
+  return (finish - start + CHARACTER_WHEEL.length) % CHARACTER_WHEEL.length;
+}
+
+function showCharacter(flap, character) {
+  flap.textContent = character === " " ? "\u00a0" : character;
+}
+
+function spinFlap(flap, from, to, startDelay) {
+  let current = wheelCharacter(from);
+  const steps = stepsToCharacter(current, to);
+  showCharacter(flap, current);
+
+  if (!steps) return;
+
+  setTimeout(() => {
+    let completed = 0;
+    const timer = setInterval(() => {
+      current = nextCharacter(current);
+      completed += 1;
+      showCharacter(flap, current);
+      flap.classList.remove("flip");
+      void flap.offsetWidth;
+      flap.classList.add("flip");
+      if (completed % 2 === 1) clickSound();
+
+      if (completed >= steps) {
+        clearInterval(timer);
+        setTimeout(() => flap.classList.remove("flip"), 150);
+      }
+    }, 58);
+  }, startDelay);
+}
+
+function flapLine(value, previousValue = "", rowIndex = 0, columnIndex = 0) {
   const line = document.createElement("div");
   line.className = "flap-line";
-  [...String(value)].forEach(character => {
+  const target = String(value);
+  const previous = String(previousValue).padEnd(target.length, " ");
+  [...target].forEach((character, characterIndex) => {
     const flap = document.createElement("span");
     flap.className = "flap";
-    flap.textContent = character === " " ? "\u00a0" : character;
+    const moduleNumber = rowIndex * 41 + columnIndex * 13 + characterIndex * 7;
+    const startDelay = 35 + (moduleNumber % 9) * 17;
+    spinFlap(flap, previous[characterIndex] || " ", character, startDelay);
     line.append(flap);
   });
   return line;
 }
 
 function statusClass(value) { return `status-${value.toLowerCase().replaceAll(" ", "-")}`; }
-
-function animate(row, rowIndex) {
-  row.querySelectorAll(".flap").forEach((flap, index) => {
-    setTimeout(() => {
-      flap.classList.add("flip");
-      if (index % 2 === 0) clickSound();
-      setTimeout(() => flap.classList.remove("flip"), 680);
-    }, rowIndex * 150 + index * 34);
-  });
-}
 
 function render() {
   ui.rows.replaceChildren();
@@ -98,12 +139,13 @@ function render() {
     values.forEach((value, columnIndex) => {
       const cell = document.createElement("td");
       if (columnIndex === 5) cell.className = statusClass(value);
-      cell.append(flapLine(value));
+      const previousValue = displayedFlights?.[rowIndex]?.[columnIndex] || "";
+      cell.append(flapLine(value, previousValue, rowIndex, columnIndex));
       row.append(cell);
     });
     ui.rows.append(row);
-    animate(row, rowIndex);
   });
+  displayedFlights = flights[mode].map(row => [...row]);
 }
 
 function setMode(next) { mode = next; render(); }
