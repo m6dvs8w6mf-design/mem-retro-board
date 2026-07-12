@@ -49,16 +49,16 @@ body.fullscreen-mode .terminal { width: 100%; min-height: 100vh; border-radius: 
 }
 .eyebrow, .airport-code { margin: 0; color: var(--muted); letter-spacing: .22em; font-size: 12px; }
 .airport-name { margin: 8px 0 9px; color: var(--amber); font-size: clamp(23px, 3vw, 43px); letter-spacing: .13em; line-height: 1.1; }
-.clock-panel { display: flex; align-items: center; gap: 16px; min-width: 270px; color: var(--amber); }
+.clock-panel { display: flex; align-items: center; gap: 18px; min-width: 315px; color: var(--amber); }
 .analog-clock {
   position: relative;
-  width: 104px;
-  height: 104px;
-  flex: 0 0 104px;
-  border: 5px solid #aa8a50;
+  width: 124px;
+  height: 124px;
+  flex: 0 0 124px;
+  border: 7px solid #9b7944;
   border-radius: 50%;
   background: radial-gradient(circle, #f0ead6 0 58%, #ded5bd 78%, #afa68f 100%);
-  box-shadow: inset 0 0 0 2px #373126, 0 3px 12px #000b;
+  box-shadow: inset 0 0 0 3px #373126, inset 0 0 14px #746c5b66, 0 4px 16px #000d;
   color: #161512;
   font-family: Arial, sans-serif;
   font-weight: 700;
@@ -71,17 +71,18 @@ body.fullscreen-mode .terminal { width: 100%; min-height: 100vh; border-radius: 
   -webkit-mask: radial-gradient(circle, transparent 0 72%, #000 73% 100%);
   mask: radial-gradient(circle, transparent 0 72%, #000 73% 100%);
 }
-.clock-brand { position: absolute; top: 29px; left: 50%; transform: translateX(-50%); font-size: 6px; letter-spacing: .18em; color: #4b4840; }
-.clock-mark { position: absolute; font-size: 11px; line-height: 1; }
-.mark-12 { top: 7px; left: 50%; transform: translateX(-50%); }
-.mark-3 { top: 50%; right: 8px; transform: translateY(-50%); }
-.mark-6 { bottom: 7px; left: 50%; transform: translateX(-50%); }
-.mark-9 { top: 50%; left: 8px; transform: translateY(-50%); }
+.hour-tick { position: absolute; z-index: 1; top: 8px; left: calc(50% - 1.5px); width: 3px; height: 10px; background: #171612; transform-origin: 1.5px 47px; transform: rotate(calc(var(--hour) * 30deg)); }
+.clock-brand { position: absolute; top: 37px; left: 50%; transform: translateX(-50%); font-size: 7px; letter-spacing: .2em; color: #4b4840; }
+.clock-mark { position: absolute; z-index: 2; font-size: 12px; line-height: 1; }
+.mark-12 { top: 17px; left: 50%; transform: translateX(-50%); }
+.mark-3 { top: 50%; right: 17px; transform: translateY(-50%); }
+.mark-6 { bottom: 17px; left: 50%; transform: translateX(-50%); }
+.mark-9 { top: 50%; left: 17px; transform: translateY(-50%); }
 .clock-hand { position: absolute; left: 50%; bottom: 50%; border-radius: 3px; transform-origin: 50% 100%; }
-.hour-hand { width: 4px; height: 28px; margin-left: -2px; background: #171612; }
-.minute-hand { width: 3px; height: 37px; margin-left: -1.5px; background: #171612; }
-.second-hand { width: 1px; height: 40px; margin-left: -.5px; background: #a82c21; }
-.clock-pin { position: absolute; top: 50%; left: 50%; width: 8px; height: 8px; transform: translate(-50%, -50%); border-radius: 50%; background: #a82c21; box-shadow: 0 0 0 2px #171612; }
+.hour-hand { z-index: 3; width: 5px; height: 32px; margin-left: -2.5px; background: #171612; }
+.minute-hand { z-index: 3; width: 3px; height: 45px; margin-left: -1.5px; background: #171612; }
+.second-hand { z-index: 4; width: 1px; height: 48px; margin-left: -.5px; background: #a82c21; }
+.clock-pin { position: absolute; z-index: 5; top: 50%; left: 50%; width: 8px; height: 8px; transform: translate(-50%, -50%); border-radius: 50%; background: #a82c21; box-shadow: 0 0 0 2px #171612; }
 .clock-caption { color: var(--muted); font-size: 10px; letter-spacing: .12em; line-height: 1.55; text-align: right; }
 #date { margin-top: 5px; max-width: 145px; }
 
@@ -117,8 +118,8 @@ button.active { background: #6b5732; color: #fff8df; box-shadow: inset 0 0 0 1px
 .board-scroll { overflow-x: auto; }
 table { width: 100%; min-width: 1060px; border-collapse: collapse; table-layout: fixed; }
 th { padding: 13px 11px; border-bottom: 1px solid var(--edge); background: #090906; color: var(--muted); font-size: 12px; letter-spacing: .15em; text-align: left; }
-th:nth-child(1) { width: 15%; } th:nth-child(2) { width: 10%; } th:nth-child(3) { width: 15%; }
-th:nth-child(4) { width: 28%; } th:nth-child(5) { width: 32%; }
+th:nth-child(1) { width: 14%; } th:nth-child(2) { width: 18%; } th:nth-child(3) { width: 14%; }
+th:nth-child(4) { width: 25%; } th:nth-child(5) { width: 29%; }
 td { padding: 10px 9px; border-bottom: 1px solid #292419; vertical-align: middle; }
 tbody tr:nth-child(even) { background: #0c0b08; }
 tbody tr:hover { background: #17140d; }
@@ -128,8 +129,8 @@ tbody tr:hover { background: #17140d; }
   align-items: center;
   justify-content: center;
   gap: 7px;
-  width: 78px;
-  height: 42px;
+  width: 142px;
+  height: 46px;
   overflow: hidden;
   border: 1px solid #665836;
   border-radius: 3px;
@@ -140,8 +141,10 @@ tbody tr:hover { background: #17140d; }
 .carrier-module::after { content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: #050504; }
 .carrier-module.flip { animation: carrier-flip .58s cubic-bezier(.32, 0, .62, 1); }
 @keyframes carrier-flip { 0% { transform: rotateX(0); } 48% { transform: rotateX(-88deg); filter: brightness(.4); } 55% { transform: rotateX(72deg); } 100% { transform: rotateX(0); } }
-.carrier-emblem { position: relative; z-index: 1; display: block; width: 21px; height: 21px; }
-.carrier-code-text { position: relative; z-index: 1; color: #eee8d4; font: 700 13px/1 Arial, sans-serif; letter-spacing: .04em; }
+.carrier-emblem { position: relative; z-index: 1; display: block; flex: 0 0 29px; width: 29px; height: 29px; }
+.carrier-details { position: relative; z-index: 1; display: flex; min-width: 78px; flex-direction: column; gap: 3px; text-align: left; }
+.carrier-code-text { color: #eee8d4; font: 700 14px/1 Arial, sans-serif; letter-spacing: .05em; }
+.carrier-name { color: #b9b096; font: 700 8px/1 Arial, sans-serif; letter-spacing: .08em; white-space: nowrap; }
 .carrier-DL .carrier-emblem { background: linear-gradient(145deg, #d71920 0 48%, transparent 49%), linear-gradient(35deg, #8b1d32 0 48%, transparent 49%); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
 .carrier-AA .carrier-emblem { background: linear-gradient(120deg, transparent 0 22%, #1473a8 23% 45%, transparent 46% 54%, #c93434 55% 77%, transparent 78%); transform: skewX(-8deg); }
 .carrier-WN .carrier-emblem { border-radius: 50% 50% 46% 46%; background: linear-gradient(90deg, #d2232a 0 34%, #f5b324 34% 55%, #17457b 55%); transform: rotate(45deg) scale(.78); }
