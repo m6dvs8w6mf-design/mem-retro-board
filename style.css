@@ -113,7 +113,7 @@ tbody tr:hover { background: #17140d; }
 }
 .flap::before, .flap::after { content: ""; position: absolute; top: calc(50% - 2px); width: 3px; height: 5px; border-radius: 1px; background: #050504; }
 .flap::before { left: 1px; } .flap::after { right: 1px; }
-.flap.flip { animation: mechanical-flip .42s cubic-bezier(.4, 0, .2, 1); }
+.flap.flip { animation: mechanical-flip .64s cubic-bezier(.4, 0, .2, 1); }
 @keyframes mechanical-flip {
   0% { transform: rotateX(0); filter: brightness(1); }
   46% { transform: rotateX(-88deg); filter: brightness(.45); }
