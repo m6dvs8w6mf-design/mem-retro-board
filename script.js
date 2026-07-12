@@ -78,8 +78,8 @@ function animate(row, rowIndex) {
     setTimeout(() => {
       flap.classList.add("flip");
       if (index % 2 === 0) clickSound();
-      setTimeout(() => flap.classList.remove("flip"), 460);
-    }, rowIndex * 95 + index * 18);
+      setTimeout(() => flap.classList.remove("flip"), 680);
+    }, rowIndex * 150 + index * 34);
   });
 }
 
