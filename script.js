@@ -31,9 +31,11 @@ let cycleTimer = null;
 let audio = null;
 let displayedFlights = null;
 let displayedTitle = "";
+let liveSignature = "";
+let usingLiveData = false;
 const CHARACTER_WHEEL = " ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789:.-/";
-const FIELD_WIDTHS = [7, 2, 7, 14, 19];
-const STEP_INTERVAL = 76;
+const FIELD_WIDTHS = [7, 2, 7, 14, 3, 15];
+const STEP_INTERVAL = 190;
 const CARRIER_NAMES = {
   DL: "DELTA", AA: "AMERICAN", WN: "SOUTHWEST",
   UA: "UNITED", G4: "ALLEGIANT", NK: "SPIRIT",
@@ -60,23 +62,34 @@ function liveRow(flight) {
 }
 
 async function loadLiveFlights() {
+  const checkedAt = new Date().toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
   try {
     const response = await fetch(`flights.json?_=${Date.now()}`, { cache: "no-store" });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
     if (!data.departures?.length || !data.arrivals?.length) throw new Error("Incomplete flight data");
-    flights = {
+    const nextFlights = {
       departures: data.departures.map(liveRow),
       arrivals: data.arrivals.map(liveRow)
     };
+    const nextSignature = JSON.stringify(nextFlights);
+    flights = nextFlights;
+    usingLiveData = true;
     const ageMinutes = (Date.now() - new Date(data.updatedAt).getTime()) / 60000;
     const label = ageMinutes > 60 ? "MEM DATA DELAYED" : "LIVE MEM DATA";
-    $("dataStatus").textContent = `${label} · UPDATED ${new Date(data.updatedAt).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" })}`;
-    render();
+    const updatedAt = new Date(data.updatedAt).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+    $("dataStatus").textContent = `${label} · UPDATED ${updatedAt} · CHECKED ${checkedAt}`;
+    if (nextSignature !== liveSignature) {
+      liveSignature = nextSignature;
+      render();
+    }
   } catch {
+    const shouldRender = usingLiveData;
     flights = sampleFlights;
-    $("dataStatus").textContent = "SAMPLE DATA · LIVE MEM FEED UNAVAILABLE";
-    render();
+    usingLiveData = false;
+    liveSignature = "";
+    $("dataStatus").textContent = `SAMPLE DATA · LIVE MEM FEED UNAVAILABLE · CHECKED ${checkedAt}`;
+    if (shouldRender) render();
   }
 }
 
@@ -133,20 +146,22 @@ function spinFlap(flap, from, to, startDelay) {
 
   setTimeout(() => {
     let completed = 0;
-    const timer = setInterval(() => {
+    const advance = () => {
       current = nextCharacter(current);
       completed += 1;
       showCharacter(flap, current);
       flap.classList.remove("flip");
       void flap.offsetWidth;
       flap.classList.add("flip");
-      if (completed % 2 === 1) clickSound();
+      clickSound();
 
       if (completed >= steps) {
-        clearInterval(timer);
-        setTimeout(() => flap.classList.remove("flip"), 150);
+        setTimeout(() => flap.classList.remove("flip"), STEP_INTERVAL);
+        return;
       }
-    }, STEP_INTERVAL);
+      setTimeout(advance, STEP_INTERVAL);
+    };
+    advance();
   }, startDelay);
 }
 
@@ -185,18 +200,15 @@ function carrierCode(flightNumber) {
 function carrierModule(code, previousCode, rowIndex) {
   const module = document.createElement("div");
   module.className = `carrier-module carrier-${code.trim()}`;
-  module.setAttribute("aria-label", `Carrier ${code.trim()}`);
+  module.setAttribute("aria-label", `Carrier ${CARRIER_NAMES[code.trim()] || code.trim()}`);
   const emblem = document.createElement("span");
   emblem.className = "carrier-emblem";
   const details = document.createElement("span");
   details.className = "carrier-details";
-  const label = document.createElement("span");
-  label.className = "carrier-code-text";
-  label.textContent = code.trim();
   const name = document.createElement("span");
   name.className = "carrier-name";
   name.textContent = CARRIER_NAMES[code.trim()] || "AIRLINE";
-  details.append(label, name);
+  details.append(name);
   module.append(emblem, details);
   if (code !== previousCode) {
     setTimeout(() => {
@@ -210,13 +222,13 @@ function carrierModule(code, previousCode, rowIndex) {
 
 function displayRow(values) {
   const [time, flight, , city, gate, status] = values;
-  return [flight, carrierCode(flight), time, city, `GATE ${gate} ${status}`];
+  return [flight, carrierCode(flight), time, city, gate, status];
 }
 
 function render() {
   ui.rows.replaceChildren();
   const departing = mode === "departures";
-  ui.city.textContent = departing ? "DESTINATION" : "ORIGIN";
+  ui.city.textContent = departing ? "TO" : "FROM";
   renderTitle();
   ui.departures.classList.toggle("active", departing);
   ui.arrivals.classList.toggle("active", !departing);
@@ -229,7 +241,8 @@ function render() {
     values.forEach((value, columnIndex) => {
       const cell = document.createElement("td");
       if (columnIndex === 1) cell.className = "carrier-cell";
-      if (columnIndex === 4) cell.classList.add(statusClass(flights[mode][rowIndex][5]));
+      if (columnIndex === 4) cell.classList.add("gate-cell");
+      if (columnIndex === 5) cell.classList.add(statusClass(flights[mode][rowIndex][5]));
       const fieldValue = fixedField(value, FIELD_WIDTHS[columnIndex]);
       const previousValue = displayedFlights?.[rowIndex]?.[columnIndex] || "";
       cell.append(columnIndex === 1
