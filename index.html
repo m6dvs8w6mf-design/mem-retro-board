@@ -45,6 +45,7 @@
       <div class="button-group" role="group" aria-label="Flight direction">
         <button id="departuresButton" class="active" type="button" aria-pressed="true">DEPARTURES</button>
         <button id="arrivalsButton" type="button" aria-pressed="false">ARRIVALS</button>
+        <button id="heritageButton" type="button" aria-pressed="false">HERITAGE</button>
       </div>
       <div class="board-title" id="boardTitle" aria-live="polite"></div>
       <div class="button-group" role="group" aria-label="Display options">
@@ -68,8 +69,8 @@
 
     <footer class="footer">
       <span id="dataStatus">SAMPLE FLIGHT DISPLAY</span>
-      <span>VERIFY INFORMATION WITH MEM OR YOUR AIRLINE</span>
-      <span>SHORTCUTS: ← → BOARD · A AUTO · S SOUND · F FULL SCREEN</span>
+      <span id="verificationText">VERIFY INFORMATION WITH MEM OR YOUR AIRLINE</span>
+      <span>SHORTCUTS: ← → BOARD · H HERITAGE · A AUTO · S SOUND · F FULL SCREEN</span>
     </footer>
   </main>
   <script src="script.js"></script>
