@@ -16,12 +16,14 @@ const sampleFlights = {
 };
 
 let flights = sampleFlights;
+let liveFlights = sampleFlights;
 
 const $ = id => document.getElementById(id);
 const ui = {
-  departures: $("departuresButton"), arrivals: $("arrivalsButton"),
+  departures: $("departuresButton"), arrivals: $("arrivalsButton"), heritage: $("heritageButton"),
   cycle: $("cycleButton"), sound: $("soundButton"), fullscreen: $("fullscreenButton"),
-  rows: $("flightRows"), city: $("cityHeading"), title: $("boardTitle")
+  rows: $("flightRows"), city: $("cityHeading"), title: $("boardTitle"),
+  status: $("dataStatus"), verification: $("verificationText")
 };
 
 let mode = "departures";
@@ -33,14 +35,136 @@ let displayedFlights = null;
 let displayedTitle = "";
 let liveSignature = "";
 let usingLiveData = false;
+let heritageOn = false;
+let heritageTimer = null;
+let heritageCursor = 0;
+let heritageDeck = [];
+let heritageFlights = { departures: [], arrivals: [] };
 const CHARACTER_WHEEL = " ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789:.-/";
-const FIELD_WIDTHS = [7, 2, 7, 14, 3, 15];
+const FIELD_WIDTHS = [7, 3, 7, 14, 3, 15];
 const STEP_INTERVAL = 190;
 const CARRIER_NAMES = {
   DL: "DELTA", AA: "AMERICAN", WN: "SOUTHWEST",
   UA: "UNITED", G4: "ALLEGIANT", NK: "SPIRIT",
   F9: "FRONTIER", MX: "BREEZE", SY: "SUN COUNTRY"
 };
+
+Object.assign(CARRIER_NAMES, {
+  PA: "PAN AM", OZ: "OZARK", NW: "NORTHWEST", NWO: "NORTHWEST ORIENT",
+  TW: "TWA", RC: "REPUBLIC", QH: "AIR FLORIDA", EA: "EASTERN",
+  NA: "NATIONAL", PI: "PIEDMONT", CO: "CONTINENTAL", PE: "PEOPLE EXPRESS",
+  AF: "AIR FRANCE", BA: "BOAC", AZ: "ALITALIA", KL: "KLM", LH: "LUFTHANSA"
+});
+
+const CARRIER_IDS = Object.fromEntries(Object.entries(CARRIER_NAMES).map(([id, name]) => [name, id]));
+const COMMONS_FILE = name => `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(name)}`;
+const LOGO_FILES = {
+  PA: "Pan Am Logo.svg",
+  OZ: "Ozark Air Lines Logo, December 1985.svg",
+  NW: "Northwest Airlines Logo.svg",
+  NWO: "Northwest Orient Airlines (1969) Logo.jpg",
+  TW: "TWA 1975 logo.svg",
+  RC: "Republic Airlines Logo, October 1984.svg",
+  QH: "Logoairflorida.svg",
+  EA: "Eastern Airlines logo.svg",
+  NA: "National Airlines (NA) Logo.png",
+  PI: "Piedmont Airlines logo 1962-1974.svg",
+  PE: "Logo of People Express Airlines (1987).png",
+  AF: "Air France logo (1976-1990).svg",
+  BA: "Logo wordmark British Overseas Airways Corporation (BOAC) 1939-1974.png",
+  KL: "KLM logo.svg",
+  LH: "Lufthansa-Logo 1964.svg"
+};
+
+const HERITAGE_CARRIERS = [
+  { id: "PA", prefix: "PA", name: "PAN AM", cities: ["NEW YORK", "LONDON", "PARIS", "ROME", "FRANKFURT"] },
+  { id: "OZ", prefix: "OZ", name: "OZARK", cities: ["ST LOUIS", "TULSA", "CEDAR RAPIDS", "NASHVILLE"] },
+  { id: "NW", prefix: "NW", name: "NORTHWEST", cities: ["MINNEAPOLIS", "DETROIT", "SEATTLE", "PORTLAND"] },
+  { id: "NWO", prefix: "NW", name: "NORTHWEST ORIENT", cities: ["TOKYO", "ANCHORAGE", "MINNEAPOLIS", "HONOLULU"] },
+  { id: "TW", prefix: "TW", name: "TWA", cities: ["NEW YORK", "LOS ANGELES", "KANSAS CITY", "SAN FRANCISCO"] },
+  { id: "RC", prefix: "RC", name: "REPUBLIC", cities: ["DETROIT", "MINNEAPOLIS", "ATLANTA", "CHICAGO"] },
+  { id: "QH", prefix: "QH", name: "AIR FLORIDA", cities: ["MIAMI", "TAMPA", "WASHINGTON", "ORLANDO"] },
+  { id: "EA", prefix: "EA", name: "EASTERN", cities: ["ATLANTA", "MIAMI", "NEW YORK", "BOSTON"] },
+  { id: "NA", prefix: "NA", name: "NATIONAL", cities: ["MIAMI", "NEW ORLEANS", "LOS ANGELES", "HOUSTON"] },
+  { id: "PI", prefix: "PI", name: "PIEDMONT", cities: ["CHARLOTTE", "ROANOKE", "WASHINGTON", "RICHMOND"] },
+  { id: "CO", prefix: "CO", name: "CONTINENTAL", cities: ["DENVER", "HOUSTON", "LOS ANGELES", "EL PASO"] },
+  { id: "PE", prefix: "PE", name: "PEOPLE EXPRESS", cities: ["NEWARK", "BUFFALO", "BOSTON", "CLEVELAND"] },
+  { id: "AF", prefix: "AF", name: "AIR FRANCE", cities: ["PARIS ORLY", "PARIS CDG", "MONTREAL", "NEW YORK"] },
+  { id: "BA", prefix: "BA", name: "BOAC", cities: ["LONDON", "BERMUDA", "NEW YORK", "MONTREAL"] },
+  { id: "AZ", prefix: "AZ", name: "ALITALIA", cities: ["ROME", "MILAN", "NEW YORK", "BOSTON"] },
+  { id: "KL", prefix: "KL", name: "KLM", cities: ["AMSTERDAM", "NEW YORK", "MONTREAL", "CHICAGO"] },
+  { id: "LH", prefix: "LH", name: "LUFTHANSA", cities: ["FRANKFURT", "HAMBURG", "NEW YORK", "CHICAGO"] }
+];
+
+function shuffle(values) {
+  const result = [...values];
+  for (let index = result.length - 1; index > 0; index -= 1) {
+    const swap = Math.floor(Math.random() * (index + 1));
+    [result[index], result[swap]] = [result[swap], result[index]];
+  }
+  return result;
+}
+
+function refillHeritageDeck() {
+  const panAm = HERITAGE_CARRIERS.find(carrier => carrier.id === "PA");
+  heritageDeck = [panAm, ...shuffle(HERITAGE_CARRIERS.filter(carrier => carrier.id !== "PA"))];
+}
+
+function takeHeritageCarrier(excluded = new Set()) {
+  if (!heritageDeck.length) refillHeritageDeck();
+  let index = heritageDeck.findIndex(carrier => !excluded.has(carrier.id));
+  if (index < 0) {
+    refillHeritageDeck();
+    index = heritageDeck.findIndex(carrier => !excluded.has(carrier.id));
+  }
+  return heritageDeck.splice(Math.max(index, 0), 1)[0];
+}
+
+function randomChoice(values) { return values[Math.floor(Math.random() * values.length)]; }
+
+function heritageTime(position) {
+  const value = new Date();
+  value.setSeconds(0, 0);
+  value.setMinutes(Math.ceil(value.getMinutes() / 5) * 5 + 10 + position * 15 + Math.floor(Math.random() * 3) * 5);
+  return value.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
+}
+
+function makeHeritageFlight(carrier, direction, position) {
+  const remarks = direction === "departures"
+    ? ["ON TIME", "BOARDING", "GATE OPEN", "FINAL CALL"]
+    : ["ON TIME", "ARRIVED", "EXPECTED", "LANDED"];
+  const number = 100 + Math.floor(Math.random() * 800);
+  const gate = String(1 + Math.floor(Math.random() * 28));
+  return [heritageTime(position), `${carrier.prefix}${number}`, carrier.name,
+    randomChoice(carrier.cities), gate, randomChoice(remarks), carrier.id];
+}
+
+function buildHeritageSchedule() {
+  refillHeritageDeck();
+  const used = new Set();
+  heritageFlights = { departures: [], arrivals: [] };
+  ["departures", "arrivals"].forEach(direction => {
+    for (let index = 0; index < 5; index += 1) {
+      const carrier = takeHeritageCarrier(used);
+      used.add(carrier.id);
+      heritageFlights[direction].push(makeHeritageFlight(carrier, direction, index));
+    }
+  });
+  heritageCursor = 0;
+}
+
+function rotateHeritageFlight() {
+  const direction = heritageCursor % 2 === 0 ? "departures" : "arrivals";
+  const rowIndex = Math.floor(heritageCursor / 2) % 5;
+  const visible = new Set([...heritageFlights.departures, ...heritageFlights.arrivals].map(row => row[6]));
+  const carrier = takeHeritageCarrier(visible);
+  heritageFlights[direction][rowIndex] = makeHeritageFlight(carrier, direction, rowIndex);
+  heritageCursor += 1;
+  if (heritageOn) {
+    flights = heritageFlights;
+    render();
+  }
+}
 
 function updateClock() {
   const now = new Date();
@@ -73,23 +197,27 @@ async function loadLiveFlights() {
       arrivals: data.arrivals.map(liveRow)
     };
     const nextSignature = JSON.stringify(nextFlights);
-    flights = nextFlights;
+    liveFlights = nextFlights;
     usingLiveData = true;
     const ageMinutes = (Date.now() - new Date(data.updatedAt).getTime()) / 60000;
     const label = ageMinutes > 60 ? "MEM DATA DELAYED" : "LIVE MEM DATA";
     const updatedAt = new Date(data.updatedAt).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
-    $("dataStatus").textContent = `${label} · UPDATED ${updatedAt} · CHECKED ${checkedAt}`;
-    if (nextSignature !== liveSignature) {
+    if (!heritageOn) ui.status.textContent = `${label} · UPDATED ${updatedAt} · CHECKED ${checkedAt}`;
+    if (!heritageOn && nextSignature !== liveSignature) {
+      flights = nextFlights;
       liveSignature = nextSignature;
       render();
     }
   } catch {
     const shouldRender = usingLiveData;
-    flights = sampleFlights;
+    liveFlights = sampleFlights;
     usingLiveData = false;
     liveSignature = "";
-    $("dataStatus").textContent = `SAMPLE DATA · LIVE MEM FEED UNAVAILABLE · CHECKED ${checkedAt}`;
-    if (shouldRender) render();
+    if (!heritageOn) ui.status.textContent = `SAMPLE DATA · LIVE MEM FEED UNAVAILABLE · CHECKED ${checkedAt}`;
+    if (!heritageOn && shouldRender) {
+      flights = sampleFlights;
+      render();
+    }
   }
 }
 
@@ -186,7 +314,7 @@ function fixedField(value, width) {
 }
 
 function renderTitle() {
-  const target = fixedField(mode, 10);
+  const target = fixedField(heritageOn ? "HERITAGE" : mode, 10);
   ui.title.replaceChildren(flapLine(target, displayedTitle, 7, 2));
   displayedTitle = target;
 }
@@ -200,9 +328,25 @@ function carrierCode(flightNumber) {
 function carrierModule(code, previousCode, rowIndex) {
   const module = document.createElement("div");
   module.className = `carrier-module carrier-${code.trim()}`;
+  if (heritageOn) module.classList.add("heritage-carrier");
   module.setAttribute("aria-label", `Carrier ${CARRIER_NAMES[code.trim()] || code.trim()}`);
-  const emblem = document.createElement("span");
-  emblem.className = "carrier-emblem";
+  let emblem;
+  if (heritageOn && LOGO_FILES[code.trim()]) {
+    emblem = document.createElement("img");
+    emblem.className = "carrier-logo";
+    emblem.alt = "";
+    emblem.src = COMMONS_FILE(LOGO_FILES[code.trim()]);
+    emblem.addEventListener("error", () => {
+      const fallback = document.createElement("span");
+      fallback.className = "carrier-emblem";
+      fallback.textContent = code.trim().slice(0, 2);
+      emblem.replaceWith(fallback);
+    }, { once: true });
+  } else {
+    emblem = document.createElement("span");
+    emblem.className = "carrier-emblem";
+    if (heritageOn) emblem.textContent = code.trim().slice(0, 2);
+  }
   const details = document.createElement("span");
   details.className = "carrier-details";
   const name = document.createElement("span");
@@ -221,8 +365,8 @@ function carrierModule(code, previousCode, rowIndex) {
 }
 
 function displayRow(values) {
-  const [time, flight, , city, gate, status] = values;
-  return [flight, carrierCode(flight), time, city, gate, status];
+  const [time, flight, airline, city, gate, status, heritageId] = values;
+  return [flight, heritageId || CARRIER_IDS[airline] || carrierCode(flight), time, city, gate, status];
 }
 
 function render() {
@@ -259,6 +403,30 @@ function render() {
 
 function setMode(next) { mode = next; render(); }
 
+function setHeritage(next) {
+  heritageOn = next;
+  ui.heritage.classList.toggle("active", next);
+  ui.heritage.setAttribute("aria-pressed", next);
+  clearInterval(heritageTimer);
+  displayedFlights = null;
+  displayedTitle = "";
+
+  if (next) {
+    if (!heritageFlights.departures.length) buildHeritageSchedule();
+    flights = heritageFlights;
+    ui.status.textContent = "HERITAGE DISPLAY · FICTIONAL NON-REPEATING TIMETABLE";
+    ui.verification.textContent = "AIRLINE MARKS SHOWN FOR HISTORICAL DISPLAY";
+    heritageTimer = setInterval(rotateHeritageFlight, 30000);
+    render();
+  } else {
+    flights = liveFlights;
+    ui.status.textContent = "LIVE MEM DATA · REFRESHING";
+    ui.verification.textContent = "VERIFY INFORMATION WITH MEM OR YOUR AIRLINE";
+    render();
+    loadLiveFlights();
+  }
+}
+
 function setCycle(next) {
   cycleOn = next;
   localStorage.setItem("mem-cycle", next ? "on" : "off");
@@ -287,6 +455,7 @@ async function toggleFullscreen() {
 
 ui.departures.addEventListener("click", () => setMode("departures"));
 ui.arrivals.addEventListener("click", () => setMode("arrivals"));
+ui.heritage.addEventListener("click", () => setHeritage(!heritageOn));
 ui.cycle.addEventListener("click", () => setCycle(!cycleOn));
 ui.sound.addEventListener("click", () => setSound(!soundOn));
 ui.fullscreen.addEventListener("click", toggleFullscreen);
@@ -301,6 +470,7 @@ document.addEventListener("keydown", event => {
   if (event.target.matches("button")) return;
   const key = event.key.toLowerCase();
   if (key === "a") setCycle(!cycleOn);
+  if (key === "h") setHeritage(!heritageOn);
   if (key === "s") setSound(!soundOn);
   if (key === "f") toggleFullscreen();
   if (event.key === "ArrowLeft") setMode("departures");
