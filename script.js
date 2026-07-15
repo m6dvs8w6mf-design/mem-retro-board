@@ -41,7 +41,7 @@ let heritageCursor = 0;
 let heritageDeck = [];
 let heritageFlights = { departures: [], arrivals: [] };
 const CHARACTER_WHEEL = " ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789:.-/";
-const FIELD_WIDTHS = [7, 3, 7, 14, 3, 15];
+const FIELD_WIDTHS = [7, 3, 7, 14, 3, 13];
 const STEP_INTERVAL = 190;
 const CARRIER_NAMES = {
   DL: "DELTA", AA: "AMERICAN", WN: "SOUTHWEST",
@@ -52,8 +52,8 @@ const CARRIER_NAMES = {
 Object.assign(CARRIER_NAMES, {
   PA: "PAN AM", OZ: "OZARK", NW: "NORTHWEST", NWO: "NORTHWEST ORIENT",
   TW: "TWA", RC: "REPUBLIC", QH: "AIR FLORIDA", EA: "EASTERN",
-  NA: "NATIONAL", PI: "PIEDMONT", CO: "CONTINENTAL", PE: "PEOPLE EXPRESS",
-  AF: "AIR FRANCE", BA: "BOAC", AZ: "ALITALIA", KL: "KLM", LH: "LUFTHANSA"
+  NA: "NATIONAL", PI: "PIEDMONT", WA: "WESTERN", PE: "PEOPLE EXPRESS",
+  AF: "AIR FRANCE", BA: "BOAC", HP: "AMERICA WEST", KL: "KLM", LH: "LUFTHANSA"
 });
 
 const CARRIER_IDS = Object.fromEntries(Object.entries(CARRIER_NAMES).map(([id, name]) => [name, id]));
@@ -69,9 +69,11 @@ const LOGO_FILES = {
   EA: "Eastern Airlines logo.svg",
   NA: "National Airlines (NA) Logo.png",
   PI: "Piedmont Airlines logo 1962-1974.svg",
+  WA: "Western Airlines.svg",
   PE: "Logo of People Express Airlines (1987).png",
   AF: "Air France logo (1976-1990).svg",
   BA: "Logo wordmark British Overseas Airways Corporation (BOAC) 1939-1974.png",
+  HP: "Former America West Airlines logo.svg",
   KL: "KLM logo.svg",
   LH: "Lufthansa-Logo 1964.svg"
 };
@@ -87,11 +89,11 @@ const HERITAGE_CARRIERS = [
   { id: "EA", prefix: "EA", name: "EASTERN", cities: ["ATLANTA", "MIAMI", "NEW YORK", "BOSTON"] },
   { id: "NA", prefix: "NA", name: "NATIONAL", cities: ["MIAMI", "NEW ORLEANS", "LOS ANGELES", "HOUSTON"] },
   { id: "PI", prefix: "PI", name: "PIEDMONT", cities: ["CHARLOTTE", "ROANOKE", "WASHINGTON", "RICHMOND"] },
-  { id: "CO", prefix: "CO", name: "CONTINENTAL", cities: ["DENVER", "HOUSTON", "LOS ANGELES", "EL PASO"] },
+  { id: "WA", prefix: "WA", name: "WESTERN", cities: ["LOS ANGELES", "DENVER", "SALT LAKE", "SAN FRANCISCO"] },
   { id: "PE", prefix: "PE", name: "PEOPLE EXPRESS", cities: ["NEWARK", "BUFFALO", "BOSTON", "CLEVELAND"] },
   { id: "AF", prefix: "AF", name: "AIR FRANCE", cities: ["PARIS ORLY", "PARIS CDG", "MONTREAL", "NEW YORK"] },
   { id: "BA", prefix: "BA", name: "BOAC", cities: ["LONDON", "BERMUDA", "NEW YORK", "MONTREAL"] },
-  { id: "AZ", prefix: "AZ", name: "ALITALIA", cities: ["ROME", "MILAN", "NEW YORK", "BOSTON"] },
+  { id: "HP", prefix: "HP", name: "AMERICA WEST", cities: ["PHOENIX", "LAS VEGAS", "SAN DIEGO", "LOS ANGELES"] },
   { id: "KL", prefix: "KL", name: "KLM", cities: ["AMSTERDAM", "NEW YORK", "MONTREAL", "CHICAGO"] },
   { id: "LH", prefix: "LH", name: "LUFTHANSA", cities: ["FRANKFURT", "HAMBURG", "NEW YORK", "CHICAGO"] }
 ];
