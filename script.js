@@ -31,6 +31,8 @@ let cycleOn = localStorage.getItem("mem-cycle") === "on";
 let soundOn = localStorage.getItem("mem-sound") === "on";
 let cycleTimer = null;
 let audio = null;
+let announcementTimer = null;
+let announcementVoice = null;
 let displayedFlights = null;
 let displayedTitle = "";
 let liveSignature = "";
@@ -160,11 +162,13 @@ function rotateHeritageFlight() {
   const rowIndex = Math.floor(heritageCursor / 2) % 5;
   const visible = new Set([...heritageFlights.departures, ...heritageFlights.arrivals].map(row => row[6]));
   const carrier = takeHeritageCarrier(visible);
-  heritageFlights[direction][rowIndex] = makeHeritageFlight(carrier, direction, rowIndex);
+  const changedFlight = makeHeritageFlight(carrier, direction, rowIndex);
+  heritageFlights[direction][rowIndex] = changedFlight;
   heritageCursor += 1;
   if (heritageOn) {
     flights = heritageFlights;
     render();
+    if (direction === mode) scheduleHeritageAnnouncement(changedFlight, direction);
   }
 }
 
@@ -246,6 +250,92 @@ function clickSound() {
   gain.gain.exponentialRampToValueAtTime(.001, now + .034);
   impact.connect(filter).connect(gain).connect(audio.destination);
   impact.start(now);
+}
+
+function chooseAnnouncementVoice() {
+  const voices = window.speechSynthesis?.getVoices?.() || [];
+  const english = voices.filter(voice => /^en[-_]/i.test(voice.lang));
+  const preferred = [
+    /microsoft david/i, /microsoft mark/i, /google uk english male/i,
+    /\b(david|mark|george|guy|daniel|alex|fred|male)\b/i
+  ];
+  announcementVoice = preferred
+    .map(pattern => english.find(voice => pattern.test(voice.name)))
+    .find(Boolean) || english.find(voice => /en[-_]us/i.test(voice.lang)) || english[0] || voices[0] || null;
+  return announcementVoice;
+}
+
+function playPaRoomTone() {
+  if (!soundOn) return;
+  audio ||= new (window.AudioContext || window.webkitAudioContext)();
+  if (audio.state === "suspended") audio.resume();
+  const now = audio.currentTime;
+  const length = Math.ceil(audio.sampleRate * 1.1);
+  const buffer = audio.createBuffer(1, length, audio.sampleRate);
+  const samples = buffer.getChannelData(0);
+  for (let index = 0; index < length; index += 1) {
+    const decay = Math.pow(1 - index / length, 2.6);
+    samples[index] = (Math.random() * 2 - 1) * decay;
+  }
+  const room = audio.createBufferSource();
+  const filter = audio.createBiquadFilter();
+  const delay = audio.createDelay(.25);
+  const gain = audio.createGain();
+  room.buffer = buffer;
+  filter.type = "bandpass";
+  filter.frequency.setValueAtTime(760, now);
+  filter.Q.setValueAtTime(.55, now);
+  delay.delayTime.setValueAtTime(.115, now);
+  gain.gain.setValueAtTime(.0065, now);
+  gain.gain.exponentialRampToValueAtTime(.0001, now + 1.1);
+  room.connect(filter).connect(delay).connect(gain).connect(audio.destination);
+  room.start(now);
+}
+
+function spokenFlightNumber(value) {
+  return String(value).replace(/^[A-Z]+/i, "").split("").join(" ");
+}
+
+function heritageAnnouncement(flight, direction) {
+  const [time, flightNumber, airline, city, gate, status] = flight;
+  const number = spokenFlightNumber(flightNumber);
+  if (direction === "departures") {
+    const departureRemarks = {
+      "BOARDING": `is now boarding at gate ${gate}`,
+      "GATE OPEN": `gate ${gate} is now open`,
+      "FINAL CALL": `is making its final boarding call at gate ${gate}`,
+      "ON TIME": `to ${city} is on time for ${time}, at gate ${gate}`
+    };
+    const remark = departureRemarks[status] || `to ${city} is ${status.toLowerCase()}, at gate ${gate}`;
+    return `Attention please. ${airline}, flight ${number}, ${remark}.`;
+  }
+  const arrivalRemarks = {
+    "ARRIVED": `from ${city} has arrived at gate ${gate}`,
+    "LANDED": `from ${city} has landed and will arrive at gate ${gate}`,
+    "EXPECTED": `from ${city} is expected at ${time}, gate ${gate}`,
+    "ON TIME": `from ${city} is on time for ${time}, gate ${gate}`
+  };
+  const remark = arrivalRemarks[status] || `from ${city} is ${status.toLowerCase()}, gate ${gate}`;
+  return `May I have your attention. ${airline}, flight ${number}, ${remark}.`;
+}
+
+function speakHeritageAnnouncement(flight, direction) {
+  if (!heritageOn || !soundOn || !("speechSynthesis" in window)) return;
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(heritageAnnouncement(flight, direction));
+  utterance.voice = announcementVoice || chooseAnnouncementVoice();
+  utterance.lang = utterance.voice?.lang || "en-US";
+  utterance.volume = .38;
+  utterance.rate = .82;
+  utterance.pitch = .76;
+  utterance.addEventListener("start", playPaRoomTone, { once: true });
+  utterance.addEventListener("end", () => setTimeout(playPaRoomTone, 90), { once: true });
+  window.speechSynthesis.speak(utterance);
+}
+
+function scheduleHeritageAnnouncement(flight, direction) {
+  clearTimeout(announcementTimer);
+  announcementTimer = setTimeout(() => speakHeritageAnnouncement(flight, direction), 5400);
 }
 
 function wheelCharacter(character) {
@@ -410,6 +500,8 @@ function setHeritage(next) {
   ui.heritage.classList.toggle("active", next);
   ui.heritage.setAttribute("aria-pressed", next);
   clearInterval(heritageTimer);
+  clearTimeout(announcementTimer);
+  if (!next && "speechSynthesis" in window) window.speechSynthesis.cancel();
   displayedFlights = null;
   displayedTitle = "";
 
@@ -445,6 +537,7 @@ function setSound(next) {
   ui.sound.textContent = `SOUND: ${next ? "ON" : "OFF"}`;
   ui.sound.classList.toggle("active", next);
   ui.sound.setAttribute("aria-pressed", next);
+  if (!next && "speechSynthesis" in window) window.speechSynthesis.cancel();
   if (next) clickSound();
 }
 
@@ -480,6 +573,10 @@ document.addEventListener("keydown", event => {
 });
 
 updateClock();
+if ("speechSynthesis" in window) {
+  chooseAnnouncementVoice();
+  window.speechSynthesis.addEventListener?.("voiceschanged", chooseAnnouncementVoice, { once: true });
+}
 setInterval(updateClock, 1000);
 setCycle(cycleOn);
 setSound(soundOn);
