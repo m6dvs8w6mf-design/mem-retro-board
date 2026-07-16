@@ -256,8 +256,9 @@ function chooseAnnouncementVoice() {
   const voices = window.speechSynthesis?.getVoices?.() || [];
   const english = voices.filter(voice => /^en[-_]/i.test(voice.lang));
   const preferred = [
+    /microsoft andrew/i, /\bandrew\b/i, /microsoft guy/i, /\bguy\b/i,
     /microsoft david/i, /microsoft mark/i, /google uk english male/i,
-    /\b(david|mark|george|guy|daniel|alex|fred|male)\b/i
+    /\b(david|mark|george|daniel|alex|fred|male)\b/i
   ];
   announcementVoice = preferred
     .map(pattern => english.find(voice => pattern.test(voice.name)))
@@ -307,7 +308,7 @@ function heritageAnnouncement(flight, direction) {
       "ON TIME": `to ${city} is on time for ${time}, at gate ${gate}`
     };
     const remark = departureRemarks[status] || `to ${city} is ${status.toLowerCase()}, at gate ${gate}`;
-    return `Attention please. ${airline}, flight ${number}, ${remark}.`;
+    return `${airline}, flight ${number}, ${remark}.`;
   }
   const arrivalRemarks = {
     "ARRIVED": `from ${city} has arrived at gate ${gate}`,
@@ -316,7 +317,7 @@ function heritageAnnouncement(flight, direction) {
     "ON TIME": `from ${city} is on time for ${time}, gate ${gate}`
   };
   const remark = arrivalRemarks[status] || `from ${city} is ${status.toLowerCase()}, gate ${gate}`;
-  return `May I have your attention. ${airline}, flight ${number}, ${remark}.`;
+  return `${airline}, flight ${number}, ${remark}.`;
 }
 
 function speakHeritageAnnouncement(flight, direction) {
