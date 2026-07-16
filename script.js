@@ -306,10 +306,10 @@ function playAnnouncementChime() {
   chime.type = "sine";
   chime.frequency.setValueAtTime(523.25, now);
   dry.gain.setValueAtTime(.0001, now);
-  dry.gain.exponentialRampToValueAtTime(.028, now + .025);
+  dry.gain.exponentialRampToValueAtTime(.042, now + .025);
   dry.gain.exponentialRampToValueAtTime(.0001, now + .62);
   delay.delayTime.setValueAtTime(.14, now);
-  echo.gain.setValueAtTime(.008, now);
+  echo.gain.setValueAtTime(.012, now);
   echo.gain.exponentialRampToValueAtTime(.0001, now + .72);
   chime.connect(dry).connect(audio.destination);
   chime.connect(delay).connect(echo).connect(audio.destination);
@@ -355,7 +355,7 @@ function speakHeritageAnnouncement(flight, direction) {
     utterance.voice = announcementVoice || chooseAnnouncementVoice();
     utterance.lang = utterance.voice?.lang || "en-US";
     utterance.volume = .38;
-    utterance.rate = .76;
+    utterance.rate = .79;
     utterance.pitch = .66;
     utterance.addEventListener("start", playPaRoomTone, { once: true });
     utterance.addEventListener("end", () => setTimeout(playPaRoomTone, 90), { once: true });
