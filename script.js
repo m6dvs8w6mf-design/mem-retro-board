@@ -32,6 +32,7 @@ let soundOn = localStorage.getItem("mem-sound") === "on";
 let cycleTimer = null;
 let audio = null;
 let announcementTimer = null;
+let announcementVoiceTimer = null;
 let announcementVoice = null;
 let displayedFlights = null;
 let displayedTitle = "";
@@ -293,6 +294,29 @@ function playPaRoomTone() {
   room.start(now);
 }
 
+function playAnnouncementChime() {
+  if (!soundOn) return;
+  audio ||= new (window.AudioContext || window.webkitAudioContext)();
+  if (audio.state === "suspended") audio.resume();
+  const now = audio.currentTime;
+  const chime = audio.createOscillator();
+  const dry = audio.createGain();
+  const delay = audio.createDelay(.3);
+  const echo = audio.createGain();
+  chime.type = "sine";
+  chime.frequency.setValueAtTime(523.25, now);
+  dry.gain.setValueAtTime(.0001, now);
+  dry.gain.exponentialRampToValueAtTime(.028, now + .025);
+  dry.gain.exponentialRampToValueAtTime(.0001, now + .62);
+  delay.delayTime.setValueAtTime(.14, now);
+  echo.gain.setValueAtTime(.008, now);
+  echo.gain.exponentialRampToValueAtTime(.0001, now + .72);
+  chime.connect(dry).connect(audio.destination);
+  chime.connect(delay).connect(echo).connect(audio.destination);
+  chime.start(now);
+  chime.stop(now + .74);
+}
+
 function spokenFlightNumber(value) {
   return String(value).replace(/^[A-Z]+/i, "").split("").join(" ");
 }
@@ -323,19 +347,25 @@ function heritageAnnouncement(flight, direction) {
 function speakHeritageAnnouncement(flight, direction) {
   if (!heritageOn || !soundOn || !("speechSynthesis" in window)) return;
   window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(heritageAnnouncement(flight, direction));
-  utterance.voice = announcementVoice || chooseAnnouncementVoice();
-  utterance.lang = utterance.voice?.lang || "en-US";
-  utterance.volume = .38;
-  utterance.rate = .82;
-  utterance.pitch = .76;
-  utterance.addEventListener("start", playPaRoomTone, { once: true });
-  utterance.addEventListener("end", () => setTimeout(playPaRoomTone, 90), { once: true });
-  window.speechSynthesis.speak(utterance);
+  playAnnouncementChime();
+  clearTimeout(announcementVoiceTimer);
+  announcementVoiceTimer = setTimeout(() => {
+    if (!heritageOn || !soundOn || direction !== mode) return;
+    const utterance = new SpeechSynthesisUtterance(heritageAnnouncement(flight, direction));
+    utterance.voice = announcementVoice || chooseAnnouncementVoice();
+    utterance.lang = utterance.voice?.lang || "en-US";
+    utterance.volume = .38;
+    utterance.rate = .76;
+    utterance.pitch = .66;
+    utterance.addEventListener("start", playPaRoomTone, { once: true });
+    utterance.addEventListener("end", () => setTimeout(playPaRoomTone, 90), { once: true });
+    window.speechSynthesis.speak(utterance);
+  }, 760);
 }
 
 function scheduleHeritageAnnouncement(flight, direction) {
   clearTimeout(announcementTimer);
+  clearTimeout(announcementVoiceTimer);
   announcementTimer = setTimeout(() => speakHeritageAnnouncement(flight, direction), 5400);
 }
 
@@ -502,6 +532,7 @@ function setHeritage(next) {
   ui.heritage.setAttribute("aria-pressed", next);
   clearInterval(heritageTimer);
   clearTimeout(announcementTimer);
+  clearTimeout(announcementVoiceTimer);
   if (!next && "speechSynthesis" in window) window.speechSynthesis.cancel();
   displayedFlights = null;
   displayedTitle = "";
@@ -538,7 +569,10 @@ function setSound(next) {
   ui.sound.textContent = `SOUND: ${next ? "ON" : "OFF"}`;
   ui.sound.classList.toggle("active", next);
   ui.sound.setAttribute("aria-pressed", next);
-  if (!next && "speechSynthesis" in window) window.speechSynthesis.cancel();
+  if (!next) {
+    clearTimeout(announcementVoiceTimer);
+    if ("speechSynthesis" in window) window.speechSynthesis.cancel();
+  }
   if (next) clickSound();
 }
 
