@@ -134,8 +134,8 @@ button.active { background: #7d3733; color: #fff4ef; box-shadow: inset 0 0 0 1px
 .board-scroll { overflow-x: auto; }
 table { width: 100%; min-width: 1120px; border-collapse: collapse; table-layout: fixed; }
 th { padding: 10px 8px; border-bottom: 1px solid var(--edge); background: #0a0b0c; color: var(--muted); font-size: 11px; letter-spacing: .14em; text-align: left; }
-th:nth-child(1) { width: 12%; } th:nth-child(2) { width: 19%; } th:nth-child(3) { width: 14%; }
-th:nth-child(4) { width: 23%; } th:nth-child(5) { width: 7%; } th:nth-child(6) { width: 25%; }
+th:nth-child(1) { width: 12%; } th:nth-child(2) { width: 19%; } th:nth-child(3) { width: 15%; }
+th:nth-child(4) { width: 22%; } th:nth-child(5) { width: 7%; } th:nth-child(6) { width: 25%; }
 td { padding: 7px 6px; border-bottom: 1px solid #292d2f; vertical-align: middle; }
 tbody tr:nth-child(even) { background: #0d0f10; }
 tbody tr:hover { background: #171a1c; }
@@ -167,7 +167,9 @@ tbody tr:hover { background: #171a1c; }
 .heritage-carrier .carrier-emblem { display: grid; place-items: center; border: 1px solid #8b8f90; border-radius: 50%; background: #e9e5da; color: #202326; font: 800 9px/1 Arial, sans-serif; }
 .gate-cell .flap-line { justify-content: center; }
 td:nth-child(3) .flap-line { gap: 0; }
-td:nth-child(3) .flap { min-width: 20px; padding-right: 2px; padding-left: 2px; }
+td:nth-child(3) .flap { min-width: 19px; padding-right: 2px; padding-left: 2px; }
+td:nth-child(3) .time-spacer { min-width: 7px; width: 7px; padding: 0; border-color: transparent; background: transparent; box-shadow: none; }
+td:nth-child(3) .time-spacer::before, td:nth-child(3) .time-spacer::after { display: none; }
 .carrier-DL .carrier-emblem { background: linear-gradient(145deg, #d71920 0 48%, transparent 49%), linear-gradient(35deg, #8b1d32 0 48%, transparent 49%); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
 .carrier-AA .carrier-emblem { background: linear-gradient(120deg, transparent 0 22%, #1473a8 23% 45%, transparent 46% 54%, #c93434 55% 77%, transparent 78%); transform: skewX(-8deg); }
 .carrier-WN .carrier-emblem { border-radius: 50% 50% 46% 46%; background: linear-gradient(90deg, #d2232a 0 34%, #f5b324 34% 55%, #17457b 55%); transform: rotate(45deg) scale(.78); }
@@ -201,6 +203,8 @@ td:nth-child(3) .flap { min-width: 20px; padding-right: 2px; padding-left: 2px; 
 }
 .flap::before, .flap::after { content: ""; position: absolute; z-index: 2; top: calc(50% - 3px); width: 4px; height: 6px; border-radius: 1px; background: #050504; box-shadow: 0 1px #5a5649; }
 .flap::before { left: 1px; } .flap::after { right: 1px; }
+.flap:nth-child(4n+2) { filter: brightness(.97); }
+.flap:nth-child(5n+3) { filter: brightness(1.02); }
 .flap.flip { animation: mechanical-flip .18s cubic-bezier(.32, 0, .62, 1); }
 @keyframes mechanical-flip {
   0% { transform: rotateX(0); filter: brightness(1); }

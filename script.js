@@ -45,7 +45,7 @@ let heritageCursor = 0;
 let heritageDeck = [];
 let heritageFlights = { departures: [], arrivals: [] };
 const CHARACTER_WHEEL = " ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789:.-/";
-const FIELD_WIDTHS = [7, 3, 7, 14, 3, 13];
+const FIELD_WIDTHS = [7, 3, 8, 14, 3, 13];
 const STEP_INTERVAL = 190;
 const CARRIER_NAMES = {
   DL: "DELTA", AA: "AMERICAN", WN: "SOUTHWEST",
@@ -372,9 +372,9 @@ function heritageAnnouncement(flight, direction) {
   const number = spokenFlightNumber(flightNumber);
   if (direction === "departures") {
     const departureRemarks = {
-      "BOARDING": `is now boarding at gate ${gate}`,
-      "GATE OPEN": `gate ${gate} is now open`,
-      "FINAL CALL": `is making its final boarding call at gate ${gate}`,
+      "BOARDING": `to ${city} is now boarding at gate ${gate}`,
+      "GATE OPEN": `to ${city}, gate ${gate} is now open`,
+      "FINAL CALL": `to ${city} is making its final boarding call at gate ${gate}`,
       "DEPARTED": `to ${city} has departed`,
       "ON TIME": `to ${city} is on time for ${time}, at gate ${gate}`
     };
@@ -471,6 +471,7 @@ function flapLine(value, previousValue = "", rowIndex = 0, columnIndex = 0) {
   [...target].forEach((character, characterIndex) => {
     const flap = document.createElement("span");
     flap.className = "flap";
+    if (columnIndex === 2 && character === " ") flap.classList.add("time-spacer");
     const moduleNumber = rowIndex * 41 + columnIndex * 13 + characterIndex * 7;
     const startDelay = 35 + (moduleNumber % 9) * 17;
     spinFlap(flap, previous[characterIndex] || " ", character, startDelay);
