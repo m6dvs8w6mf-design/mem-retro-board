@@ -98,6 +98,11 @@ const HERITAGE_CARRIERS = [
   { id: "KL", prefix: "KL", name: "KLM", cities: ["AMSTERDAM", "NEW YORK", "MONTREAL", "CHICAGO"] }
 ];
 
+const HERITAGE_STAGES = {
+  departures: ["ON TIME", "GATE OPEN", "BOARDING", "FINAL CALL", "DEPARTED"],
+  arrivals: ["ON TIME", "EXPECTED", "LANDED", "ARRIVED"]
+};
+
 function shuffle(values) {
   const result = [...values];
   for (let index = result.length - 1; index > 0; index -= 1) {
@@ -131,14 +136,17 @@ function heritageTime(position) {
   return value.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" });
 }
 
-function makeHeritageFlight(carrier, direction, position) {
-  const remarks = direction === "departures"
-    ? ["ON TIME", "BOARDING", "GATE OPEN", "FINAL CALL"]
-    : ["ON TIME", "ARRIVED", "EXPECTED", "LANDED"];
+function initialHeritageStage(direction, position) {
+  if (direction === "departures") return position === 0 ? 2 : position === 1 ? 1 : 0;
+  return position === 0 ? 2 : position === 1 ? 1 : 0;
+}
+
+function makeHeritageFlight(carrier, direction, position, stageIndex = initialHeritageStage(direction, position)) {
+  const stages = HERITAGE_STAGES[direction];
   const number = 100 + Math.floor(Math.random() * 800);
   const gate = String(1 + Math.floor(Math.random() * 28));
   return [heritageTime(position), `${carrier.prefix}${number}`, carrier.name,
-    randomChoice(carrier.cities), gate, randomChoice(remarks), carrier.id];
+    randomChoice(carrier.cities), gate, stages[stageIndex], carrier.id, stageIndex];
 }
 
 function buildHeritageSchedule() {
@@ -158,10 +166,24 @@ function buildHeritageSchedule() {
 function rotateHeritageFlight() {
   const direction = heritageCursor % 2 === 0 ? "departures" : "arrivals";
   const rowIndex = Math.floor(heritageCursor / 2) % 5;
-  const visible = new Set([...heritageFlights.departures, ...heritageFlights.arrivals].map(row => row[6]));
-  const carrier = takeHeritageCarrier(visible);
-  const changedFlight = makeHeritageFlight(carrier, direction, rowIndex);
-  heritageFlights[direction][rowIndex] = changedFlight;
+  const stages = HERITAGE_STAGES[direction];
+  const currentFlight = heritageFlights[direction][rowIndex];
+  const currentStage = Number(currentFlight[7] || 0);
+  let changedFlight;
+
+  if (currentStage < stages.length - 1) {
+    const nextStage = currentStage + 1;
+    changedFlight = [...currentFlight];
+    changedFlight[5] = stages[nextStage];
+    changedFlight[7] = nextStage;
+    heritageFlights[direction][rowIndex] = changedFlight;
+  } else {
+    const visible = new Set([...heritageFlights.departures, ...heritageFlights.arrivals].map(row => row[6]));
+    const carrier = takeHeritageCarrier(visible);
+    heritageFlights[direction].splice(rowIndex, 1);
+    changedFlight = makeHeritageFlight(carrier, direction, 5, 0);
+    heritageFlights[direction].push(changedFlight);
+  }
   heritageCursor += 1;
   if (heritageOn) {
     flights = heritageFlights;
@@ -353,6 +375,7 @@ function heritageAnnouncement(flight, direction) {
       "BOARDING": `is now boarding at gate ${gate}`,
       "GATE OPEN": `gate ${gate} is now open`,
       "FINAL CALL": `is making its final boarding call at gate ${gate}`,
+      "DEPARTED": `to ${city} has departed`,
       "ON TIME": `to ${city} is on time for ${time}, at gate ${gate}`
     };
     const remark = departureRemarks[status] || `to ${city} is ${status.toLowerCase()}, at gate ${gate}`;
@@ -626,7 +649,7 @@ document.addEventListener("fullscreenchange", () => {
 });
 
 document.addEventListener("keydown", event => {
-  if (event.target.matches("button")) return;
+  if (event.target.matches("button, select")) return;
   const key = event.key.toLowerCase();
   if (key === "a") setCycle(!cycleOn);
   if (key === "h") setHeritage(!heritageOn);
