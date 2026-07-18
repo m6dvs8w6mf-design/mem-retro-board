@@ -53,10 +53,10 @@ const CARRIER_NAMES = {
 };
 
 Object.assign(CARRIER_NAMES, {
-  PA: "PAN AM", OZ: "OZARK", NW: "NORTHWEST", NWO: "NORTHWEST ORIENT",
+  PA: "PAN AM EXPRESS", OZ: "OZARK", NW: "NORTHWEST", NAL: "NORTHWEST AIRLINK",
   TW: "TWA", RC: "REPUBLIC", QH: "AIR FLORIDA", EA: "EASTERN",
   NA: "NATIONAL", PI: "PIEDMONT", WA: "WESTERN", PE: "PEOPLE EXPRESS",
-  AF: "AIR FRANCE", BA: "BOAC", HP: "AMERICA WEST", KL: "KLM", LH: "LUFTHANSA"
+  SO: "SOUTHERN AIRWAYS", HP: "AMERICA WEST", KL: "KLM"
 });
 
 const CARRIER_IDS = Object.fromEntries(Object.entries(CARRIER_NAMES).map(([id, name]) => [name, id]));
@@ -65,40 +65,36 @@ const LOGO_FILES = {
   PA: "Pan Am Logo.svg",
   OZ: "Ozark Air Lines Logo, December 1985.svg",
   NW: "Northwest Airlines Logo.svg",
-  NWO: "Northwest Orient Airlines (1969) Logo.jpg",
+  NAL: "Northwest Airlines 1989-2003.svg",
   TW: "TWA 1975 logo.svg",
   RC: "Republic Airlines Logo, October 1984.svg",
+  SO: "Southern Airways logo.svg",
   QH: "Logoairflorida.svg",
   EA: "Eastern Airlines logo.svg",
   NA: "National Airlines (NA) Logo.png",
   PI: "Piedmont Airlines logo 1962-1974.svg",
   WA: "Western Airlines.svg",
   PE: "Logo of People Express Airlines (1987).png",
-  AF: "Air France logo (1976-1990).svg",
-  BA: "Logo wordmark British Overseas Airways Corporation (BOAC) 1939-1974.png",
   HP: "Former America West Airlines logo.svg",
-  KL: "KLM logo.svg",
-  LH: "Lufthansa-Logo 1964.svg"
+  KL: "KLM logo.svg"
 };
 
 const HERITAGE_CARRIERS = [
-  { id: "PA", prefix: "PA", name: "PAN AM", cities: ["NEW YORK", "LONDON", "PARIS", "ROME", "FRANKFURT"] },
+  { id: "PA", prefix: "PA", name: "PAN AM EXPRESS", cities: ["NEW YORK", "LONDON", "PARIS", "ROME", "FRANKFURT"] },
   { id: "OZ", prefix: "OZ", name: "OZARK", cities: ["ST LOUIS", "TULSA", "CEDAR RAPIDS", "NASHVILLE"] },
   { id: "NW", prefix: "NW", name: "NORTHWEST", cities: ["MINNEAPOLIS", "DETROIT", "SEATTLE", "PORTLAND"] },
-  { id: "NWO", prefix: "NW", name: "NORTHWEST ORIENT", cities: ["TOKYO", "ANCHORAGE", "MINNEAPOLIS", "HONOLULU"] },
+  { id: "NAL", prefix: "NW", name: "NORTHWEST AIRLINK", cities: ["TUPELO", "MONROE", "GREENVILLE", "CHATTANOOGA", "BATON ROUGE"] },
   { id: "TW", prefix: "TW", name: "TWA", cities: ["NEW YORK", "LOS ANGELES", "KANSAS CITY", "SAN FRANCISCO"] },
   { id: "RC", prefix: "RC", name: "REPUBLIC", cities: ["DETROIT", "MINNEAPOLIS", "ATLANTA", "CHICAGO"] },
+  { id: "SO", prefix: "SO", name: "SOUTHERN AIRWAYS", cities: ["ATLANTA", "NEW ORLEANS", "BIRMINGHAM", "TUPELO", "JACKSON"] },
   { id: "QH", prefix: "QH", name: "AIR FLORIDA", cities: ["MIAMI", "TAMPA", "WASHINGTON", "ORLANDO"] },
   { id: "EA", prefix: "EA", name: "EASTERN", cities: ["ATLANTA", "MIAMI", "NEW YORK", "BOSTON"] },
   { id: "NA", prefix: "NA", name: "NATIONAL", cities: ["MIAMI", "NEW ORLEANS", "LOS ANGELES", "HOUSTON"] },
   { id: "PI", prefix: "PI", name: "PIEDMONT", cities: ["CHARLOTTE", "ROANOKE", "WASHINGTON", "RICHMOND"] },
   { id: "WA", prefix: "WA", name: "WESTERN", cities: ["LOS ANGELES", "DENVER", "SALT LAKE", "SAN FRANCISCO"] },
   { id: "PE", prefix: "PE", name: "PEOPLE EXPRESS", cities: ["NEWARK", "BUFFALO", "BOSTON", "CLEVELAND"] },
-  { id: "AF", prefix: "AF", name: "AIR FRANCE", cities: ["PARIS ORLY", "PARIS CDG", "MONTREAL", "NEW YORK"] },
-  { id: "BA", prefix: "BA", name: "BOAC", cities: ["LONDON", "BERMUDA", "NEW YORK", "MONTREAL"] },
   { id: "HP", prefix: "HP", name: "AMERICA WEST", cities: ["PHOENIX", "LAS VEGAS", "SAN DIEGO", "LOS ANGELES"] },
-  { id: "KL", prefix: "KL", name: "KLM", cities: ["AMSTERDAM", "NEW YORK", "MONTREAL", "CHICAGO"] },
-  { id: "LH", prefix: "LH", name: "LUFTHANSA", cities: ["FRANKFURT", "HAMBURG", "NEW YORK", "CHICAGO"] }
+  { id: "KL", prefix: "KL", name: "KLM", cities: ["AMSTERDAM", "NEW YORK", "MONTREAL", "CHICAGO"] }
 ];
 
 function shuffle(values) {
@@ -355,7 +351,7 @@ function speakHeritageAnnouncement(flight, direction) {
     utterance.voice = announcementVoice || chooseAnnouncementVoice();
     utterance.lang = utterance.voice?.lang || "en-US";
     utterance.volume = .38;
-    utterance.rate = .79;
+    utterance.rate = .81;
     utterance.pitch = .66;
     utterance.addEventListener("start", playPaRoomTone, { once: true });
     utterance.addEventListener("end", () => setTimeout(playPaRoomTone, 90), { once: true });
