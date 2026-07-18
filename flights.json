@@ -1,21 +1,7 @@
 {
-  "updatedAt": "2026-07-18T06:31:46.330Z",
+  "updatedAt": "2026-07-18T10:48:43.027Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
-    {
-      "date": "07/18/26",
-      "claim": "",
-      "remarks": "On Time",
-      "gate": "4",
-      "actualtime": "0500",
-      "scheduletime": "0500",
-      "city": "CHARLOTTE",
-      "flightnumber": "978",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "5:00 AM"
-    },
     {
       "date": "07/18/26",
       "claim": "",
@@ -33,23 +19,9 @@
     {
       "date": "07/18/26",
       "claim": "",
-      "remarks": "On Time",
-      "gate": "12",
-      "actualtime": "0515",
-      "scheduletime": "0515",
-      "city": "ATLANTA",
-      "flightnumber": "1666",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "5:15 AM"
-    },
-    {
-      "date": "07/18/26",
-      "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "1",
-      "actualtime": "0534",
+      "actualtime": "0544",
       "scheduletime": "0534",
       "city": "MIAMI",
       "flightnumber": "1340",
@@ -71,29 +43,43 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "5:51 AM"
+    },
+    {
+      "date": "07/18/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "16",
+      "actualtime": "0600",
+      "scheduletime": "0600",
+      "city": "MINNEAPOLIS",
+      "flightnumber": "3899",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "6:00 AM"
+    },
+    {
+      "date": "07/18/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "23",
+      "actualtime": "0600",
+      "scheduletime": "0600",
+      "city": "BOSTON",
+      "flightnumber": "5604",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "6:00 AM"
     }
   ],
   "arrivals": [
     {
       "date": "07/18/26",
-      "claim": "3B",
-      "remarks": "Arrived",
-      "gate": "6",
-      "actualtime": "0040",
-      "scheduletime": "0018",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "3945",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "12:18 AM"
-    },
-    {
-      "date": "07/18/26",
       "claim": "7B",
-      "remarks": "On Time",
+      "remarks": "Now 7:58 AM",
       "gate": "10",
-      "actualtime": "0759",
+      "actualtime": "0758",
       "scheduletime": "0759",
       "city": "FT. LAUDERDALE",
       "flightnumber": "2118",
@@ -105,9 +91,9 @@
     {
       "date": "07/18/26",
       "claim": "6B",
-      "remarks": "Now 8:45 AM",
+      "remarks": "Now 8:42 AM",
       "gate": "14",
-      "actualtime": "0845",
+      "actualtime": "0842",
       "scheduletime": "0849",
       "city": "ATLANTA",
       "flightnumber": "2071",
@@ -119,9 +105,9 @@
     {
       "date": "07/18/26",
       "claim": "7B",
-      "remarks": "On Time",
+      "remarks": "Now 8:57 AM",
       "gate": "13",
-      "actualtime": "0858",
+      "actualtime": "0857",
       "scheduletime": "0858",
       "city": "HOUSTON",
       "flightnumber": "370",
@@ -133,9 +119,9 @@
     {
       "date": "07/18/26",
       "claim": "4B",
-      "remarks": "On Time",
+      "remarks": "Now 8:57 AM",
       "gate": "5",
-      "actualtime": "0905",
+      "actualtime": "0857",
       "scheduletime": "0905",
       "city": "NASHVILLE",
       "flightnumber": "579",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "9:05 AM"
+    },
+    {
+      "date": "07/18/26",
+      "claim": "3B",
+      "remarks": "On Time",
+      "gate": "2",
+      "actualtime": "0957",
+      "scheduletime": "0957",
+      "city": "WASHINGTON",
+      "flightnumber": "5091",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "9:57 AM"
     }
   ]
 }
