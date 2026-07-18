@@ -21,7 +21,7 @@ let liveFlights = sampleFlights;
 const $ = id => document.getElementById(id);
 const ui = {
   departures: $("departuresButton"), arrivals: $("arrivalsButton"), heritage: $("heritageButton"),
-  cycle: $("cycleButton"), sound: $("soundButton"), fullscreen: $("fullscreenButton"),
+  cycle: $("cycleButton"), sound: $("soundButton"), voice: $("voiceSelect"), fullscreen: $("fullscreenButton"),
   rows: $("flightRows"), city: $("cityHeading"), title: $("boardTitle"),
   status: $("dataStatus"), verification: $("verificationText")
 };
@@ -34,6 +34,7 @@ let audio = null;
 let announcementTimer = null;
 let announcementVoiceTimer = null;
 let announcementVoice = null;
+let selectedVoiceName = localStorage.getItem("mem-announcement-voice") || "";
 let displayedFlights = null;
 let displayedTitle = "";
 let liveSignature = "";
@@ -80,7 +81,7 @@ const LOGO_FILES = {
 };
 
 const HERITAGE_CARRIERS = [
-  { id: "PA", prefix: "PA", name: "PAN AM EXPRESS", cities: ["NEW YORK", "LONDON", "PARIS", "ROME", "FRANKFURT"] },
+  { id: "PA", prefix: "PA", name: "PAN AM EXPRESS", cities: ["ALBANY", "PROVIDENCE", "BALTIMORE", "HARTFORD", "ROCHESTER", "BUFFALO", "ALLENTOWN", "KEY WEST", "FORT MYERS"] },
   { id: "OZ", prefix: "OZ", name: "OZARK", cities: ["ST LOUIS", "TULSA", "CEDAR RAPIDS", "NASHVILLE"] },
   { id: "NW", prefix: "NW", name: "NORTHWEST", cities: ["MINNEAPOLIS", "DETROIT", "SEATTLE", "PORTLAND"] },
   { id: "NAL", prefix: "NW", name: "NORTHWEST AIRLINK", cities: ["TUPELO", "MONROE", "GREENVILLE", "CHATTANOOGA", "BATON ROUGE"] },
@@ -257,10 +258,37 @@ function chooseAnnouncementVoice() {
     /microsoft david/i, /microsoft mark/i, /google uk english male/i,
     /\b(david|mark|george|daniel|alex|fred|male)\b/i
   ];
-  announcementVoice = preferred
+  const selected = english.find(voice => voice.name === selectedVoiceName);
+  announcementVoice = selected || preferred
     .map(pattern => english.find(voice => pattern.test(voice.name)))
     .find(Boolean) || english.find(voice => /en[-_]us/i.test(voice.lang)) || english[0] || voices[0] || null;
   return announcementVoice;
+}
+
+function populateVoiceSelect() {
+  if (!ui.voice || !("speechSynthesis" in window)) return;
+  const voices = window.speechSynthesis.getVoices()
+    .filter(voice => /^en[-_]/i.test(voice.lang))
+    .sort((left, right) => left.name.localeCompare(right.name));
+  ui.voice.replaceChildren(new Option("VOICE: AUTO", ""));
+  voices.forEach(voice => {
+    const accent = voice.lang.replace("_", "-").toUpperCase();
+    ui.voice.add(new Option(`${voice.name} (${accent})`, voice.name));
+  });
+  ui.voice.value = voices.some(voice => voice.name === selectedVoiceName) ? selectedVoiceName : "";
+  chooseAnnouncementVoice();
+}
+
+function previewAnnouncementVoice() {
+  if (!("speechSynthesis" in window)) return;
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance("Pan Am Express flight four eighty seven is now boarding at gate twelve.");
+  utterance.voice = chooseAnnouncementVoice();
+  utterance.lang = utterance.voice?.lang || "en-US";
+  utterance.volume = .46;
+  utterance.rate = .81;
+  utterance.pitch = .66;
+  window.speechSynthesis.speak(utterance);
 }
 
 function playPaRoomTone() {
@@ -348,7 +376,7 @@ function speakHeritageAnnouncement(flight, direction) {
   announcementVoiceTimer = setTimeout(() => {
     if (!heritageOn || !soundOn || direction !== mode) return;
     const utterance = new SpeechSynthesisUtterance(heritageAnnouncement(flight, direction));
-    utterance.voice = announcementVoice || chooseAnnouncementVoice();
+    utterance.voice = chooseAnnouncementVoice();
     utterance.lang = utterance.voice?.lang || "en-US";
     utterance.volume = .38;
     utterance.rate = .81;
@@ -584,6 +612,11 @@ ui.arrivals.addEventListener("click", () => setMode("arrivals"));
 ui.heritage.addEventListener("click", () => setHeritage(!heritageOn));
 ui.cycle.addEventListener("click", () => setCycle(!cycleOn));
 ui.sound.addEventListener("click", () => setSound(!soundOn));
+ui.voice.addEventListener("change", () => {
+  selectedVoiceName = ui.voice.value;
+  localStorage.setItem("mem-announcement-voice", selectedVoiceName);
+  previewAnnouncementVoice();
+});
 ui.fullscreen.addEventListener("click", toggleFullscreen);
 
 document.addEventListener("fullscreenchange", () => {
@@ -605,8 +638,8 @@ document.addEventListener("keydown", event => {
 
 updateClock();
 if ("speechSynthesis" in window) {
-  chooseAnnouncementVoice();
-  window.speechSynthesis.addEventListener?.("voiceschanged", chooseAnnouncementVoice, { once: true });
+  populateVoiceSelect();
+  window.speechSynthesis.addEventListener?.("voiceschanged", populateVoiceSelect);
 }
 setInterval(updateClock, 1000);
 setCycle(cycleOn);
