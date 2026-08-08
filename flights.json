@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-08T08:08:33.337Z",
+  "updatedAt": "2026-08-08T10:03:13.010Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -48,7 +48,7 @@
       "date": "08/08/26",
       "claim": "",
       "remarks": "On Time",
-      "gate": "22",
+      "gate": "20",
       "actualtime": "0600",
       "scheduletime": "0600",
       "city": "MINNEAPOLIS",
