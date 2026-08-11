@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-08-11T17:33:08.503Z",
+  "updatedAt": "2026-08-11T18:29:25.408Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/11/26",
       "claim": "",
-      "remarks": "Now 12:51 PM",
+      "remarks": "Departed",
       "gate": "7",
-      "actualtime": "1251",
+      "actualtime": "1322",
       "scheduletime": "1225",
       "city": "HOUSTON (HOBBY)",
       "flightnumber": "4258",
@@ -19,9 +19,9 @@
     {
       "date": "08/11/26",
       "claim": "",
-      "remarks": "Now 1:31 PM",
+      "remarks": "Now 1:41 PM",
       "gate": "2",
-      "actualtime": "1331",
+      "actualtime": "1341",
       "scheduletime": "1311",
       "city": "PHILADELPHIA",
       "flightnumber": "5202",
@@ -33,9 +33,9 @@
     {
       "date": "08/11/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Now 1:44 PM",
       "gate": "14",
-      "actualtime": "1349",
+      "actualtime": "1344",
       "scheduletime": "1349",
       "city": "ATLANTA",
       "flightnumber": "2778",
@@ -76,24 +76,10 @@
   "arrivals": [
     {
       "date": "08/11/26",
-      "claim": "4B",
-      "remarks": "Arrived",
-      "gate": "7",
-      "actualtime": "1215",
-      "scheduletime": "1145",
-      "city": "CHICAGO/MIDWAY",
-      "flightnumber": "4258",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "11:45 AM"
-    },
-    {
-      "date": "08/11/26",
       "claim": "3B",
-      "remarks": "Now 1:20 PM",
+      "remarks": "Arrived",
       "gate": "2",
-      "actualtime": "1320",
+      "actualtime": "1319",
       "scheduletime": "1240",
       "city": "PHILADELPHIA",
       "flightnumber": "5202",
@@ -105,7 +91,7 @@
     {
       "date": "08/11/26",
       "claim": "6B",
-      "remarks": "Now 12:44 PM",
+      "remarks": "Arrived",
       "gate": "14",
       "actualtime": "1244",
       "scheduletime": "1243",
@@ -119,9 +105,9 @@
     {
       "date": "08/11/26",
       "claim": "4B",
-      "remarks": "On Time",
+      "remarks": "Now 1:46 PM",
       "gate": "5",
-      "actualtime": "1340",
+      "actualtime": "1346",
       "scheduletime": "1340",
       "city": "HOUSTON (HOBBY)",
       "flightnumber": "1556",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "1:56 PM"
+    },
+    {
+      "date": "08/11/26",
+      "claim": "6B",
+      "remarks": "Now 2:03 PM",
+      "gate": "14",
+      "actualtime": "1403",
+      "scheduletime": "1407",
+      "city": "ATLANTA",
+      "flightnumber": "1681",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "2:07 PM"
     }
   ]
 }
