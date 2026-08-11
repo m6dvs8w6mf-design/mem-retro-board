@@ -1,21 +1,7 @@
 {
-  "updatedAt": "2026-08-11T19:37:37.711Z",
+  "updatedAt": "2026-08-11T20:21:49.452Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
-    {
-      "date": "08/11/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "5",
-      "actualtime": "1430",
-      "scheduletime": "1435",
-      "city": "NASHVILLE",
-      "flightnumber": "717",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "2:35 PM"
-    },
     {
       "date": "08/11/26",
       "claim": "",
@@ -29,20 +15,6 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "2:37 PM"
-    },
-    {
-      "date": "08/11/26",
-      "claim": "",
-      "remarks": "On Time",
-      "gate": "4",
-      "actualtime": "1448",
-      "scheduletime": "1448",
-      "city": "DALLAS FT. WORT",
-      "flightnumber": "3888",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "2:48 PM"
     },
     {
       "date": "08/11/26",
@@ -71,6 +43,34 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "3:25 PM"
+    },
+    {
+      "date": "08/11/26",
+      "claim": "",
+      "remarks": "Now 5:15 PM",
+      "gate": "11",
+      "actualtime": "1715",
+      "scheduletime": "1527",
+      "city": "HOUSTON",
+      "flightnumber": "5798",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "3:27 PM"
+    },
+    {
+      "date": "08/11/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "6",
+      "actualtime": "1531",
+      "scheduletime": "1531",
+      "city": "CHARLOTTE",
+      "flightnumber": "1790",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "3:31 PM"
     }
   ],
   "arrivals": [
@@ -78,64 +78,8 @@
       "date": "08/11/26",
       "claim": "4B",
       "remarks": "Arrived",
-      "gate": "5",
-      "actualtime": "1347",
-      "scheduletime": "1340",
-      "city": "HOUSTON (HOBBY)",
-      "flightnumber": "1556",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "1:40 PM"
-    },
-    {
-      "date": "08/11/26",
-      "claim": "7B",
-      "remarks": "Arrived",
-      "gate": "13",
-      "actualtime": "1351",
-      "scheduletime": "1356",
-      "city": "HOUSTON",
-      "flightnumber": "5758",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "1:56 PM"
-    },
-    {
-      "date": "08/11/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "12",
-      "actualtime": "1408",
-      "scheduletime": "1407",
-      "city": "ATLANTA",
-      "flightnumber": "1681",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "2:07 PM"
-    },
-    {
-      "date": "08/11/26",
-      "claim": "3B",
-      "remarks": "Arrived",
-      "gate": "4",
-      "actualtime": "1409",
-      "scheduletime": "1418",
-      "city": "DALLAS FT. WORT",
-      "flightnumber": "3888",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "2:18 PM"
-    },
-    {
-      "date": "08/11/26",
-      "claim": "4B",
-      "remarks": "Now 2:38 PM",
       "gate": "7",
-      "actualtime": "1438",
+      "actualtime": "1439",
       "scheduletime": "1430",
       "city": "DENVER",
       "flightnumber": "4662",
@@ -143,6 +87,62 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "2:30 PM"
+    },
+    {
+      "date": "08/11/26",
+      "claim": "3B",
+      "remarks": "Arrived",
+      "gate": "6",
+      "actualtime": "1433",
+      "scheduletime": "1439",
+      "city": "CHARLOTTE",
+      "flightnumber": "1790",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "2:39 PM"
+    },
+    {
+      "date": "08/11/26",
+      "claim": "7B",
+      "remarks": "Now 5:21 PM",
+      "gate": "11",
+      "actualtime": "1721",
+      "scheduletime": "1446",
+      "city": "CHICAGO-OHARE",
+      "flightnumber": "5392",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "2:46 PM"
+    },
+    {
+      "date": "08/11/26",
+      "claim": "7B",
+      "remarks": "Arrived",
+      "gate": "15",
+      "actualtime": "1446",
+      "scheduletime": "1450",
+      "city": "DENVER",
+      "flightnumber": "2789",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "2:50 PM"
+    },
+    {
+      "date": "08/11/26",
+      "claim": "7B",
+      "remarks": "Now 3:25 PM",
+      "gate": "13",
+      "actualtime": "1525",
+      "scheduletime": "1521",
+      "city": "NEWARK",
+      "flightnumber": "3650",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "3:21 PM"
     }
   ]
 }
