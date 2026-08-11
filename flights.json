@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-11T07:23:43.711Z",
+  "updatedAt": "2026-08-11T08:28:59.883Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -87,20 +87,6 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "7:46 AM"
-    },
-    {
-      "date": "08/11/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "18",
-      "actualtime": "0149",
-      "scheduletime": "2355",
-      "city": "LOS ANGELES",
-      "flightnumber": "1080",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "11:55 PM"
     }
   ]
 }
