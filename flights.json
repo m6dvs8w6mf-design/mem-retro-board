@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-11T06:04:30.309Z",
+  "updatedAt": "2026-08-11T07:23:43.711Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -90,59 +90,17 @@
     },
     {
       "date": "08/11/26",
-      "claim": "4B",
-      "remarks": "Arrived",
-      "gate": "7",
-      "actualtime": "0029",
-      "scheduletime": "2130",
-      "city": "DENVER",
-      "flightnumber": "210",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "9:30 PM"
-    },
-    {
-      "date": "08/11/26",
       "claim": "6B",
       "remarks": "Arrived",
       "gate": "18",
-      "actualtime": "0026",
-      "scheduletime": "2221",
-      "city": "ATLANTA",
-      "flightnumber": "1577",
+      "actualtime": "0149",
+      "scheduletime": "2355",
+      "city": "LOS ANGELES",
+      "flightnumber": "1080",
       "airlinecode": "DL",
       "indicator": "D",
       "type": "A",
-      "scheduled": "10:21 PM"
-    },
-    {
-      "date": "08/11/26",
-      "claim": "4B",
-      "remarks": "Arrived",
-      "gate": "3",
-      "actualtime": "0021",
-      "scheduletime": "2225",
-      "city": "CHICAGO/MIDWAY",
-      "flightnumber": "4975",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "10:25 PM"
-    },
-    {
-      "date": "08/11/26",
-      "claim": "3B",
-      "remarks": "Arrived",
-      "gate": "10",
-      "actualtime": "0012",
-      "scheduletime": "2250",
-      "city": "CHARLOTTE",
-      "flightnumber": "1372",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "10:50 PM"
+      "scheduled": "11:55 PM"
     }
   ]
 }
