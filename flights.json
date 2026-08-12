@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-12T07:57:21.986Z",
+  "updatedAt": "2026-08-12T09:13:57.804Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -134,7 +134,7 @@
       "date": "08/12/26",
       "claim": "6B",
       "remarks": "Now 9:24 AM",
-      "gate": "14",
+      "gate": "18",
       "actualtime": "0924",
       "scheduletime": "0927",
       "city": "ATLANTA",
