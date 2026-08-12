@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-12T05:02:26.034Z",
+  "updatedAt": "2026-08-12T06:22:21.698Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -34,7 +34,7 @@
       "date": "08/12/26",
       "claim": "",
       "remarks": "On Time",
-      "gate": "9",
+      "gate": "13",
       "actualtime": "0600",
       "scheduletime": "0600",
       "city": "NEWARK",
@@ -120,7 +120,7 @@
       "date": "08/12/26",
       "claim": "7B",
       "remarks": "On Time",
-      "gate": "",
+      "gate": "13",
       "actualtime": "0906",
       "scheduletime": "0906",
       "city": "HOUSTON",
