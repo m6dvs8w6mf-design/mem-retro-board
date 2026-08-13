@@ -1,49 +1,7 @@
 {
-  "updatedAt": "2026-08-13T21:07:43.668Z",
+  "updatedAt": "2026-08-13T21:59:34.307Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
-    {
-      "date": "08/13/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "7",
-      "actualtime": "1554",
-      "scheduletime": "1520",
-      "city": "CHICAGO/MIDWAY",
-      "flightnumber": "22",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "3:20 PM"
-    },
-    {
-      "date": "08/13/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "2",
-      "actualtime": "1603",
-      "scheduletime": "1559",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "4285",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "3:59 PM"
-    },
-    {
-      "date": "08/13/26",
-      "claim": "",
-      "remarks": "On Time",
-      "gate": "6",
-      "actualtime": "1626",
-      "scheduletime": "1626",
-      "city": "NEW YORK-LGA",
-      "flightnumber": "4807",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "4:26 PM"
-    },
     {
       "date": "08/13/26",
       "claim": "",
@@ -61,9 +19,9 @@
     {
       "date": "08/13/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Now 5:00 PM",
       "gate": "13",
-      "actualtime": "1639",
+      "actualtime": "1700",
       "scheduletime": "1639",
       "city": "NEWARK",
       "flightnumber": "3613",
@@ -71,65 +29,51 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "4:39 PM"
-    }
-  ],
-  "arrivals": [
-    {
-      "date": "08/13/26",
-      "claim": "7B",
-      "remarks": "Arrived",
-      "gate": "13",
-      "actualtime": "1527",
-      "scheduletime": "1521",
-      "city": "NEWARK",
-      "flightnumber": "3650",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "3:21 PM"
     },
     {
       "date": "08/13/26",
-      "claim": "3B",
-      "remarks": "Arrived",
-      "gate": "2",
-      "actualtime": "1534",
-      "scheduletime": "1529",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "4285",
-      "airlinecode": "AA",
+      "claim": "",
+      "remarks": "Now 5:15 PM",
+      "gate": "5",
+      "actualtime": "1715",
+      "scheduletime": "1655",
+      "city": "DALLAS-LOVE",
+      "flightnumber": "3794",
+      "airlinecode": "WN",
       "indicator": "D",
-      "type": "A",
-      "scheduled": "3:29 PM"
+      "type": "D",
+      "scheduled": "4:55 PM"
     },
     {
       "date": "08/13/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "16",
-      "actualtime": "1538",
-      "scheduletime": "1551",
-      "city": "NEW YORK-LGA",
-      "flightnumber": "5773",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "3:51 PM"
-    },
-    {
-      "date": "08/13/26",
-      "claim": "6B",
-      "remarks": "Arrived",
+      "claim": "",
+      "remarks": "Now 4:54 PM",
       "gate": "12",
-      "actualtime": "1550",
-      "scheduletime": "1553",
+      "actualtime": "1654",
+      "scheduletime": "1659",
       "city": "ATLANTA",
       "flightnumber": "1700",
       "airlinecode": "DL",
       "indicator": "D",
-      "type": "A",
-      "scheduled": "3:53 PM"
+      "type": "D",
+      "scheduled": "4:59 PM"
     },
+    {
+      "date": "08/13/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "16",
+      "actualtime": "1710",
+      "scheduletime": "1710",
+      "city": "NEW YORK-LGA",
+      "flightnumber": "5779",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "5:10 PM"
+    }
+  ],
+  "arrivals": [
     {
       "date": "08/13/26",
       "claim": "3B",
@@ -143,6 +87,62 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "3:56 PM"
+    },
+    {
+      "date": "08/13/26",
+      "claim": "4B",
+      "remarks": "Arrived",
+      "gate": "5",
+      "actualtime": "1631",
+      "scheduletime": "1610",
+      "city": "HOUSTON (HOBBY)",
+      "flightnumber": "2449",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "4:10 PM"
+    },
+    {
+      "date": "08/13/26",
+      "claim": "6B",
+      "remarks": "Arrived",
+      "gate": "14",
+      "actualtime": "1647",
+      "scheduletime": "1655",
+      "city": "ATLANTA",
+      "flightnumber": "552",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "4:55 PM"
+    },
+    {
+      "date": "08/13/26",
+      "claim": "6B",
+      "remarks": "Now 7:17 PM",
+      "gate": "14",
+      "actualtime": "1917",
+      "scheduletime": "1710",
+      "city": "DETROIT",
+      "flightnumber": "4007",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "5:10 PM"
+    },
+    {
+      "date": "08/13/26",
+      "claim": "3B",
+      "remarks": "Now 5:02 PM",
+      "gate": "6",
+      "actualtime": "1702",
+      "scheduletime": "1714",
+      "city": "WASHINGTON",
+      "flightnumber": "4444",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "5:14 PM"
     }
   ]
 }
