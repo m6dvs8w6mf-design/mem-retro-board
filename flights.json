@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-13T07:47:15.796Z",
+  "updatedAt": "2026-08-13T08:56:49.392Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -77,9 +77,9 @@
     {
       "date": "08/13/26",
       "claim": "7B",
-      "remarks": "On Time",
+      "remarks": "Now 7:30 AM",
       "gate": "",
-      "actualtime": "0744",
+      "actualtime": "0730",
       "scheduletime": "0744",
       "city": "FT. LAUDERDALE",
       "flightnumber": "2137",
