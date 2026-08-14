@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-08-14T21:54:07.898Z",
+  "updatedAt": "2026-08-14T22:15:55.626Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/14/26",
       "claim": "",
-      "remarks": "Now 4:50 PM",
+      "remarks": "Departed",
       "gate": "6",
-      "actualtime": "1650",
+      "actualtime": "1707",
       "scheduletime": "1626",
       "city": "NEW YORK-LGA",
       "flightnumber": "4807",
@@ -33,23 +33,9 @@
     {
       "date": "08/14/26",
       "claim": "",
-      "remarks": "Departed",
-      "gate": "13",
-      "actualtime": "1648",
-      "scheduletime": "1639",
-      "city": "NEWARK",
-      "flightnumber": "3613",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "4:39 PM"
-    },
-    {
-      "date": "08/14/26",
-      "claim": "",
-      "remarks": "Now 5:40 PM",
+      "remarks": "Now 5:38 PM",
       "gate": "5",
-      "actualtime": "1740",
+      "actualtime": "1738",
       "scheduletime": "1655",
       "city": "DALLAS-LOVE",
       "flightnumber": "3794",
@@ -71,6 +57,20 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "4:59 PM"
+    },
+    {
+      "date": "08/14/26",
+      "claim": "",
+      "remarks": "Departed",
+      "gate": "10",
+      "actualtime": "1704",
+      "scheduletime": "1704",
+      "city": "FT. LAUDERDALE",
+      "flightnumber": "3481",
+      "airlinecode": "G4",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "5:04 PM"
     }
   ],
   "arrivals": [
@@ -90,24 +90,10 @@
     },
     {
       "date": "08/14/26",
-      "claim": "3B",
-      "remarks": "Arrived",
-      "gate": "6",
-      "actualtime": "1554",
-      "scheduletime": "1556",
-      "city": "NEW YORK-LGA",
-      "flightnumber": "4807",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "3:56 PM"
-    },
-    {
-      "date": "08/14/26",
       "claim": "4B",
-      "remarks": "Now 4:59 PM",
+      "remarks": "Arrived",
       "gate": "5",
-      "actualtime": "1659",
+      "actualtime": "1656",
       "scheduletime": "1610",
       "city": "HOUSTON (HOBBY)",
       "flightnumber": "2449",
@@ -135,7 +121,7 @@
       "claim": "6B",
       "remarks": "Arrived",
       "gate": "",
-      "actualtime": "1646",
+      "actualtime": "1701",
       "scheduletime": "1638",
       "city": "SAN PEDRO SULA",
       "flightnumber": "1805",
@@ -143,6 +129,20 @@
       "indicator": "I",
       "type": "A",
       "scheduled": "4:38 PM"
+    },
+    {
+      "date": "08/14/26",
+      "claim": "6B",
+      "remarks": "Now 5:29 PM",
+      "gate": "22",
+      "actualtime": "1729",
+      "scheduletime": "1655",
+      "city": "ATLANTA",
+      "flightnumber": "552",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "4:55 PM"
     }
   ]
 }
