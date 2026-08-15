@@ -1,21 +1,7 @@
 {
-  "updatedAt": "2026-08-15T15:52:56.496Z",
+  "updatedAt": "2026-08-15T16:12:50.544Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
-    {
-      "date": "08/15/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "4",
-      "actualtime": "1049",
-      "scheduletime": "1028",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "3959",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "10:28 AM"
-    },
     {
       "date": "08/15/26",
       "claim": "",
@@ -71,6 +57,20 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "12:04 PM"
+    },
+    {
+      "date": "08/15/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "14",
+      "actualtime": "1212",
+      "scheduletime": "1212",
+      "city": "DETROIT",
+      "flightnumber": "4157",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "12:12 PM"
     }
   ],
   "arrivals": [
@@ -119,9 +119,9 @@
     {
       "date": "08/15/26",
       "claim": "3B",
-      "remarks": "Now 11:09 AM",
+      "remarks": "Arrived",
       "gate": "4",
-      "actualtime": "1109",
+      "actualtime": "1107",
       "scheduletime": "1113",
       "city": "DALLAS FT. WORT",
       "flightnumber": "1935",
@@ -133,9 +133,9 @@
     {
       "date": "08/15/26",
       "claim": "6B",
-      "remarks": "Now 11:08 AM",
+      "remarks": "Now 11:13 AM",
       "gate": "18",
-      "actualtime": "1108",
+      "actualtime": "1113",
       "scheduletime": "1123",
       "city": "MINNEAPOLIS",
       "flightnumber": "3989",
