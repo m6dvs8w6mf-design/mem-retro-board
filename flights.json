@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T11:45:45.596Z",
+  "updatedAt": "2026-08-15T11:59:02.814Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -33,9 +33,9 @@
     {
       "date": "08/15/26",
       "claim": "",
-      "remarks": "Now 6:42 AM",
+      "remarks": "Now 6:52 AM",
       "gate": "19",
-      "actualtime": "0642",
+      "actualtime": "0652",
       "scheduletime": "0632",
       "city": "CHICAGO-OHARE",
       "flightnumber": "4362",
@@ -48,22 +48,22 @@
       "date": "08/15/26",
       "claim": "",
       "remarks": "Departed",
-      "gate": "17",
-      "actualtime": "0637",
-      "scheduletime": "0632",
-      "city": "CHARLOTTE",
-      "flightnumber": "978",
-      "airlinecode": "AA",
+      "gate": "7",
+      "actualtime": "0646",
+      "scheduletime": "0645",
+      "city": "ORLANDO",
+      "flightnumber": "4261",
+      "airlinecode": "WN",
       "indicator": "D",
       "type": "D",
-      "scheduled": "6:32 AM"
+      "scheduled": "6:45 AM"
     },
     {
       "date": "08/15/26",
       "claim": "",
       "remarks": "Departed",
       "gate": "11",
-      "actualtime": "0641",
+      "actualtime": "0656",
       "scheduletime": "0645",
       "city": "HOUSTON",
       "flightnumber": "6207",
@@ -105,9 +105,9 @@
     {
       "date": "08/15/26",
       "claim": "6B",
-      "remarks": "Now 8:41 AM",
+      "remarks": "Now 8:37 AM",
       "gate": "18",
-      "actualtime": "0841",
+      "actualtime": "0837",
       "scheduletime": "0849",
       "city": "ATLANTA",
       "flightnumber": "2071",
