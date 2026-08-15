@@ -1,21 +1,7 @@
 {
-  "updatedAt": "2026-08-15T20:31:25.839Z",
+  "updatedAt": "2026-08-15T20:52:28.695Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
-    {
-      "date": "08/15/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "11",
-      "actualtime": "1520",
-      "scheduletime": "1527",
-      "city": "HOUSTON",
-      "flightnumber": "5798",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "3:27 PM"
-    },
     {
       "date": "08/15/26",
       "claim": "",
@@ -33,9 +19,9 @@
     {
       "date": "08/15/26",
       "claim": "",
-      "remarks": "Now 3:45 PM",
+      "remarks": "Departed",
       "gate": "12",
-      "actualtime": "1545",
+      "actualtime": "1541",
       "scheduletime": "1550",
       "city": "ATLANTA",
       "flightnumber": "1700",
@@ -47,9 +33,9 @@
     {
       "date": "08/15/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Now 4:02 PM",
       "gate": "8",
-      "actualtime": "1551",
+      "actualtime": "1602",
       "scheduletime": "1551",
       "city": "CHARLOTTE",
       "flightnumber": "5387",
@@ -71,15 +57,29 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "4:33 PM"
+    },
+    {
+      "date": "08/15/26",
+      "claim": "",
+      "remarks": "Now 7:37 PM",
+      "gate": "7",
+      "actualtime": "1937",
+      "scheduletime": "1715",
+      "city": "DENVER",
+      "flightnumber": "3581",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "5:15 PM"
     }
   ],
   "arrivals": [
     {
       "date": "08/15/26",
       "claim": "7B",
-      "remarks": "Now 3:29 PM",
+      "remarks": "Arrived",
       "gate": "15",
-      "actualtime": "1529",
+      "actualtime": "1528",
       "scheduletime": "1450",
       "city": "DENVER",
       "flightnumber": "2789",
@@ -90,22 +90,8 @@
     },
     {
       "date": "08/15/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "12",
-      "actualtime": "1441",
-      "scheduletime": "1455",
-      "city": "ATLANTA",
-      "flightnumber": "1700",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "2:55 PM"
-    },
-    {
-      "date": "08/15/26",
       "claim": "3B",
-      "remarks": "Now 3:36 PM",
+      "remarks": "Arrived",
       "gate": "2",
       "actualtime": "1536",
       "scheduletime": "1517",
@@ -119,7 +105,7 @@
     {
       "date": "08/15/26",
       "claim": "3B",
-      "remarks": "Now 3:32 PM",
+      "remarks": "Arrived",
       "gate": "8",
       "actualtime": "1532",
       "scheduletime": "1521",
@@ -134,7 +120,7 @@
       "date": "08/15/26",
       "claim": "6B",
       "remarks": "Arrived",
-      "gate": "23",
+      "gate": "20",
       "actualtime": "1509",
       "scheduletime": "1544",
       "city": "BOSTON",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "3:44 PM"
+    },
+    {
+      "date": "08/15/26",
+      "claim": "6B",
+      "remarks": "Arrived",
+      "gate": "23",
+      "actualtime": "1532",
+      "scheduletime": "1600",
+      "city": "NEW YORK-LGA",
+      "flightnumber": "5773",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "4:00 PM"
     }
   ]
 }
