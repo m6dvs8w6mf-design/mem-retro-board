@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-08-15T03:26:13.281Z",
+  "updatedAt": "2026-08-15T04:03:41.301Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/14/26",
       "claim": "",
-      "remarks": "Now 10:55 PM",
+      "remarks": "Now 11:00 PM",
       "gate": "19",
-      "actualtime": "2255",
+      "actualtime": "2300",
       "scheduletime": "2131",
       "city": "LAS VEGAS",
       "flightnumber": "54",
@@ -18,20 +18,6 @@
     }
   ],
   "arrivals": [
-    {
-      "date": "08/14/26",
-      "claim": "6B",
-      "remarks": "Now 11:36 PM",
-      "gate": "22",
-      "actualtime": "2336",
-      "scheduletime": "2128",
-      "city": "AUSTIN",
-      "flightnumber": "3952",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "9:28 PM"
-    },
     {
       "date": "08/14/26",
       "claim": "4B",
@@ -45,20 +31,6 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "9:55 PM"
-    },
-    {
-      "date": "08/14/26",
-      "claim": "7B",
-      "remarks": "Arrived",
-      "gate": "15",
-      "actualtime": "2147",
-      "scheduletime": "2156",
-      "city": "HOUSTON",
-      "flightnumber": "4021",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "9:56 PM"
     },
     {
       "date": "08/14/26",
@@ -87,6 +59,34 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "10:11 PM"
+    },
+    {
+      "date": "08/14/26",
+      "claim": "6B",
+      "remarks": "Arrived",
+      "gate": "12",
+      "actualtime": "2217",
+      "scheduletime": "2221",
+      "city": "ATLANTA",
+      "flightnumber": "1577",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "10:21 PM"
+    },
+    {
+      "date": "08/14/26",
+      "claim": "4B",
+      "remarks": "Now 11:54 PM",
+      "gate": "7",
+      "actualtime": "2354",
+      "scheduletime": "2225",
+      "city": "CHICAGO/MIDWAY",
+      "flightnumber": "4975",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "10:25 PM"
     }
   ]
 }
