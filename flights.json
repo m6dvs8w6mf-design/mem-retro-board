@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-08-15T22:10:05.159Z",
+  "updatedAt": "2026-08-15T22:36:06.159Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/15/26",
       "claim": "",
-      "remarks": "Now 6:10 PM",
+      "remarks": "Now 6:51 PM",
       "gate": "15",
-      "actualtime": "1810",
+      "actualtime": "1851",
       "scheduletime": "1633",
       "city": "DENVER",
       "flightnumber": "2028",
@@ -33,9 +33,9 @@
     {
       "date": "08/15/26",
       "claim": "",
-      "remarks": "Now 5:27 PM",
+      "remarks": "Departed",
       "gate": "12",
-      "actualtime": "1727",
+      "actualtime": "1733",
       "scheduletime": "1737",
       "city": "ATLANTA",
       "flightnumber": "552",
@@ -90,20 +90,6 @@
     },
     {
       "date": "08/15/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "12",
-      "actualtime": "1633",
-      "scheduletime": "1652",
-      "city": "ATLANTA",
-      "flightnumber": "552",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "4:52 PM"
-    },
-    {
-      "date": "08/15/26",
       "claim": "3B",
       "remarks": "Arrived",
       "gate": "6",
@@ -119,9 +105,9 @@
     {
       "date": "08/15/26",
       "claim": "3B",
-      "remarks": "Now 5:30 PM",
+      "remarks": "Arrived",
       "gate": "4",
-      "actualtime": "1730",
+      "actualtime": "1728",
       "scheduletime": "1722",
       "city": "CHARLOTTE",
       "flightnumber": "5379",
@@ -133,9 +119,9 @@
     {
       "date": "08/15/26",
       "claim": "3B",
-      "remarks": "Now 5:42 PM",
-      "gate": "8",
-      "actualtime": "1742",
+      "remarks": "Now 7:34 PM",
+      "gate": "6",
+      "actualtime": "1934",
       "scheduletime": "1732",
       "city": "DALLAS FT. WORT",
       "flightnumber": "3932",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "5:32 PM"
+    },
+    {
+      "date": "08/15/26",
+      "claim": "6B",
+      "remarks": "Now 6:13 PM",
+      "gate": "14",
+      "actualtime": "1813",
+      "scheduletime": "1740",
+      "city": "SALT LAKE CITY",
+      "flightnumber": "2515",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "5:40 PM"
     }
   ]
 }
