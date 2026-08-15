@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-15T02:51:07.557Z",
+  "updatedAt": "2026-08-15T03:26:13.281Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -21,65 +21,9 @@
     {
       "date": "08/14/26",
       "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "12",
-      "actualtime": "2129",
-      "scheduletime": "2040",
-      "city": "ATLANTA",
-      "flightnumber": "1811",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "8:40 PM"
-    },
-    {
-      "date": "08/14/26",
-      "claim": "7B",
-      "remarks": "Now 10:00 PM",
-      "gate": "19",
-      "actualtime": "2200",
-      "scheduletime": "2041",
-      "city": "LAS VEGAS",
-      "flightnumber": "66",
-      "airlinecode": "G4",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "8:41 PM"
-    },
-    {
-      "date": "08/14/26",
-      "claim": "7B",
-      "remarks": "Now 10:45 PM",
-      "gate": "15",
-      "actualtime": "2245",
-      "scheduletime": "2042",
-      "city": "DENVER",
-      "flightnumber": "2130",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "8:42 PM"
-    },
-    {
-      "date": "08/14/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "14",
-      "actualtime": "2058",
-      "scheduletime": "2111",
-      "city": "DETROIT",
-      "flightnumber": "1230",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "9:11 PM"
-    },
-    {
-      "date": "08/14/26",
-      "claim": "6B",
-      "remarks": "Now 11:20 PM",
+      "remarks": "Now 11:36 PM",
       "gate": "22",
-      "actualtime": "2320",
+      "actualtime": "2336",
       "scheduletime": "2128",
       "city": "AUSTIN",
       "flightnumber": "3952",
@@ -87,6 +31,62 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "9:28 PM"
+    },
+    {
+      "date": "08/14/26",
+      "claim": "4B",
+      "remarks": "Arrived",
+      "gate": "5",
+      "actualtime": "2204",
+      "scheduletime": "2155",
+      "city": "NASHVILLE",
+      "flightnumber": "3758",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "9:55 PM"
+    },
+    {
+      "date": "08/14/26",
+      "claim": "7B",
+      "remarks": "Arrived",
+      "gate": "15",
+      "actualtime": "2147",
+      "scheduletime": "2156",
+      "city": "HOUSTON",
+      "flightnumber": "4021",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "9:56 PM"
+    },
+    {
+      "date": "08/14/26",
+      "claim": "3B",
+      "remarks": "Arrived",
+      "gate": "9",
+      "actualtime": "2207",
+      "scheduletime": "2156",
+      "city": "NEW YORK-LGA",
+      "flightnumber": "4696",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "9:56 PM"
+    },
+    {
+      "date": "08/14/26",
+      "claim": "6B",
+      "remarks": "Now 11:48 PM",
+      "gate": "16",
+      "actualtime": "2348",
+      "scheduletime": "2211",
+      "city": "MINNEAPOLIS",
+      "flightnumber": "4035",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "10:11 PM"
     }
   ]
 }
