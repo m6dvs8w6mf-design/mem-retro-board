@@ -1,27 +1,13 @@
 {
-  "updatedAt": "2026-08-15T15:35:09.774Z",
+  "updatedAt": "2026-08-15T15:52:56.496Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/15/26",
       "claim": "",
       "remarks": "Departed",
-      "gate": "18",
-      "actualtime": "1025",
-      "scheduletime": "1026",
-      "city": "ATLANTA",
-      "flightnumber": "2071",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "10:26 AM"
-    },
-    {
-      "date": "08/15/26",
-      "claim": "",
-      "remarks": "Now 10:38 AM",
       "gate": "4",
-      "actualtime": "1038",
+      "actualtime": "1049",
       "scheduletime": "1028",
       "city": "CHICAGO-OHARE",
       "flightnumber": "3959",
@@ -71,6 +57,20 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "12:03 PM"
+    },
+    {
+      "date": "08/15/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "4",
+      "actualtime": "1204",
+      "scheduletime": "1204",
+      "city": "DALLAS FT. WORT",
+      "flightnumber": "1086",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "12:04 PM"
     }
   ],
   "arrivals": [
@@ -105,9 +105,9 @@
     {
       "date": "08/15/26",
       "claim": "7B",
-      "remarks": "Now 11:41 AM",
+      "remarks": "Now 11:35 AM",
       "gate": "11",
-      "actualtime": "1141",
+      "actualtime": "1135",
       "scheduletime": "1103",
       "city": "CHICAGO-OHARE",
       "flightnumber": "5593",
