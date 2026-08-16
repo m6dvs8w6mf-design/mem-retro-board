@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-08-16T22:33:20.816Z",
+  "updatedAt": "2026-08-16T22:52:39.471Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/16/26",
       "claim": "",
-      "remarks": "Now 5:30 PM",
+      "remarks": "Now 5:50 PM",
       "gate": "6",
-      "actualtime": "1730",
+      "actualtime": "1750",
       "scheduletime": "1626",
       "city": "NEW YORK-LGA",
       "flightnumber": "4807",
@@ -15,20 +15,6 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "4:26 PM"
-    },
-    {
-      "date": "08/16/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "9",
-      "actualtime": "1730",
-      "scheduletime": "1635",
-      "city": "NEWARK",
-      "flightnumber": "3613",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "4:35 PM"
     },
     {
       "date": "08/16/26",
@@ -47,9 +33,9 @@
     {
       "date": "08/16/26",
       "claim": "",
-      "remarks": "Now 5:50 PM",
+      "remarks": "Departed",
       "gate": "4",
-      "actualtime": "1750",
+      "actualtime": "1751",
       "scheduletime": "1720",
       "city": "DALLAS FT. WORT",
       "flightnumber": "1929",
@@ -61,9 +47,9 @@
     {
       "date": "08/16/26",
       "claim": "",
-      "remarks": "Now 6:20 PM",
+      "remarks": "Now 6:45 PM",
       "gate": "6",
-      "actualtime": "1820",
+      "actualtime": "1845",
       "scheduletime": "1744",
       "city": "CHICAGO-OHARE",
       "flightnumber": "4507",
@@ -71,6 +57,20 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "5:44 PM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "5",
+      "actualtime": "1750",
+      "scheduletime": "1750",
+      "city": "DENVER",
+      "flightnumber": "127",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "5:50 PM"
     }
   ],
   "arrivals": [
@@ -90,52 +90,10 @@
     },
     {
       "date": "08/16/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "14",
-      "actualtime": "1642",
-      "scheduletime": "1655",
-      "city": "ATLANTA",
-      "flightnumber": "552",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "4:55 PM"
-    },
-    {
-      "date": "08/16/26",
-      "claim": "4B",
-      "remarks": "Arrived",
-      "gate": "5",
-      "actualtime": "1651",
-      "scheduletime": "1700",
-      "city": "BALTIMORE",
-      "flightnumber": "127",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "5:00 PM"
-    },
-    {
-      "date": "08/16/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "20",
-      "actualtime": "1649",
-      "scheduletime": "1710",
-      "city": "DETROIT",
-      "flightnumber": "4007",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "5:10 PM"
-    },
-    {
-      "date": "08/16/26",
       "claim": "3B",
-      "remarks": "Now 5:59 PM",
+      "remarks": "Now 6:00 PM",
       "gate": "6",
-      "actualtime": "1759",
+      "actualtime": "1800",
       "scheduletime": "1714",
       "city": "WASHINGTON",
       "flightnumber": "4444",
@@ -143,6 +101,48 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "5:14 PM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "6B",
+      "remarks": "Now 5:52 PM",
+      "gate": "18",
+      "actualtime": "1752",
+      "scheduletime": "1740",
+      "city": "SALT LAKE CITY",
+      "flightnumber": "2515",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "5:40 PM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "7B",
+      "remarks": "Now 7:49 PM",
+      "gate": "13",
+      "actualtime": "1949",
+      "scheduletime": "1756",
+      "city": "CHICAGO-OHARE",
+      "flightnumber": "4431",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "5:56 PM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "4B",
+      "remarks": "Arrived",
+      "gate": "7",
+      "actualtime": "1746",
+      "scheduletime": "1800",
+      "city": "HOUSTON (HOBBY)",
+      "flightnumber": "1036",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "6:00 PM"
     }
   ]
 }
