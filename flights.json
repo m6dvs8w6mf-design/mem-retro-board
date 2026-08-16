@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T15:48:05.738Z",
+  "updatedAt": "2026-08-16T16:00:59.279Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -15,20 +15,6 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "9:47 AM"
-    },
-    {
-      "date": "08/16/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "5",
-      "actualtime": "1033",
-      "scheduletime": "1020",
-      "city": "DALLAS-LOVE",
-      "flightnumber": "578",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "10:20 AM"
     },
     {
       "date": "08/16/26",
@@ -63,7 +49,7 @@
       "claim": "",
       "remarks": "Departed",
       "gate": "7",
-      "actualtime": "1041",
+      "actualtime": "1048",
       "scheduletime": "1045",
       "city": "ORLANDO",
       "flightnumber": "5006",
@@ -71,37 +57,23 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "10:45 AM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "",
+      "remarks": "Departed",
+      "gate": "9",
+      "actualtime": "1056",
+      "scheduletime": "1050",
+      "city": "PENSACOLA",
+      "flightnumber": "147",
+      "airlinecode": "MX",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "10:50 AM"
     }
   ],
   "arrivals": [
-    {
-      "date": "08/16/26",
-      "claim": "4B",
-      "remarks": "Arrived",
-      "gate": "7",
-      "actualtime": "0949",
-      "scheduletime": "1000",
-      "city": "DALLAS-LOVE",
-      "flightnumber": "5006",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "10:00 AM"
-    },
-    {
-      "date": "08/16/26",
-      "claim": "7B",
-      "remarks": "Arrived",
-      "gate": "9",
-      "actualtime": "0953",
-      "scheduletime": "1010",
-      "city": "PENSACOLA",
-      "flightnumber": "146",
-      "airlinecode": "MX",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "10:10 AM"
-    },
     {
       "date": "08/16/26",
       "claim": "6B",
@@ -143,6 +115,34 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "11:03 AM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "3B",
+      "remarks": "Now 11:09 AM",
+      "gate": "4",
+      "actualtime": "1109",
+      "scheduletime": "1113",
+      "city": "DALLAS FT. WORT",
+      "flightnumber": "1935",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "11:13 AM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "6B",
+      "remarks": "Now 11:08 AM",
+      "gate": "18",
+      "actualtime": "1108",
+      "scheduletime": "1123",
+      "city": "MINNEAPOLIS",
+      "flightnumber": "3989",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "11:23 AM"
     }
   ]
 }
