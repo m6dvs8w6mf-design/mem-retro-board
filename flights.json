@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T21:09:43.463Z",
+  "updatedAt": "2026-08-16T21:33:25.177Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -19,9 +19,9 @@
     {
       "date": "08/16/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "7",
-      "actualtime": "1620",
+      "actualtime": "1629",
       "scheduletime": "1620",
       "city": "NASHVILLE",
       "flightnumber": "717",
@@ -33,9 +33,9 @@
     {
       "date": "08/16/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Now 5:30 PM",
       "gate": "6",
-      "actualtime": "1626",
+      "actualtime": "1730",
       "scheduletime": "1626",
       "city": "NEW YORK-LGA",
       "flightnumber": "4807",
@@ -76,20 +76,6 @@
   "arrivals": [
     {
       "date": "08/16/26",
-      "claim": "7B",
-      "remarks": "Arrived",
-      "gate": "9",
-      "actualtime": "1515",
-      "scheduletime": "1521",
-      "city": "NEWARK",
-      "flightnumber": "3650",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "3:21 PM"
-    },
-    {
-      "date": "08/16/26",
       "claim": "3B",
       "remarks": "Now 4:38 PM",
       "gate": "2",
@@ -104,45 +90,59 @@
     },
     {
       "date": "08/16/26",
-      "claim": "4B",
+      "claim": "3B",
       "remarks": "Arrived",
-      "gate": "7",
-      "actualtime": "1523",
-      "scheduletime": "1540",
-      "city": "ORLANDO",
-      "flightnumber": "717",
+      "gate": "6",
+      "actualtime": "1555",
+      "scheduletime": "1556",
+      "city": "NEW YORK-LGA",
+      "flightnumber": "4807",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "3:56 PM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "3B",
+      "remarks": "Now 5:05 PM",
+      "gate": "4",
+      "actualtime": "1705",
+      "scheduletime": "1630",
+      "city": "DALLAS FT. WORT",
+      "flightnumber": "2969",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "4:30 PM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "6B",
+      "remarks": "Now 4:43 PM",
+      "gate": "14",
+      "actualtime": "1643",
+      "scheduletime": "1655",
+      "city": "ATLANTA",
+      "flightnumber": "552",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "4:55 PM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "4B",
+      "remarks": "Now 4:53 PM",
+      "gate": "5",
+      "actualtime": "1653",
+      "scheduletime": "1700",
+      "city": "BALTIMORE",
+      "flightnumber": "127",
       "airlinecode": "WN",
       "indicator": "D",
       "type": "A",
-      "scheduled": "3:40 PM"
-    },
-    {
-      "date": "08/16/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "16",
-      "actualtime": "1515",
-      "scheduletime": "1551",
-      "city": "NEW YORK-LGA",
-      "flightnumber": "5773",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "3:51 PM"
-    },
-    {
-      "date": "08/16/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "12",
-      "actualtime": "1531",
-      "scheduletime": "1553",
-      "city": "ATLANTA",
-      "flightnumber": "1700",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "3:53 PM"
+      "scheduled": "5:00 PM"
     }
   ]
 }
