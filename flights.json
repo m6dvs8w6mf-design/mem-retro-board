@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T07:58:29.923Z",
+  "updatedAt": "2026-08-16T08:36:15.655Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -77,9 +77,9 @@
     {
       "date": "08/16/26",
       "claim": "7B",
-      "remarks": "On Time",
+      "remarks": "Now 7:29 AM",
       "gate": "10",
-      "actualtime": "0744",
+      "actualtime": "0729",
       "scheduletime": "0744",
       "city": "FT. LAUDERDALE",
       "flightnumber": "535",
