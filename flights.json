@@ -1,27 +1,13 @@
 {
-  "updatedAt": "2026-08-16T16:35:05.949Z",
+  "updatedAt": "2026-08-16T16:56:16.986Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/16/26",
       "claim": "",
       "remarks": "Departed",
-      "gate": "6",
-      "actualtime": "1131",
-      "scheduletime": "1026",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "3959",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "10:26 AM"
-    },
-    {
-      "date": "08/16/26",
-      "claim": "",
-      "remarks": "On Time",
       "gate": "11",
-      "actualtime": "1144",
+      "actualtime": "1149",
       "scheduletime": "1144",
       "city": "HOUSTON",
       "flightnumber": "5285",
@@ -33,9 +19,9 @@
     {
       "date": "08/16/26",
       "claim": "",
-      "remarks": "Now 11:41 AM",
+      "remarks": "Departed",
       "gate": "12",
-      "actualtime": "1141",
+      "actualtime": "1145",
       "scheduletime": "1146",
       "city": "ATLANTA",
       "flightnumber": "82",
@@ -47,9 +33,9 @@
     {
       "date": "08/16/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "18",
-      "actualtime": "1203",
+      "actualtime": "1153",
       "scheduletime": "1203",
       "city": "MINNEAPOLIS",
       "flightnumber": "3989",
@@ -71,23 +57,23 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "12:04 PM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "5",
+      "actualtime": "1240",
+      "scheduletime": "1240",
+      "city": "BALTIMORE",
+      "flightnumber": "425",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "12:40 PM"
     }
   ],
   "arrivals": [
-    {
-      "date": "08/16/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "12",
-      "actualtime": "1039",
-      "scheduletime": "1039",
-      "city": "ATLANTA",
-      "flightnumber": "2937",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "10:39 AM"
-    },
     {
       "date": "08/16/26",
       "claim": "3B",
@@ -133,9 +119,9 @@
     {
       "date": "08/16/26",
       "claim": "3B",
-      "remarks": "Now 12:45 PM",
+      "remarks": "Now 12:44 PM",
       "gate": "2",
-      "actualtime": "1245",
+      "actualtime": "1244",
       "scheduletime": "1240",
       "city": "PHILADELPHIA",
       "flightnumber": "5202",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "12:40 PM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "6B",
+      "remarks": "Now 12:34 PM",
+      "gate": "12",
+      "actualtime": "1234",
+      "scheduletime": "1243",
+      "city": "ATLANTA",
+      "flightnumber": "2778",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "12:43 PM"
     }
   ]
 }
