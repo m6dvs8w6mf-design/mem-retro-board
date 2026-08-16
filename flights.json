@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T09:34:56.968Z",
+  "updatedAt": "2026-08-16T09:55:05.603Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -119,9 +119,9 @@
     {
       "date": "08/16/26",
       "claim": "7B",
-      "remarks": "On Time",
+      "remarks": "Now 11:36 AM",
       "gate": "13",
-      "actualtime": "0906",
+      "actualtime": "1136",
       "scheduletime": "0906",
       "city": "HOUSTON",
       "flightnumber": "5722",
