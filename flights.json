@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T15:28:09.814Z",
+  "updatedAt": "2026-08-16T15:48:05.738Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -21,7 +21,7 @@
       "claim": "",
       "remarks": "Departed",
       "gate": "5",
-      "actualtime": "1022",
+      "actualtime": "1033",
       "scheduletime": "1020",
       "city": "DALLAS-LOVE",
       "flightnumber": "578",
@@ -33,37 +33,9 @@
     {
       "date": "08/16/26",
       "claim": "",
-      "remarks": "Departed",
-      "gate": "12",
-      "actualtime": "1021",
-      "scheduletime": "1022",
-      "city": "DETROIT",
-      "flightnumber": "3137",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "10:22 AM"
-    },
-    {
-      "date": "08/16/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "14",
-      "actualtime": "1019",
-      "scheduletime": "1026",
-      "city": "ATLANTA",
-      "flightnumber": "2071",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "10:26 AM"
-    },
-    {
-      "date": "08/16/26",
-      "claim": "",
-      "remarks": "Now 11:00 AM",
+      "remarks": "Now 11:15 AM",
       "gate": "6",
-      "actualtime": "1100",
+      "actualtime": "1115",
       "scheduletime": "1026",
       "city": "CHICAGO-OHARE",
       "flightnumber": "3959",
@@ -71,65 +43,37 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "10:26 AM"
-    }
-  ],
-  "arrivals": [
-    {
-      "date": "08/16/26",
-      "claim": "7B",
-      "remarks": "Now 1:11 PM",
-      "gate": "13",
-      "actualtime": "1311",
-      "scheduletime": "0906",
-      "city": "HOUSTON",
-      "flightnumber": "5722",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "9:06 AM"
     },
     {
       "date": "08/16/26",
-      "claim": "4B",
-      "remarks": "Arrived",
-      "gate": "5",
-      "actualtime": "0938",
-      "scheduletime": "0945",
-      "city": "NASHVILLE",
-      "flightnumber": "578",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "9:45 AM"
-    },
-    {
-      "date": "08/16/26",
-      "claim": "3B",
-      "remarks": "Arrived",
+      "claim": "",
+      "remarks": "Departed",
       "gate": "4",
-      "actualtime": "0932",
-      "scheduletime": "0946",
+      "actualtime": "1046",
+      "scheduletime": "1040",
       "city": "CHARLOTTE",
       "flightnumber": "1354",
       "airlinecode": "AA",
       "indicator": "D",
-      "type": "A",
-      "scheduled": "9:46 AM"
+      "type": "D",
+      "scheduled": "10:40 AM"
     },
     {
       "date": "08/16/26",
-      "claim": "3B",
-      "remarks": "Arrived",
-      "gate": "6",
-      "actualtime": "0943",
-      "scheduletime": "0956",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "3959",
-      "airlinecode": "AA",
+      "claim": "",
+      "remarks": "Departed",
+      "gate": "7",
+      "actualtime": "1041",
+      "scheduletime": "1045",
+      "city": "ORLANDO",
+      "flightnumber": "5006",
+      "airlinecode": "WN",
       "indicator": "D",
-      "type": "A",
-      "scheduled": "9:56 AM"
-    },
+      "type": "D",
+      "scheduled": "10:45 AM"
+    }
+  ],
+  "arrivals": [
     {
       "date": "08/16/26",
       "claim": "4B",
@@ -143,6 +87,62 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "10:00 AM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "7B",
+      "remarks": "Arrived",
+      "gate": "9",
+      "actualtime": "0953",
+      "scheduletime": "1010",
+      "city": "PENSACOLA",
+      "flightnumber": "146",
+      "airlinecode": "MX",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "10:10 AM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "6B",
+      "remarks": "Arrived",
+      "gate": "16",
+      "actualtime": "1019",
+      "scheduletime": "1017",
+      "city": "NEW YORK-LGA",
+      "flightnumber": "4903",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "10:17 AM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "6B",
+      "remarks": "Arrived",
+      "gate": "12",
+      "actualtime": "1039",
+      "scheduletime": "1039",
+      "city": "ATLANTA",
+      "flightnumber": "2937",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "10:39 AM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "7B",
+      "remarks": "Arrived",
+      "gate": "11",
+      "actualtime": "1030",
+      "scheduletime": "1103",
+      "city": "CHICAGO-OHARE",
+      "flightnumber": "5593",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "11:03 AM"
     }
   ]
 }
