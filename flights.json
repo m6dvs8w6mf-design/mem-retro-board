@@ -1,35 +1,7 @@
 {
-  "updatedAt": "2026-08-16T20:52:20.972Z",
+  "updatedAt": "2026-08-16T21:09:43.463Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
-    {
-      "date": "08/16/26",
-      "claim": "",
-      "remarks": "Now 4:00 PM",
-      "gate": "13",
-      "actualtime": "1600",
-      "scheduletime": "1437",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "5780",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "2:37 PM"
-    },
-    {
-      "date": "08/16/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "11",
-      "actualtime": "1542",
-      "scheduletime": "1527",
-      "city": "HOUSTON",
-      "flightnumber": "5798",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "3:27 PM"
-    },
     {
       "date": "08/16/26",
       "claim": "",
@@ -71,6 +43,34 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "4:26 PM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "15",
+      "actualtime": "1633",
+      "scheduletime": "1633",
+      "city": "DENVER",
+      "flightnumber": "2028",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "4:33 PM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "9",
+      "actualtime": "1635",
+      "scheduletime": "1635",
+      "city": "NEWARK",
+      "flightnumber": "3613",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "4:35 PM"
     }
   ],
   "arrivals": [
@@ -91,9 +91,9 @@
     {
       "date": "08/16/26",
       "claim": "3B",
-      "remarks": "Now 4:40 PM",
+      "remarks": "Now 4:38 PM",
       "gate": "2",
-      "actualtime": "1640",
+      "actualtime": "1638",
       "scheduletime": "1529",
       "city": "CHICAGO-OHARE",
       "flightnumber": "4285",
