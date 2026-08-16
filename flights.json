@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-16T01:09:37.326Z",
+  "updatedAt": "2026-08-16T02:34:28.456Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -15,85 +15,29 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "6:11 PM"
-    },
-    {
-      "date": "08/15/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "13",
-      "actualtime": "1959",
-      "scheduletime": "1831",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "4409",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "6:31 PM"
     }
   ],
   "arrivals": [
     {
       "date": "08/15/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "18",
-      "actualtime": "1954",
-      "scheduletime": "1839",
-      "city": "ATLANTA",
-      "flightnumber": "2939",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "6:39 PM"
-    },
-    {
-      "date": "08/15/26",
       "claim": "3B",
-      "remarks": "Now 8:31 PM",
-      "gate": "21",
-      "actualtime": "2031",
-      "scheduletime": "1925",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "4647",
+      "remarks": "Arrived",
+      "gate": "6",
+      "actualtime": "2105",
+      "scheduletime": "2017",
+      "city": "CHARLOTTE",
+      "flightnumber": "1354",
       "airlinecode": "AA",
       "indicator": "D",
       "type": "A",
-      "scheduled": "7:25 PM"
-    },
-    {
-      "date": "08/15/26",
-      "claim": "4B",
-      "remarks": "Arrived",
-      "gate": "5",
-      "actualtime": "1934",
-      "scheduletime": "1955",
-      "city": "CHICAGO/MIDWAY",
-      "flightnumber": "4267",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "7:55 PM"
-    },
-    {
-      "date": "08/15/26",
-      "claim": "4B",
-      "remarks": "Arrived",
-      "gate": "7",
-      "actualtime": "2008",
-      "scheduletime": "2005",
-      "city": "ORLANDO",
-      "flightnumber": "4112",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "8:05 PM"
+      "scheduled": "8:17 PM"
     },
     {
       "date": "08/15/26",
       "claim": "3B",
-      "remarks": "Now 10:35 PM",
+      "remarks": "Now 11:46 PM",
       "gate": "4",
-      "actualtime": "2235",
+      "actualtime": "2346",
       "scheduletime": "2017",
       "city": "DALLAS FT. WORT",
       "flightnumber": "2153",
@@ -101,6 +45,48 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "8:17 PM"
+    },
+    {
+      "date": "08/15/26",
+      "claim": "7B",
+      "remarks": "Arrived",
+      "gate": "15",
+      "actualtime": "2042",
+      "scheduletime": "2042",
+      "city": "DENVER",
+      "flightnumber": "2130",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "8:42 PM"
+    },
+    {
+      "date": "08/15/26",
+      "claim": "4B",
+      "remarks": "Now 11:01 PM",
+      "gate": "3",
+      "actualtime": "2301",
+      "scheduletime": "2055",
+      "city": "DENVER",
+      "flightnumber": "179",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "8:55 PM"
+    },
+    {
+      "date": "08/15/26",
+      "claim": "7B",
+      "remarks": "Arrived",
+      "gate": "13",
+      "actualtime": "2128",
+      "scheduletime": "2156",
+      "city": "HOUSTON",
+      "flightnumber": "4021",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "9:56 PM"
     }
   ]
 }
