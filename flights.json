@@ -1,27 +1,13 @@
 {
-  "updatedAt": "2026-08-16T13:26:49.728Z",
+  "updatedAt": "2026-08-16T13:52:49.113Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/16/26",
       "claim": "",
       "remarks": "Departed",
-      "gate": "16",
-      "actualtime": "0824",
-      "scheduletime": "0826",
-      "city": "ATLANTA",
-      "flightnumber": "5247",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "8:26 AM"
-    },
-    {
-      "date": "08/16/26",
-      "claim": "",
-      "remarks": "On Time",
       "gate": "7",
-      "actualtime": "0830",
+      "actualtime": "0852",
       "scheduletime": "0830",
       "city": "NASHVILLE",
       "flightnumber": "3872",
@@ -35,7 +21,7 @@
       "claim": "",
       "remarks": "Departed",
       "gate": "15",
-      "actualtime": "0823",
+      "actualtime": "0843",
       "scheduletime": "0830",
       "city": "DENVER",
       "flightnumber": "1714",
@@ -47,9 +33,9 @@
     {
       "date": "08/16/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "10",
-      "actualtime": "0834",
+      "actualtime": "0838",
       "scheduletime": "0834",
       "city": "FT. LAUDERDALE",
       "flightnumber": "512",
@@ -71,27 +57,27 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "9:00 AM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "",
+      "remarks": "Now 9:21 AM",
+      "gate": "18",
+      "actualtime": "0921",
+      "scheduletime": "0926",
+      "city": "ATLANTA",
+      "flightnumber": "1149",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "9:26 AM"
     }
   ],
   "arrivals": [
     {
       "date": "08/16/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "16",
-      "actualtime": "0741",
-      "scheduletime": "0746",
-      "city": "ATLANTA",
-      "flightnumber": "5247",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "7:46 AM"
-    },
-    {
-      "date": "08/16/26",
       "claim": "3B",
-      "remarks": "Now 8:45 AM",
+      "remarks": "Arrived",
       "gate": "8",
       "actualtime": "0845",
       "scheduletime": "0856",
@@ -105,9 +91,9 @@
     {
       "date": "08/16/26",
       "claim": "7B",
-      "remarks": "Now 12:34 PM",
+      "remarks": "Now 12:13 PM",
       "gate": "13",
-      "actualtime": "1234",
+      "actualtime": "1213",
       "scheduletime": "0906",
       "city": "HOUSTON",
       "flightnumber": "5722",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "9:37 AM"
+    },
+    {
+      "date": "08/16/26",
+      "claim": "4B",
+      "remarks": "Now 9:36 AM",
+      "gate": "5",
+      "actualtime": "0936",
+      "scheduletime": "0945",
+      "city": "NASHVILLE",
+      "flightnumber": "578",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "9:45 AM"
     }
   ]
 }
