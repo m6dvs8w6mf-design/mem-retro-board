@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-17T05:59:10.027Z",
+  "updatedAt": "2026-08-17T07:09:13.756Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -78,7 +78,7 @@
       "date": "08/17/26",
       "claim": "6B",
       "remarks": "On Time",
-      "gate": "16",
+      "gate": "12",
       "actualtime": "0746",
       "scheduletime": "0746",
       "city": "ATLANTA",
