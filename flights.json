@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-17T15:53:06.799Z",
+  "updatedAt": "2026-08-17T16:17:03.569Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -20,22 +20,8 @@
       "date": "08/17/26",
       "claim": "",
       "remarks": "Departed",
-      "gate": "14",
-      "actualtime": "1044",
-      "scheduletime": "1033",
-      "city": "ATLANTA",
-      "flightnumber": "2071",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "10:33 AM"
-    },
-    {
-      "date": "08/17/26",
-      "claim": "",
-      "remarks": "Now 11:13 AM",
       "gate": "16",
-      "actualtime": "1113",
+      "actualtime": "1105",
       "scheduletime": "1118",
       "city": "NEW YORK-LGA",
       "flightnumber": "4903",
@@ -71,6 +57,20 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "11:21 AM"
+    },
+    {
+      "date": "08/17/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "11",
+      "actualtime": "1144",
+      "scheduletime": "1144",
+      "city": "HOUSTON",
+      "flightnumber": "5285",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "11:44 AM"
     }
   ],
   "arrivals": [
