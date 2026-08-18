@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-08-18T06:17:25.776Z",
+  "updatedAt": "2026-08-18T07:09:07.956Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/18/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Now 12:00 PM",
       "gate": "10",
-      "actualtime": "0532",
+      "actualtime": "1200",
       "scheduletime": "0532",
       "city": "DALLAS FT. WORT",
       "flightnumber": "1940",
