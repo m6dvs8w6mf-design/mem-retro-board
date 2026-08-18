@@ -1,49 +1,7 @@
 {
-  "updatedAt": "2026-08-18T21:49:58.573Z",
+  "updatedAt": "2026-08-18T22:06:23.873Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
-    {
-      "date": "08/18/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "15",
-      "actualtime": "1647",
-      "scheduletime": "1633",
-      "city": "DENVER",
-      "flightnumber": "2028",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "4:33 PM"
-    },
-    {
-      "date": "08/18/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "9",
-      "actualtime": "1646",
-      "scheduletime": "1639",
-      "city": "NEWARK",
-      "flightnumber": "3613",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "4:39 PM"
-    },
-    {
-      "date": "08/18/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "12",
-      "actualtime": "1644",
-      "scheduletime": "1642",
-      "city": "ATLANTA",
-      "flightnumber": "1700",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "4:42 PM"
-    },
     {
       "date": "08/18/26",
       "claim": "",
@@ -71,6 +29,48 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "5:20 PM"
+    },
+    {
+      "date": "08/18/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "4",
+      "actualtime": "1744",
+      "scheduletime": "1744",
+      "city": "CHICAGO-OHARE",
+      "flightnumber": "4507",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "5:44 PM"
+    },
+    {
+      "date": "08/18/26",
+      "claim": "",
+      "remarks": "Now 5:56 PM",
+      "gate": "2",
+      "actualtime": "1756",
+      "scheduletime": "1752",
+      "city": "CHARLOTTE",
+      "flightnumber": "5269",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "5:52 PM"
+    },
+    {
+      "date": "08/18/26",
+      "claim": "",
+      "remarks": "Now 6:37 PM",
+      "gate": "12",
+      "actualtime": "1837",
+      "scheduletime": "1753",
+      "city": "DETROIT",
+      "flightnumber": "4007",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "5:53 PM"
     }
   ],
   "arrivals": [
@@ -119,9 +119,9 @@
     {
       "date": "08/18/26",
       "claim": "3B",
-      "remarks": "Now 4:55 PM",
+      "remarks": "Arrived",
       "gate": "4",
-      "actualtime": "1655",
+      "actualtime": "1703",
       "scheduletime": "1714",
       "city": "WASHINGTON",
       "flightnumber": "4444",
