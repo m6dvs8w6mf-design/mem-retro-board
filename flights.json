@@ -1,27 +1,13 @@
 {
-  "updatedAt": "2026-08-18T22:06:23.873Z",
+  "updatedAt": "2026-08-18T22:37:50.273Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/18/26",
       "claim": "",
-      "remarks": "Now 5:05 PM",
-      "gate": "16",
-      "actualtime": "1705",
-      "scheduletime": "1710",
-      "city": "NEW YORK-LGA",
-      "flightnumber": "5779",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "5:10 PM"
-    },
-    {
-      "date": "08/18/26",
-      "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "6",
-      "actualtime": "1720",
+      "actualtime": "1733",
       "scheduletime": "1720",
       "city": "DALLAS FT. WORT",
       "flightnumber": "1929",
@@ -33,9 +19,9 @@
     {
       "date": "08/18/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "4",
-      "actualtime": "1744",
+      "actualtime": "1734",
       "scheduletime": "1744",
       "city": "CHICAGO-OHARE",
       "flightnumber": "4507",
@@ -71,6 +57,20 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "5:53 PM"
+    },
+    {
+      "date": "08/18/26",
+      "claim": "",
+      "remarks": "Now 5:55 PM",
+      "gate": "14",
+      "actualtime": "1755",
+      "scheduletime": "1800",
+      "city": "ATLANTA",
+      "flightnumber": "552",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "6:00 PM"
     }
   ],
   "arrivals": [
@@ -133,9 +133,9 @@
     {
       "date": "08/18/26",
       "claim": "4B",
-      "remarks": "On Time",
+      "remarks": "Arrived",
       "gate": "5",
-      "actualtime": "1715",
+      "actualtime": "1721",
       "scheduletime": "1715",
       "city": "HOUSTON (HOBBY)",
       "flightnumber": "596",
