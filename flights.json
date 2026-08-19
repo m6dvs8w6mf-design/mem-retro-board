@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-19T16:00:34.216Z",
+  "updatedAt": "2026-08-19T16:40:18.543Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -19,9 +19,9 @@
     {
       "date": "08/19/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "16",
-      "actualtime": "1118",
+      "actualtime": "1125",
       "scheduletime": "1118",
       "city": "NEW YORK-LGA",
       "flightnumber": "4903",
@@ -33,9 +33,9 @@
     {
       "date": "08/19/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "10",
-      "actualtime": "1121",
+      "actualtime": "1129",
       "scheduletime": "1121",
       "city": "CHARLOTTE",
       "flightnumber": "1354",
@@ -47,9 +47,9 @@
     {
       "date": "08/19/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "11",
-      "actualtime": "1144",
+      "actualtime": "1138",
       "scheduletime": "1144",
       "city": "HOUSTON",
       "flightnumber": "5285",
@@ -61,9 +61,9 @@
     {
       "date": "08/19/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Now 11:40 AM",
       "gate": "12",
-      "actualtime": "1146",
+      "actualtime": "1140",
       "scheduletime": "1146",
       "city": "ATLANTA",
       "flightnumber": "82",
@@ -74,62 +74,6 @@
     }
   ],
   "arrivals": [
-    {
-      "date": "08/19/26",
-      "claim": "3B",
-      "remarks": "Arrived",
-      "gate": "8",
-      "actualtime": "1006",
-      "scheduletime": "0956",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "3959",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "9:56 AM"
-    },
-    {
-      "date": "08/19/26",
-      "claim": "3B",
-      "remarks": "Now 11:42 AM",
-      "gate": "2",
-      "actualtime": "1142",
-      "scheduletime": "1002",
-      "city": "WASHINGTON",
-      "flightnumber": "5596",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "10:02 AM"
-    },
-    {
-      "date": "08/19/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "16",
-      "actualtime": "1019",
-      "scheduletime": "1036",
-      "city": "NEW YORK-LGA",
-      "flightnumber": "4903",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "10:36 AM"
-    },
-    {
-      "date": "08/19/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "12",
-      "actualtime": "1028",
-      "scheduletime": "1039",
-      "city": "ATLANTA",
-      "flightnumber": "2937",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "10:39 AM"
-    },
     {
       "date": "08/19/26",
       "claim": "7B",
@@ -143,6 +87,62 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "11:03 AM"
+    },
+    {
+      "date": "08/19/26",
+      "claim": "3B",
+      "remarks": "Arrived",
+      "gate": "8",
+      "actualtime": "1101",
+      "scheduletime": "1113",
+      "city": "DALLAS FT. WORT",
+      "flightnumber": "1935",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "11:13 AM"
+    },
+    {
+      "date": "08/19/26",
+      "claim": "6B",
+      "remarks": "Now 12:26 PM",
+      "gate": "18",
+      "actualtime": "1226",
+      "scheduletime": "1123",
+      "city": "MINNEAPOLIS",
+      "flightnumber": "3989",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "11:23 AM"
+    },
+    {
+      "date": "08/19/26",
+      "claim": "4B",
+      "remarks": "Now 11:54 AM",
+      "gate": "5",
+      "actualtime": "1154",
+      "scheduletime": "1145",
+      "city": "CHICAGO/MIDWAY",
+      "flightnumber": "4258",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "11:45 AM"
+    },
+    {
+      "date": "08/19/26",
+      "claim": "3B",
+      "remarks": "Now 12:26 PM",
+      "gate": "2",
+      "actualtime": "1226",
+      "scheduletime": "1240",
+      "city": "PHILADELPHIA",
+      "flightnumber": "5202",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "12:40 PM"
     }
   ]
 }
