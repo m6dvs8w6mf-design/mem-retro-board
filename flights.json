@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20T08:50:02.633Z",
+  "updatedAt": "2026-08-20T09:19:28.218Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -120,7 +120,7 @@
       "date": "08/20/26",
       "claim": "7B",
       "remarks": "On Time",
-      "gate": "13",
+      "gate": "15",
       "actualtime": "0906",
       "scheduletime": "0906",
       "city": "HOUSTON",
