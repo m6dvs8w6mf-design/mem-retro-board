@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-08-20T09:54:01.634Z",
+  "updatedAt": "2026-08-20T10:22:24.961Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/20/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "3",
-      "actualtime": "0515",
+      "actualtime": "0521",
       "scheduletime": "0515",
       "city": "CHICAGO/MIDWAY",
       "flightnumber": "2851",
@@ -19,9 +19,9 @@
     {
       "date": "08/20/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Now 5:45 AM",
       "gate": "10",
-      "actualtime": "0532",
+      "actualtime": "0545",
       "scheduletime": "0532",
       "city": "DALLAS FT. WORT",
       "flightnumber": "1940",
@@ -77,9 +77,9 @@
     {
       "date": "08/20/26",
       "claim": "6B",
-      "remarks": "On Time",
+      "remarks": "Now 7:43 AM",
       "gate": "14",
-      "actualtime": "0746",
+      "actualtime": "0743",
       "scheduletime": "0746",
       "city": "ATLANTA",
       "flightnumber": "5247",
@@ -133,9 +133,9 @@
     {
       "date": "08/20/26",
       "claim": "6B",
-      "remarks": "Now 9:25 AM",
+      "remarks": "Now 9:46 AM",
       "gate": "22",
-      "actualtime": "0925",
+      "actualtime": "0946",
       "scheduletime": "0927",
       "city": "ATLANTA",
       "flightnumber": "2071",
