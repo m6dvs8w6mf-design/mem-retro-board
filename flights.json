@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-21T19:31:44.608Z",
+  "updatedAt": "2026-08-21T19:50:56.796Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -33,9 +33,9 @@
     {
       "date": "08/21/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Now 2:49 PM",
       "gate": "14",
-      "actualtime": "1454",
+      "actualtime": "1449",
       "scheduletime": "1454",
       "city": "ATLANTA",
       "flightnumber": "1681",
@@ -133,9 +133,9 @@
     {
       "date": "08/21/26",
       "claim": "3B",
-      "remarks": "Now 3:43 PM",
+      "remarks": "Now 4:20 PM",
       "gate": "6",
-      "actualtime": "1543",
+      "actualtime": "1620",
       "scheduletime": "1439",
       "city": "CHARLOTTE",
       "flightnumber": "1790",
