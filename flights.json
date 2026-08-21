@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-21T20:39:35.373Z",
+  "updatedAt": "2026-08-21T20:59:20.306Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -15,20 +15,6 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "3:20 PM"
-    },
-    {
-      "date": "08/21/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "11",
-      "actualtime": "1536",
-      "scheduletime": "1527",
-      "city": "HOUSTON",
-      "flightnumber": "5798",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "3:27 PM"
     },
     {
       "date": "08/21/26",
@@ -71,6 +57,20 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "4:26 PM"
+    },
+    {
+      "date": "08/21/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "15",
+      "actualtime": "1633",
+      "scheduletime": "1633",
+      "city": "DENVER",
+      "flightnumber": "2028",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "4:33 PM"
     }
   ],
   "arrivals": [
@@ -119,9 +119,9 @@
     {
       "date": "08/21/26",
       "claim": "3B",
-      "remarks": "Now 4:00 PM",
+      "remarks": "Now 4:02 PM",
       "gate": "2",
-      "actualtime": "1600",
+      "actualtime": "1602",
       "scheduletime": "1529",
       "city": "CHICAGO-OHARE",
       "flightnumber": "4285",
@@ -133,9 +133,9 @@
     {
       "date": "08/21/26",
       "claim": "6B",
-      "remarks": "Now 3:57 PM",
+      "remarks": "Now 4:02 PM",
       "gate": "16",
-      "actualtime": "1557",
+      "actualtime": "1602",
       "scheduletime": "1551",
       "city": "NEW YORK-LGA",
       "flightnumber": "5773",
