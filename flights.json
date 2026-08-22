@@ -1,27 +1,13 @@
 {
-  "updatedAt": "2026-08-22T17:16:36.245Z",
+  "updatedAt": "2026-08-22T17:39:59.501Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/22/26",
       "claim": "",
       "remarks": "Departed",
-      "gate": "18",
-      "actualtime": "1210",
-      "scheduletime": "1203",
-      "city": "MINNEAPOLIS",
-      "flightnumber": "3989",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "12:03 PM"
-    },
-    {
-      "date": "08/22/26",
-      "claim": "",
-      "remarks": "Now 12:30 PM",
       "gate": "4",
-      "actualtime": "1230",
+      "actualtime": "1235",
       "scheduletime": "1204",
       "city": "DALLAS FT. WORT",
       "flightnumber": "1086",
@@ -35,7 +21,7 @@
       "claim": "",
       "remarks": "Departed",
       "gate": "14",
-      "actualtime": "1209",
+      "actualtime": "1237",
       "scheduletime": "1212",
       "city": "DETROIT",
       "flightnumber": "4157",
@@ -47,9 +33,9 @@
     {
       "date": "08/22/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "7",
-      "actualtime": "1215",
+      "actualtime": "1230",
       "scheduletime": "1215",
       "city": "HOUSTON (HOBBY)",
       "flightnumber": "3745",
@@ -61,9 +47,9 @@
     {
       "date": "08/22/26",
       "claim": "",
-      "remarks": "Now 12:28 PM",
+      "remarks": "Departed",
       "gate": "2",
-      "actualtime": "1228",
+      "actualtime": "1236",
       "scheduletime": "1224",
       "city": "WASHINGTON",
       "flightnumber": "5596",
@@ -71,6 +57,20 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "12:24 PM"
+    },
+    {
+      "date": "08/22/26",
+      "claim": "",
+      "remarks": "Departed",
+      "gate": "5",
+      "actualtime": "1235",
+      "scheduletime": "1240",
+      "city": "CHICAGO/MIDWAY",
+      "flightnumber": "4769",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "12:40 PM"
     }
   ],
   "arrivals": [
@@ -119,7 +119,7 @@
     {
       "date": "08/22/26",
       "claim": "3B",
-      "remarks": "Now 12:26 PM",
+      "remarks": "Arrived",
       "gate": "2",
       "actualtime": "1226",
       "scheduletime": "1240",
@@ -133,9 +133,9 @@
     {
       "date": "08/22/26",
       "claim": "6B",
-      "remarks": "Now 12:29 PM",
+      "remarks": "Arrived",
       "gate": "12",
-      "actualtime": "1229",
+      "actualtime": "1228",
       "scheduletime": "1243",
       "city": "ATLANTA",
       "flightnumber": "2778",
