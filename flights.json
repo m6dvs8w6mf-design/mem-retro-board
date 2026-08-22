@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-08-22T09:55:50.937Z",
+  "updatedAt": "2026-08-22T10:21:12.650Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/22/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "3",
-      "actualtime": "0510",
+      "actualtime": "0516",
       "scheduletime": "0510",
       "city": "CHICAGO/MIDWAY",
       "flightnumber": "2851",
