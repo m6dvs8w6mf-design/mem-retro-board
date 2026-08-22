@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-22T19:47:36.562Z",
+  "updatedAt": "2026-08-22T20:00:48.455Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -7,7 +7,7 @@
       "claim": "",
       "remarks": "Departed",
       "gate": "13",
-      "actualtime": "1445",
+      "actualtime": "1449",
       "scheduletime": "1437",
       "city": "CHICAGO-OHARE",
       "flightnumber": "5780",
@@ -21,7 +21,7 @@
       "claim": "",
       "remarks": "Departed",
       "gate": "4",
-      "actualtime": "1445",
+      "actualtime": "1455",
       "scheduletime": "1448",
       "city": "DALLAS FT. WORT",
       "flightnumber": "3888",
