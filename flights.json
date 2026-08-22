@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-22T17:39:59.501Z",
+  "updatedAt": "2026-08-22T17:57:23.295Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -7,7 +7,7 @@
       "claim": "",
       "remarks": "Departed",
       "gate": "4",
-      "actualtime": "1235",
+      "actualtime": "1248",
       "scheduletime": "1204",
       "city": "DALLAS FT. WORT",
       "flightnumber": "1086",
@@ -20,36 +20,8 @@
       "date": "08/22/26",
       "claim": "",
       "remarks": "Departed",
-      "gate": "14",
-      "actualtime": "1237",
-      "scheduletime": "1212",
-      "city": "DETROIT",
-      "flightnumber": "4157",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "12:12 PM"
-    },
-    {
-      "date": "08/22/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "7",
-      "actualtime": "1230",
-      "scheduletime": "1215",
-      "city": "HOUSTON (HOBBY)",
-      "flightnumber": "3745",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "12:15 PM"
-    },
-    {
-      "date": "08/22/26",
-      "claim": "",
-      "remarks": "Departed",
       "gate": "2",
-      "actualtime": "1236",
+      "actualtime": "1248",
       "scheduletime": "1224",
       "city": "WASHINGTON",
       "flightnumber": "5596",
@@ -63,7 +35,7 @@
       "claim": "",
       "remarks": "Departed",
       "gate": "5",
-      "actualtime": "1235",
+      "actualtime": "1245",
       "scheduletime": "1240",
       "city": "CHICAGO/MIDWAY",
       "flightnumber": "4769",
@@ -71,6 +43,34 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "12:40 PM"
+    },
+    {
+      "date": "08/22/26",
+      "claim": "",
+      "remarks": "Departed",
+      "gate": "22",
+      "actualtime": "1249",
+      "scheduletime": "1300",
+      "city": "NEW YORK-LGA",
+      "flightnumber": "5673",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "1:00 PM"
+    },
+    {
+      "date": "08/22/26",
+      "claim": "",
+      "remarks": "Now 1:16 PM",
+      "gate": "2",
+      "actualtime": "1316",
+      "scheduletime": "1311",
+      "city": "PHILADELPHIA",
+      "flightnumber": "5202",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "1:11 PM"
     }
   ],
   "arrivals": [
@@ -90,38 +90,10 @@
     },
     {
       "date": "08/22/26",
-      "claim": "4B",
-      "remarks": "Arrived",
-      "gate": "5",
-      "actualtime": "1154",
-      "scheduletime": "1200",
-      "city": "HOUSTON (HOBBY)",
-      "flightnumber": "4769",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "12:00 PM"
-    },
-    {
-      "date": "08/22/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "22",
-      "actualtime": "1147",
-      "scheduletime": "1201",
-      "city": "NEW YORK-LGA",
-      "flightnumber": "5673",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "12:01 PM"
-    },
-    {
-      "date": "08/22/26",
       "claim": "3B",
       "remarks": "Arrived",
       "gate": "2",
-      "actualtime": "1226",
+      "actualtime": "1246",
       "scheduletime": "1240",
       "city": "PHILADELPHIA",
       "flightnumber": "5202",
@@ -143,6 +115,34 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "12:43 PM"
+    },
+    {
+      "date": "08/22/26",
+      "claim": "4B",
+      "remarks": "Now 12:57 PM",
+      "gate": "7",
+      "actualtime": "1257",
+      "scheduletime": "1305",
+      "city": "DALLAS-LOVE",
+      "flightnumber": "717",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "1:05 PM"
+    },
+    {
+      "date": "08/22/26",
+      "claim": "7B",
+      "remarks": "Now 2:18 PM",
+      "gate": "13",
+      "actualtime": "1418",
+      "scheduletime": "1356",
+      "city": "HOUSTON",
+      "flightnumber": "5758",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "1:56 PM"
     }
   ]
 }
