@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-22T21:56:29.516Z",
+  "updatedAt": "2026-08-22T22:21:14.990Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -76,20 +76,6 @@
   "arrivals": [
     {
       "date": "08/22/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "20",
-      "actualtime": "1601",
-      "scheduletime": "1544",
-      "city": "BOSTON",
-      "flightnumber": "5594",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "3:44 PM"
-    },
-    {
-      "date": "08/22/26",
       "claim": "4B",
       "remarks": "Arrived",
       "gate": "5",
@@ -119,9 +105,9 @@
     {
       "date": "08/22/26",
       "claim": "3B",
-      "remarks": "Now 5:09 PM",
+      "remarks": "Arrived",
       "gate": "6",
-      "actualtime": "1709",
+      "actualtime": "1708",
       "scheduletime": "1715",
       "city": "WASHINGTON",
       "flightnumber": "4444",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "5:22 PM"
+    },
+    {
+      "date": "08/22/26",
+      "claim": "3B",
+      "remarks": "Now 5:15 PM",
+      "gate": "2",
+      "actualtime": "1715",
+      "scheduletime": "1732",
+      "city": "DALLAS FT. WORT",
+      "flightnumber": "3932",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "5:32 PM"
     }
   ]
 }
