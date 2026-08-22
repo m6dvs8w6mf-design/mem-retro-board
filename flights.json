@@ -1,35 +1,7 @@
 {
-  "updatedAt": "2026-08-22T15:44:13.553Z",
+  "updatedAt": "2026-08-22T15:59:11.860Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
-    {
-      "date": "08/22/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "14",
-      "actualtime": "1032",
-      "scheduletime": "1026",
-      "city": "ATLANTA",
-      "flightnumber": "2071",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "10:26 AM"
-    },
-    {
-      "date": "08/22/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "4",
-      "actualtime": "1034",
-      "scheduletime": "1028",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "3959",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "10:28 AM"
-    },
     {
       "date": "08/22/26",
       "claim": "",
@@ -71,23 +43,37 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "12:03 PM"
+    },
+    {
+      "date": "08/22/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "4",
+      "actualtime": "1204",
+      "scheduletime": "1204",
+      "city": "DALLAS FT. WORT",
+      "flightnumber": "1086",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "12:04 PM"
+    },
+    {
+      "date": "08/22/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "14",
+      "actualtime": "1212",
+      "scheduletime": "1212",
+      "city": "DETROIT",
+      "flightnumber": "4157",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "12:12 PM"
     }
   ],
   "arrivals": [
-    {
-      "date": "08/22/26",
-      "claim": "3B",
-      "remarks": "Arrived",
-      "gate": "2",
-      "actualtime": "0947",
-      "scheduletime": "0939",
-      "city": "CHARLOTTE",
-      "flightnumber": "5360",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "9:39 AM"
-    },
     {
       "date": "08/22/26",
       "claim": "6B",
@@ -119,9 +105,9 @@
     {
       "date": "08/22/26",
       "claim": "3B",
-      "remarks": "Now 11:16 AM",
+      "remarks": "On Time",
       "gate": "4",
-      "actualtime": "1116",
+      "actualtime": "1113",
       "scheduletime": "1113",
       "city": "DALLAS FT. WORT",
       "flightnumber": "1935",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "11:23 AM"
+    },
+    {
+      "date": "08/22/26",
+      "claim": "6B",
+      "remarks": "Now 11:05 AM",
+      "gate": "14",
+      "actualtime": "1105",
+      "scheduletime": "1126",
+      "city": "DETROIT",
+      "flightnumber": "4157",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "11:26 AM"
     }
   ]
 }
