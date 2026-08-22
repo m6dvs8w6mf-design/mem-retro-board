@@ -1,27 +1,13 @@
 {
-  "updatedAt": "2026-08-22T15:24:43.675Z",
+  "updatedAt": "2026-08-22T15:44:13.553Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/22/26",
       "claim": "",
       "remarks": "Departed",
-      "gate": "2",
-      "actualtime": "1015",
-      "scheduletime": "1009",
-      "city": "CHARLOTTE",
-      "flightnumber": "5360",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "10:09 AM"
-    },
-    {
-      "date": "08/22/26",
-      "claim": "",
-      "remarks": "Departed",
       "gate": "14",
-      "actualtime": "1020",
+      "actualtime": "1032",
       "scheduletime": "1026",
       "city": "ATLANTA",
       "flightnumber": "2071",
@@ -35,7 +21,7 @@
       "claim": "",
       "remarks": "Departed",
       "gate": "4",
-      "actualtime": "1020",
+      "actualtime": "1034",
       "scheduletime": "1028",
       "city": "CHICAGO-OHARE",
       "flightnumber": "3959",
@@ -71,6 +57,20 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "11:45 AM"
+    },
+    {
+      "date": "08/22/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "18",
+      "actualtime": "1203",
+      "scheduletime": "1203",
+      "city": "MINNEAPOLIS",
+      "flightnumber": "3989",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "12:03 PM"
     }
   ],
   "arrivals": [
@@ -90,22 +90,8 @@
     },
     {
       "date": "08/22/26",
-      "claim": "3B",
-      "remarks": "Arrived",
-      "gate": "4",
-      "actualtime": "0938",
-      "scheduletime": "0954",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "3959",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "9:54 AM"
-    },
-    {
-      "date": "08/22/26",
       "claim": "6B",
-      "remarks": "Now 10:28 AM",
+      "remarks": "Arrived",
       "gate": "12",
       "actualtime": "1028",
       "scheduletime": "1039",
@@ -119,9 +105,9 @@
     {
       "date": "08/22/26",
       "claim": "7B",
-      "remarks": "Now 10:33 AM",
+      "remarks": "Arrived",
       "gate": "11",
-      "actualtime": "1033",
+      "actualtime": "1036",
       "scheduletime": "1103",
       "city": "CHICAGO-OHARE",
       "flightnumber": "5593",
@@ -133,9 +119,9 @@
     {
       "date": "08/22/26",
       "claim": "3B",
-      "remarks": "Now 11:15 AM",
+      "remarks": "Now 11:16 AM",
       "gate": "4",
-      "actualtime": "1115",
+      "actualtime": "1116",
       "scheduletime": "1113",
       "city": "DALLAS FT. WORT",
       "flightnumber": "1935",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "11:13 AM"
+    },
+    {
+      "date": "08/22/26",
+      "claim": "6B",
+      "remarks": "Now 10:58 AM",
+      "gate": "18",
+      "actualtime": "1058",
+      "scheduletime": "1123",
+      "city": "MINNEAPOLIS",
+      "flightnumber": "3989",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "11:23 AM"
     }
   ]
 }
