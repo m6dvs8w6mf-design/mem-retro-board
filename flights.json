@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-08-22T16:32:49.269Z",
+  "updatedAt": "2026-08-22T16:54:48.417Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/22/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "11",
-      "actualtime": "1144",
+      "actualtime": "1153",
       "scheduletime": "1144",
       "city": "HOUSTON",
       "flightnumber": "5285",
@@ -19,9 +19,9 @@
     {
       "date": "08/22/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "12",
-      "actualtime": "1145",
+      "actualtime": "1150",
       "scheduletime": "1145",
       "city": "ATLANTA",
       "flightnumber": "82",
@@ -47,9 +47,9 @@
     {
       "date": "08/22/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Now 12:30 PM",
       "gate": "4",
-      "actualtime": "1204",
+      "actualtime": "1230",
       "scheduletime": "1204",
       "city": "DALLAS FT. WORT",
       "flightnumber": "1086",
@@ -74,20 +74,6 @@
     }
   ],
   "arrivals": [
-    {
-      "date": "08/22/26",
-      "claim": "7B",
-      "remarks": "Arrived",
-      "gate": "11",
-      "actualtime": "1036",
-      "scheduletime": "1103",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "5593",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "11:03 AM"
-    },
     {
       "date": "08/22/26",
       "claim": "3B",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "11:30 AM"
+    },
+    {
+      "date": "08/22/26",
+      "claim": "3B",
+      "remarks": "Now 12:02 PM",
+      "gate": "2",
+      "actualtime": "1202",
+      "scheduletime": "1154",
+      "city": "WASHINGTON",
+      "flightnumber": "5596",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "11:54 AM"
     }
   ]
 }
