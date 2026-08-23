@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-08-23T09:55:54.819Z",
+  "updatedAt": "2026-08-23T10:21:58.418Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/23/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "6",
-      "actualtime": "0518",
+      "actualtime": "0514",
       "scheduletime": "0518",
       "city": "CHARLOTTE",
       "flightnumber": "978",
@@ -33,9 +33,9 @@
     {
       "date": "08/23/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Now 6:00 AM",
       "gate": "5",
-      "actualtime": "0535",
+      "actualtime": "0600",
       "scheduletime": "0535",
       "city": "CHICAGO/MIDWAY",
       "flightnumber": "2851",
@@ -77,9 +77,9 @@
     {
       "date": "08/23/26",
       "claim": "6B",
-      "remarks": "Now 7:43 AM",
+      "remarks": "Now 7:48 AM",
       "gate": "14",
-      "actualtime": "0743",
+      "actualtime": "0748",
       "scheduletime": "0746",
       "city": "ATLANTA",
       "flightnumber": "5247",
