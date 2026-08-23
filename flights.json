@@ -1,27 +1,13 @@
 {
-  "updatedAt": "2026-08-23T13:01:42.347Z",
+  "updatedAt": "2026-08-23T13:39:48.965Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/23/26",
       "claim": "",
-      "remarks": "On Time",
-      "gate": "17",
-      "actualtime": "0809",
-      "scheduletime": "0809",
-      "city": "NEW YORK-LGA",
-      "flightnumber": "4564",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "8:09 AM"
-    },
-    {
-      "date": "08/23/26",
-      "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "14",
-      "actualtime": "0826",
+      "actualtime": "0836",
       "scheduletime": "0826",
       "city": "ATLANTA",
       "flightnumber": "5247",
@@ -33,9 +19,9 @@
     {
       "date": "08/23/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "15",
-      "actualtime": "0830",
+      "actualtime": "0839",
       "scheduletime": "0830",
       "city": "DENVER",
       "flightnumber": "1714",
@@ -47,9 +33,9 @@
     {
       "date": "08/23/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "7",
-      "actualtime": "0830",
+      "actualtime": "0834",
       "scheduletime": "0830",
       "city": "NASHVILLE",
       "flightnumber": "3872",
@@ -71,6 +57,20 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "9:00 AM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "19",
+      "actualtime": "0926",
+      "scheduletime": "0926",
+      "city": "ATLANTA",
+      "flightnumber": "1149",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "9:26 AM"
     }
   ],
   "arrivals": [
@@ -91,9 +91,9 @@
     {
       "date": "08/23/26",
       "claim": "3B",
-      "remarks": "Now 8:50 AM",
+      "remarks": "Now 8:49 AM",
       "gate": "2",
-      "actualtime": "0850",
+      "actualtime": "0849",
       "scheduletime": "0856",
       "city": "DALLAS FT. WORT",
       "flightnumber": "3528",
@@ -119,9 +119,9 @@
     {
       "date": "08/23/26",
       "claim": "6B",
-      "remarks": "Now 9:08 AM",
+      "remarks": "On Time",
       "gate": "14",
-      "actualtime": "0908",
+      "actualtime": "0927",
       "scheduletime": "0927",
       "city": "ATLANTA",
       "flightnumber": "2071",
@@ -133,9 +133,9 @@
     {
       "date": "08/23/26",
       "claim": "6B",
-      "remarks": "Now 9:20 AM",
+      "remarks": "Now 9:17 AM",
       "gate": "18",
-      "actualtime": "0920",
+      "actualtime": "0917",
       "scheduletime": "0937",
       "city": "DETROIT",
       "flightnumber": "3137",
