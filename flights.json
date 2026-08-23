@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-23T08:31:48.475Z",
+  "updatedAt": "2026-08-23T09:00:01.844Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -134,7 +134,7 @@
       "date": "08/23/26",
       "claim": "6B",
       "remarks": "Now 9:32 AM",
-      "gate": "16",
+      "gate": "18",
       "actualtime": "0932",
       "scheduletime": "0937",
       "city": "DETROIT",
