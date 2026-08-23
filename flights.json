@@ -1,21 +1,7 @@
 {
-  "updatedAt": "2026-08-23T21:56:48.317Z",
+  "updatedAt": "2026-08-23T22:43:52.213Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
-    {
-      "date": "08/23/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "7",
-      "actualtime": "1642",
-      "scheduletime": "1620",
-      "city": "NASHVILLE",
-      "flightnumber": "717",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "4:20 PM"
-    },
     {
       "date": "08/23/26",
       "claim": "",
@@ -33,34 +19,6 @@
     {
       "date": "08/23/26",
       "claim": "",
-      "remarks": "Departed",
-      "gate": "12",
-      "actualtime": "1647",
-      "scheduletime": "1659",
-      "city": "ATLANTA",
-      "flightnumber": "1700",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "4:59 PM"
-    },
-    {
-      "date": "08/23/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "16",
-      "actualtime": "1652",
-      "scheduletime": "1710",
-      "city": "NEW YORK-LGA",
-      "flightnumber": "5779",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "5:10 PM"
-    },
-    {
-      "date": "08/23/26",
-      "claim": "",
       "remarks": "Now 6:40 PM",
       "gate": "4",
       "actualtime": "1840",
@@ -71,29 +29,57 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "5:20 PM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "",
+      "remarks": "Departed",
+      "gate": "6",
+      "actualtime": "1734",
+      "scheduletime": "1744",
+      "city": "CHICAGO-OHARE",
+      "flightnumber": "4507",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "5:44 PM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "",
+      "remarks": "Now 6:14 PM",
+      "gate": "5",
+      "actualtime": "1814",
+      "scheduletime": "1750",
+      "city": "DENVER",
+      "flightnumber": "127",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "5:50 PM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "",
+      "remarks": "Departed",
+      "gate": "12",
+      "actualtime": "1742",
+      "scheduletime": "1753",
+      "city": "DETROIT",
+      "flightnumber": "4007",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "5:53 PM"
     }
   ],
   "arrivals": [
     {
       "date": "08/23/26",
-      "claim": "4B",
-      "remarks": "Arrived",
-      "gate": "7",
-      "actualtime": "1557",
-      "scheduletime": "1540",
-      "city": "ORLANDO",
-      "flightnumber": "717",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "3:40 PM"
-    },
-    {
-      "date": "08/23/26",
       "claim": "3B",
-      "remarks": "Now 5:48 PM",
+      "remarks": "Now 5:47 PM",
       "gate": "4",
-      "actualtime": "1748",
+      "actualtime": "1747",
       "scheduletime": "1630",
       "city": "DALLAS FT. WORT",
       "flightnumber": "2969",
@@ -101,20 +87,6 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "4:30 PM"
-    },
-    {
-      "date": "08/23/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "14",
-      "actualtime": "1642",
-      "scheduletime": "1655",
-      "city": "ATLANTA",
-      "flightnumber": "552",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "4:55 PM"
     },
     {
       "date": "08/23/26",
@@ -133,7 +105,7 @@
     {
       "date": "08/23/26",
       "claim": "6B",
-      "remarks": "Now 4:56 PM",
+      "remarks": "Arrived",
       "gate": "12",
       "actualtime": "1656",
       "scheduletime": "1710",
@@ -143,6 +115,34 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "5:10 PM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "3B",
+      "remarks": "Arrived",
+      "gate": "6",
+      "actualtime": "1700",
+      "scheduletime": "1714",
+      "city": "WASHINGTON",
+      "flightnumber": "4444",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "5:14 PM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "6B",
+      "remarks": "Arrived",
+      "gate": "18",
+      "actualtime": "1731",
+      "scheduletime": "1740",
+      "city": "SALT LAKE CITY",
+      "flightnumber": "2515",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "5:40 PM"
     }
   ]
 }
