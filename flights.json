@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-23T19:33:06.757Z",
+  "updatedAt": "2026-08-23T19:50:21.690Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -19,9 +19,9 @@
     {
       "date": "08/23/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "13",
-      "actualtime": "1437",
+      "actualtime": "1447",
       "scheduletime": "1437",
       "city": "CHICAGO-OHARE",
       "flightnumber": "5780",
@@ -33,9 +33,9 @@
     {
       "date": "08/23/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "4",
-      "actualtime": "1448",
+      "actualtime": "1446",
       "scheduletime": "1448",
       "city": "DALLAS FT. WORT",
       "flightnumber": "3888",
@@ -90,20 +90,6 @@
     },
     {
       "date": "08/23/26",
-      "claim": "7B",
-      "remarks": "Arrived",
-      "gate": "13",
-      "actualtime": "1349",
-      "scheduletime": "1356",
-      "city": "HOUSTON",
-      "flightnumber": "5758",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "1:56 PM"
-    },
-    {
-      "date": "08/23/26",
       "claim": "6B",
       "remarks": "Arrived",
       "gate": "14",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "2:10 PM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "3B",
+      "remarks": "Arrived",
+      "gate": "4",
+      "actualtime": "1416",
+      "scheduletime": "1418",
+      "city": "DALLAS FT. WORT",
+      "flightnumber": "3888",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "2:18 PM"
     }
   ]
 }
