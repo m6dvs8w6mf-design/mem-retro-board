@@ -1,27 +1,13 @@
 {
-  "updatedAt": "2026-08-23T17:09:16.339Z",
+  "updatedAt": "2026-08-23T17:32:57.703Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/23/26",
       "claim": "",
-      "remarks": "Departed",
-      "gate": "18",
-      "actualtime": "1207",
-      "scheduletime": "1203",
-      "city": "MINNEAPOLIS",
-      "flightnumber": "3989",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "12:03 PM"
-    },
-    {
-      "date": "08/23/26",
-      "claim": "",
-      "remarks": "Now 12:12 PM",
+      "remarks": "Now 12:22 PM",
       "gate": "4",
-      "actualtime": "1212",
+      "actualtime": "1222",
       "scheduletime": "1204",
       "city": "DALLAS FT. WORT",
       "flightnumber": "1086",
@@ -71,23 +57,23 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "1:25 PM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "12",
+      "actualtime": "1349",
+      "scheduletime": "1349",
+      "city": "ATLANTA",
+      "flightnumber": "2778",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "1:49 PM"
     }
   ],
   "arrivals": [
-    {
-      "date": "08/23/26",
-      "claim": "3B",
-      "remarks": "Arrived",
-      "gate": "4",
-      "actualtime": "1122",
-      "scheduletime": "1113",
-      "city": "DALLAS FT. WORT",
-      "flightnumber": "1935",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "11:13 AM"
-    },
     {
       "date": "08/23/26",
       "claim": "4B",
@@ -105,9 +91,9 @@
     {
       "date": "08/23/26",
       "claim": "3B",
-      "remarks": "Now 12:25 PM",
+      "remarks": "Arrived",
       "gate": "2",
-      "actualtime": "1225",
+      "actualtime": "1224",
       "scheduletime": "1240",
       "city": "PHILADELPHIA",
       "flightnumber": "5202",
@@ -119,9 +105,9 @@
     {
       "date": "08/23/26",
       "claim": "6B",
-      "remarks": "Now 12:27 PM",
+      "remarks": "Arrived",
       "gate": "12",
-      "actualtime": "1227",
+      "actualtime": "1231",
       "scheduletime": "1243",
       "city": "ATLANTA",
       "flightnumber": "2778",
@@ -133,9 +119,9 @@
     {
       "date": "08/23/26",
       "claim": "4B",
-      "remarks": "Now 12:30 PM",
+      "remarks": "Arrived",
       "gate": "7",
-      "actualtime": "1230",
+      "actualtime": "1227",
       "scheduletime": "1245",
       "city": "HOUSTON (HOBBY)",
       "flightnumber": "4260",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "12:45 PM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "7B",
+      "remarks": "Now 1:42 PM",
+      "gate": "17",
+      "actualtime": "1342",
+      "scheduletime": "1345",
+      "city": "ORLANDO",
+      "flightnumber": "2129",
+      "airlinecode": "F9",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "1:45 PM"
     }
   ]
 }
