@@ -1,41 +1,13 @@
 {
-  "updatedAt": "2026-08-23T10:46:23.122Z",
+  "updatedAt": "2026-08-23T11:02:55.906Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/23/26",
       "claim": "",
       "remarks": "Departed",
-      "gate": "6",
-      "actualtime": "0531",
-      "scheduletime": "0518",
-      "city": "CHARLOTTE",
-      "flightnumber": "978",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "5:18 AM"
-    },
-    {
-      "date": "08/23/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "2",
-      "actualtime": "0537",
-      "scheduletime": "0532",
-      "city": "DALLAS FT. WORT",
-      "flightnumber": "1940",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "5:32 AM"
-    },
-    {
-      "date": "08/23/26",
-      "claim": "",
-      "remarks": "Now 5:45 AM",
       "gate": "5",
-      "actualtime": "0545",
+      "actualtime": "0601",
       "scheduletime": "0535",
       "city": "CHICAGO/MIDWAY",
       "flightnumber": "2851",
@@ -47,7 +19,7 @@
     {
       "date": "08/23/26",
       "claim": "",
-      "remarks": "Now 5:55 AM",
+      "remarks": "Departed",
       "gate": "12",
       "actualtime": "0555",
       "scheduletime": "0600",
@@ -71,6 +43,34 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "6:00 AM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "",
+      "remarks": "Departed",
+      "gate": "9",
+      "actualtime": "0555",
+      "scheduletime": "0600",
+      "city": "NEWARK",
+      "flightnumber": "3642",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "6:00 AM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "",
+      "remarks": "Departed",
+      "gate": "20",
+      "actualtime": "0600",
+      "scheduletime": "0605",
+      "city": "BOSTON",
+      "flightnumber": "5604",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "6:05 AM"
     }
   ],
   "arrivals": [
