@@ -1,41 +1,13 @@
 {
-  "updatedAt": "2026-08-23T18:10:01.718Z",
+  "updatedAt": "2026-08-23T18:47:12.873Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/23/26",
       "claim": "",
       "remarks": "Departed",
-      "gate": "2",
-      "actualtime": "1302",
-      "scheduletime": "1311",
-      "city": "PHILADELPHIA",
-      "flightnumber": "5202",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "1:11 PM"
-    },
-    {
-      "date": "08/23/26",
-      "claim": "",
-      "remarks": "On Time",
-      "gate": "7",
-      "actualtime": "1325",
-      "scheduletime": "1325",
-      "city": "LAS VEGAS",
-      "flightnumber": "4260",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "1:25 PM"
-    },
-    {
-      "date": "08/23/26",
-      "claim": "",
-      "remarks": "On Time",
       "gate": "12",
-      "actualtime": "1349",
+      "actualtime": "1345",
       "scheduletime": "1349",
       "city": "ATLANTA",
       "flightnumber": "2778",
@@ -71,51 +43,37 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "2:37 PM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "4",
+      "actualtime": "1448",
+      "scheduletime": "1448",
+      "city": "DALLAS FT. WORT",
+      "flightnumber": "3888",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "2:48 PM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "6",
+      "actualtime": "1453",
+      "scheduletime": "1453",
+      "city": "CHARLOTTE",
+      "flightnumber": "1790",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "2:53 PM"
     }
   ],
   "arrivals": [
-    {
-      "date": "08/23/26",
-      "claim": "3B",
-      "remarks": "Arrived",
-      "gate": "2",
-      "actualtime": "1224",
-      "scheduletime": "1240",
-      "city": "PHILADELPHIA",
-      "flightnumber": "5202",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "12:40 PM"
-    },
-    {
-      "date": "08/23/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "12",
-      "actualtime": "1229",
-      "scheduletime": "1243",
-      "city": "ATLANTA",
-      "flightnumber": "2778",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "12:43 PM"
-    },
-    {
-      "date": "08/23/26",
-      "claim": "4B",
-      "remarks": "Arrived",
-      "gate": "7",
-      "actualtime": "1227",
-      "scheduletime": "1245",
-      "city": "HOUSTON (HOBBY)",
-      "flightnumber": "4260",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "12:45 PM"
-    },
     {
       "date": "08/23/26",
       "claim": "7B",
@@ -143,6 +101,48 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "1:56 PM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "6B",
+      "remarks": "Now 2:33 PM",
+      "gate": "14",
+      "actualtime": "1433",
+      "scheduletime": "1407",
+      "city": "ATLANTA",
+      "flightnumber": "1681",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "2:07 PM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "3B",
+      "remarks": "Now 2:12 PM",
+      "gate": "6",
+      "actualtime": "1412",
+      "scheduletime": "1408",
+      "city": "CHARLOTTE",
+      "flightnumber": "1790",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "2:08 PM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "4B",
+      "remarks": "Now 2:05 PM",
+      "gate": "5",
+      "actualtime": "1405",
+      "scheduletime": "1410",
+      "city": "DENVER",
+      "flightnumber": "4662",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "2:10 PM"
     }
   ]
 }
