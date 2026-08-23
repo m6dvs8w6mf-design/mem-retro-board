@@ -1,13 +1,13 @@
 {
-  "updatedAt": "2026-08-23T15:55:58.507Z",
+  "updatedAt": "2026-08-23T16:23:45.793Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/23/26",
       "claim": "",
-      "remarks": "Now 11:00 AM",
+      "remarks": "Now 11:20 AM",
       "gate": "21",
-      "actualtime": "1100",
+      "actualtime": "1120",
       "scheduletime": "0953",
       "city": "WASHINGTON",
       "flightnumber": "4633",
@@ -15,34 +15,6 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "9:53 AM"
-    },
-    {
-      "date": "08/23/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "6",
-      "actualtime": "1042",
-      "scheduletime": "1040",
-      "city": "CHARLOTTE",
-      "flightnumber": "1354",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "10:40 AM"
-    },
-    {
-      "date": "08/23/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "7",
-      "actualtime": "1048",
-      "scheduletime": "1045",
-      "city": "ORLANDO",
-      "flightnumber": "1447",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "10:45 AM"
     },
     {
       "date": "08/23/26",
@@ -61,9 +33,9 @@
     {
       "date": "08/23/26",
       "claim": "",
-      "remarks": "Now 11:13 AM",
+      "remarks": "Departed",
       "gate": "16",
-      "actualtime": "1113",
+      "actualtime": "1118",
       "scheduletime": "1100",
       "city": "NEW YORK-LGA",
       "flightnumber": "4903",
@@ -71,6 +43,34 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "11:00 AM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "11",
+      "actualtime": "1144",
+      "scheduletime": "1144",
+      "city": "HOUSTON",
+      "flightnumber": "5285",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "11:44 AM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "",
+      "remarks": "Now 11:41 AM",
+      "gate": "12",
+      "actualtime": "1141",
+      "scheduletime": "1146",
+      "city": "ATLANTA",
+      "flightnumber": "82",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "11:46 AM"
     }
   ],
   "arrivals": [
@@ -133,9 +133,9 @@
     {
       "date": "08/23/26",
       "claim": "3B",
-      "remarks": "Now 11:22 AM",
+      "remarks": "Arrived",
       "gate": "4",
-      "actualtime": "1122",
+      "actualtime": "1120",
       "scheduletime": "1113",
       "city": "DALLAS FT. WORT",
       "flightnumber": "1935",
