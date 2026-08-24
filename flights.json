@@ -1,35 +1,7 @@
 {
-  "updatedAt": "2026-08-23T23:48:26.392Z",
+  "updatedAt": "2026-08-24T00:01:20.244Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
-    {
-      "date": "08/23/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "4",
-      "actualtime": "1847",
-      "scheduletime": "1720",
-      "city": "DALLAS FT. WORT",
-      "flightnumber": "1929",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "5:20 PM"
-    },
-    {
-      "date": "08/23/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "13",
-      "actualtime": "1843",
-      "scheduletime": "1831",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "4409",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "6:31 PM"
-    },
     {
       "date": "08/23/26",
       "claim": "",
@@ -49,7 +21,7 @@
       "claim": "",
       "remarks": "Departed",
       "gate": "14",
-      "actualtime": "1845",
+      "actualtime": "1848",
       "scheduletime": "1841",
       "city": "MINNEAPOLIS",
       "flightnumber": "4063",
@@ -61,9 +33,9 @@
     {
       "date": "08/23/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "2",
-      "actualtime": "1841",
+      "actualtime": "1857",
       "scheduletime": "1841",
       "city": "CHARLOTTE",
       "flightnumber": "5269",
@@ -71,23 +43,37 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "6:41 PM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "",
+      "remarks": "Departed",
+      "gate": "6",
+      "actualtime": "1854",
+      "scheduletime": "1845",
+      "city": "WASHINGTON",
+      "flightnumber": "4497",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "6:45 PM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "",
+      "remarks": "Departed",
+      "gate": "7",
+      "actualtime": "1849",
+      "scheduletime": "1845",
+      "city": "DALLAS-LOVE",
+      "flightnumber": "3794",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "6:45 PM"
     }
   ],
   "arrivals": [
-    {
-      "date": "08/23/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "14",
-      "actualtime": "1757",
-      "scheduletime": "1800",
-      "city": "MINNEAPOLIS",
-      "flightnumber": "4063",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "6:00 PM"
-    },
     {
       "date": "08/23/26",
       "claim": "3B",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "6:25 PM"
+    },
+    {
+      "date": "08/23/26",
+      "claim": "6B",
+      "remarks": "Arrived",
+      "gate": "12",
+      "actualtime": "1812",
+      "scheduletime": "1839",
+      "city": "ATLANTA",
+      "flightnumber": "2939",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "6:39 PM"
     }
   ]
 }
