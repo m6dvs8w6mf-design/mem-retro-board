@@ -1,35 +1,7 @@
 {
-  "updatedAt": "2026-08-24T16:50:29.040Z",
+  "updatedAt": "2026-08-24T17:18:56.581Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
-    {
-      "date": "08/24/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "7",
-      "actualtime": "1140",
-      "scheduletime": "1120",
-      "city": "BALTIMORE",
-      "flightnumber": "1757",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "11:20 AM"
-    },
-    {
-      "date": "08/24/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "11",
-      "actualtime": "1148",
-      "scheduletime": "1144",
-      "city": "HOUSTON",
-      "flightnumber": "5285",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "11:44 AM"
-    },
     {
       "date": "08/24/26",
       "claim": "",
@@ -47,9 +19,9 @@
     {
       "date": "08/24/26",
       "claim": "",
-      "remarks": "Now 11:58 AM",
+      "remarks": "Departed",
       "gate": "18",
-      "actualtime": "1158",
+      "actualtime": "1212",
       "scheduletime": "1203",
       "city": "MINNEAPOLIS",
       "flightnumber": "3989",
@@ -71,6 +43,34 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "12:04 PM"
+    },
+    {
+      "date": "08/24/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "5",
+      "actualtime": "1220",
+      "scheduletime": "1220",
+      "city": "HOUSTON (HOBBY)",
+      "flightnumber": "4258",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "12:20 PM"
+    },
+    {
+      "date": "08/24/26",
+      "claim": "",
+      "remarks": "Now 12:57 PM",
+      "gate": "7",
+      "actualtime": "1257",
+      "scheduletime": "1225",
+      "city": "LAS VEGAS",
+      "flightnumber": "1064",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "12:25 PM"
     }
   ],
   "arrivals": [
@@ -79,7 +79,7 @@
       "claim": "3B",
       "remarks": "Arrived",
       "gate": "4",
-      "actualtime": "1147",
+      "actualtime": "1145",
       "scheduletime": "1113",
       "city": "DALLAS FT. WORT",
       "flightnumber": "1935",
@@ -87,20 +87,6 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "11:13 AM"
-    },
-    {
-      "date": "08/24/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "18",
-      "actualtime": "1053",
-      "scheduletime": "1123",
-      "city": "MINNEAPOLIS",
-      "flightnumber": "3989",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "11:23 AM"
     },
     {
       "date": "08/24/26",
@@ -119,9 +105,9 @@
     {
       "date": "08/24/26",
       "claim": "4B",
-      "remarks": "Now 12:16 PM",
+      "remarks": "Arrived",
       "gate": "7",
-      "actualtime": "1216",
+      "actualtime": "1217",
       "scheduletime": "1145",
       "city": "HOUSTON (HOBBY)",
       "flightnumber": "1064",
@@ -133,9 +119,9 @@
     {
       "date": "08/24/26",
       "claim": "3B",
-      "remarks": "Now 12:18 PM",
+      "remarks": "Now 12:21 PM",
       "gate": "2",
-      "actualtime": "1218",
+      "actualtime": "1221",
       "scheduletime": "1240",
       "city": "PHILADELPHIA",
       "flightnumber": "5202",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "12:40 PM"
+    },
+    {
+      "date": "08/24/26",
+      "claim": "6B",
+      "remarks": "Now 12:48 PM",
+      "gate": "12",
+      "actualtime": "1248",
+      "scheduletime": "1243",
+      "city": "ATLANTA",
+      "flightnumber": "2778",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "12:43 PM"
     }
   ]
 }
