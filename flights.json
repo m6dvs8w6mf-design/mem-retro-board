@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-25T09:50:38.682Z",
+  "updatedAt": "2026-08-25T10:17:22.554Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -77,9 +77,9 @@
     {
       "date": "08/25/26",
       "claim": "6B",
-      "remarks": "On Time",
+      "remarks": "Now 7:44 AM",
       "gate": "14",
-      "actualtime": "0746",
+      "actualtime": "0744",
       "scheduletime": "0746",
       "city": "ATLANTA",
       "flightnumber": "5247",
