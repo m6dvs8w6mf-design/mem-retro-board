@@ -1,41 +1,13 @@
 {
-  "updatedAt": "2026-08-25T19:53:23.897Z",
+  "updatedAt": "2026-08-25T20:18:51.218Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "08/25/26",
       "claim": "",
-      "remarks": "Departed",
-      "gate": "5",
-      "actualtime": "1445",
-      "scheduletime": "1435",
-      "city": "NASHVILLE",
-      "flightnumber": "717",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "2:35 PM"
-    },
-    {
-      "date": "08/25/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "13",
-      "actualtime": "1444",
-      "scheduletime": "1437",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "5780",
-      "airlinecode": "UA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "2:37 PM"
-    },
-    {
-      "date": "08/25/26",
-      "claim": "",
-      "remarks": "Now 2:58 PM",
+      "remarks": "Now 3:08 PM",
       "gate": "4",
-      "actualtime": "1458",
+      "actualtime": "1508",
       "scheduletime": "1448",
       "city": "DALLAS FT. WORT",
       "flightnumber": "3888",
@@ -43,20 +15,6 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "2:48 PM"
-    },
-    {
-      "date": "08/25/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "14",
-      "actualtime": "1446",
-      "scheduletime": "1454",
-      "city": "ATLANTA",
-      "flightnumber": "1681",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "2:54 PM"
     },
     {
       "date": "08/25/26",
@@ -71,23 +29,51 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "3:25 PM"
+    },
+    {
+      "date": "08/25/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "11",
+      "actualtime": "1527",
+      "scheduletime": "1527",
+      "city": "HOUSTON",
+      "flightnumber": "5798",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "3:27 PM"
+    },
+    {
+      "date": "08/25/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "6",
+      "actualtime": "1531",
+      "scheduletime": "1531",
+      "city": "CHARLOTTE",
+      "flightnumber": "1790",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "3:31 PM"
+    },
+    {
+      "date": "08/25/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "2",
+      "actualtime": "1559",
+      "scheduletime": "1559",
+      "city": "CHICAGO-OHARE",
+      "flightnumber": "4285",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "3:59 PM"
     }
   ],
   "arrivals": [
-    {
-      "date": "08/25/26",
-      "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "14",
-      "actualtime": "1354",
-      "scheduletime": "1407",
-      "city": "ATLANTA",
-      "flightnumber": "1681",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "2:07 PM"
-    },
     {
       "date": "08/25/26",
       "claim": "3B",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "2:46 PM"
+    },
+    {
+      "date": "08/25/26",
+      "claim": "7B",
+      "remarks": "Arrived",
+      "gate": "15",
+      "actualtime": "1448",
+      "scheduletime": "1450",
+      "city": "DENVER",
+      "flightnumber": "2789",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "2:50 PM"
     }
   ]
 }
