@@ -1,21 +1,7 @@
 {
-  "updatedAt": "2026-08-25T17:41:30.143Z",
+  "updatedAt": "2026-08-25T18:03:43.480Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
-    {
-      "date": "08/25/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "18",
-      "actualtime": "1228",
-      "scheduletime": "1203",
-      "city": "MINNEAPOLIS",
-      "flightnumber": "3989",
-      "airlinecode": "DL",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "12:03 PM"
-    },
     {
       "date": "08/25/26",
       "claim": "",
@@ -29,20 +15,6 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "12:04 PM"
-    },
-    {
-      "date": "08/25/26",
-      "claim": "",
-      "remarks": "Departed",
-      "gate": "7",
-      "actualtime": "1237",
-      "scheduletime": "1225",
-      "city": "HOUSTON (HOBBY)",
-      "flightnumber": "4258",
-      "airlinecode": "WN",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "12:25 PM"
     },
     {
       "date": "08/25/26",
@@ -71,23 +43,37 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "1:49 PM"
+    },
+    {
+      "date": "08/25/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "5",
+      "actualtime": "1435",
+      "scheduletime": "1435",
+      "city": "NASHVILLE",
+      "flightnumber": "717",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "2:35 PM"
+    },
+    {
+      "date": "08/25/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "13",
+      "actualtime": "1437",
+      "scheduletime": "1437",
+      "city": "CHICAGO-OHARE",
+      "flightnumber": "5780",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "2:37 PM"
     }
   ],
   "arrivals": [
-    {
-      "date": "08/25/26",
-      "claim": "3B",
-      "remarks": "Arrived",
-      "gate": "4",
-      "actualtime": "1230",
-      "scheduletime": "1113",
-      "city": "DALLAS FT. WORT",
-      "flightnumber": "1086",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "11:13 AM"
-    },
     {
       "date": "08/25/26",
       "claim": "3B",
@@ -133,9 +119,9 @@
     {
       "date": "08/25/26",
       "claim": "7B",
-      "remarks": "Now 1:43 PM",
+      "remarks": "Now 1:47 PM",
       "gate": "13",
-      "actualtime": "1343",
+      "actualtime": "1347",
       "scheduletime": "1356",
       "city": "HOUSTON",
       "flightnumber": "5758",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "1:56 PM"
+    },
+    {
+      "date": "08/25/26",
+      "claim": "6B",
+      "remarks": "Now 1:56 PM",
+      "gate": "14",
+      "actualtime": "1356",
+      "scheduletime": "1407",
+      "city": "ATLANTA",
+      "flightnumber": "1681",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "2:07 PM"
     }
   ]
 }
