@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T05:36:35.768Z",
+  "updatedAt": "2026-09-05T09:19:13.950Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -62,7 +62,7 @@
       "date": "09/05/26",
       "claim": "",
       "remarks": "On Time",
-      "gate": "16",
+      "gate": "14",
       "actualtime": "0600",
       "scheduletime": "0600",
       "city": "MINNEAPOLIS",
@@ -76,73 +76,73 @@
   "arrivals": [
     {
       "date": "09/05/26",
-      "claim": "3B",
-      "remarks": "Canceled",
-      "gate": "8",
-      "actualtime": "0231",
-      "scheduletime": "2027",
-      "city": "PHILADELPHIA",
-      "flightnumber": "5204",
-      "airlinecode": "AA",
+      "claim": "4B",
+      "remarks": "On Time",
+      "gate": "7",
+      "actualtime": "0840",
+      "scheduletime": "0840",
+      "city": "NASHVILLE",
+      "flightnumber": "142",
+      "airlinecode": "WN",
       "indicator": "D",
       "type": "A",
-      "scheduled": "8:27 PM"
+      "scheduled": "8:40 AM"
     },
     {
       "date": "09/05/26",
       "claim": "6B",
-      "remarks": "Now 12:54 AM",
-      "gate": "20",
-      "actualtime": "0054",
-      "scheduletime": "2219",
-      "city": "NEW YORK-LGA",
-      "flightnumber": "5775",
+      "remarks": "Now 8:45 AM",
+      "gate": "12",
+      "actualtime": "0845",
+      "scheduletime": "0849",
+      "city": "ATLANTA",
+      "flightnumber": "2071",
       "airlinecode": "DL",
       "indicator": "D",
       "type": "A",
-      "scheduled": "10:19 PM"
+      "scheduled": "8:49 AM"
     },
     {
       "date": "09/05/26",
       "claim": "3B",
-      "remarks": "Arrived",
-      "gate": "1",
-      "actualtime": "0016",
-      "scheduletime": "2246",
-      "city": "MIAMI",
-      "flightnumber": "1551",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "10:46 PM"
-    },
-    {
-      "date": "09/05/26",
-      "claim": "3B",
-      "remarks": "Now 2:09 AM",
-      "gate": "17",
-      "actualtime": "0209",
-      "scheduletime": "2250",
+      "remarks": "On Time",
+      "gate": "2",
+      "actualtime": "0856",
+      "scheduletime": "0856",
       "city": "DALLAS FT. WORT",
-      "flightnumber": "1758",
+      "flightnumber": "3528",
       "airlinecode": "AA",
       "indicator": "D",
       "type": "A",
-      "scheduled": "10:50 PM"
+      "scheduled": "8:56 AM"
     },
     {
       "date": "09/05/26",
       "claim": "7B",
-      "remarks": "Now 12:53 AM",
+      "remarks": "On Time",
       "gate": "13",
-      "actualtime": "0053",
-      "scheduletime": "2318",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "2317",
+      "actualtime": "0906",
+      "scheduletime": "0906",
+      "city": "HOUSTON",
+      "flightnumber": "5722",
       "airlinecode": "UA",
       "indicator": "D",
       "type": "A",
-      "scheduled": "11:18 PM"
+      "scheduled": "9:06 AM"
+    },
+    {
+      "date": "09/05/26",
+      "claim": "3B",
+      "remarks": "On Time",
+      "gate": "6",
+      "actualtime": "0944",
+      "scheduletime": "0944",
+      "city": "CHARLOTTE",
+      "flightnumber": "1354",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "9:44 AM"
     }
   ]
 }
