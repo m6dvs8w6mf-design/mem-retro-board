@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-06T05:48:29.805Z",
+  "updatedAt": "2026-09-06T09:42:15.105Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -62,7 +62,7 @@
       "date": "09/06/26",
       "claim": "",
       "remarks": "On Time",
-      "gate": "",
+      "gate": "3",
       "actualtime": "0610",
       "scheduletime": "0610",
       "city": "CHICAGO/MIDWAY",
@@ -77,30 +77,72 @@
     {
       "date": "09/06/26",
       "claim": "6B",
-      "remarks": "Arrived",
-      "gate": "14",
-      "actualtime": "0017",
-      "scheduletime": "2040",
+      "remarks": "Now 8:45 AM",
+      "gate": "12",
+      "actualtime": "0845",
+      "scheduletime": "0849",
       "city": "ATLANTA",
-      "flightnumber": "1811",
+      "flightnumber": "2071",
       "airlinecode": "DL",
       "indicator": "D",
       "type": "A",
-      "scheduled": "8:40 PM"
+      "scheduled": "8:49 AM"
+    },
+    {
+      "date": "09/06/26",
+      "claim": "7B",
+      "remarks": "On Time",
+      "gate": "15",
+      "actualtime": "0906",
+      "scheduletime": "0906",
+      "city": "HOUSTON",
+      "flightnumber": "5722",
+      "airlinecode": "UA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "9:06 AM"
     },
     {
       "date": "09/06/26",
       "claim": "3B",
-      "remarks": "Now 12:48 AM",
-      "gate": "1",
-      "actualtime": "0048",
-      "scheduletime": "2249",
-      "city": "MIAMI",
-      "flightnumber": "1551",
+      "remarks": "On Time",
+      "gate": "6",
+      "actualtime": "0946",
+      "scheduletime": "0946",
+      "city": "CHARLOTTE",
+      "flightnumber": "1354",
       "airlinecode": "AA",
       "indicator": "D",
       "type": "A",
-      "scheduled": "10:49 PM"
+      "scheduled": "9:46 AM"
+    },
+    {
+      "date": "09/06/26",
+      "claim": "3B",
+      "remarks": "On Time",
+      "gate": "4",
+      "actualtime": "0956",
+      "scheduletime": "0956",
+      "city": "CHICAGO-OHARE",
+      "flightnumber": "3959",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "9:56 AM"
+    },
+    {
+      "date": "09/06/26",
+      "claim": "7B",
+      "remarks": "On Time",
+      "gate": "9",
+      "actualtime": "1010",
+      "scheduletime": "1010",
+      "city": "PENSACOLA",
+      "flightnumber": "146",
+      "airlinecode": "MX",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "10:10 AM"
     }
   ]
 }
