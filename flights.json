@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-09T05:06:32.980Z",
+  "updatedAt": "2026-09-09T09:39:37.679Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -76,20 +76,6 @@
   "arrivals": [
     {
       "date": "09/09/26",
-      "claim": "3B",
-      "remarks": "Now 12:38 AM",
-      "gate": "8",
-      "actualtime": "0038",
-      "scheduletime": "0053",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "6387",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "12:53 AM"
-    },
-    {
-      "date": "09/09/26",
       "claim": "4B",
       "remarks": "On Time",
       "gate": "5",
@@ -120,7 +106,7 @@
       "date": "09/09/26",
       "claim": "7B",
       "remarks": "On Time",
-      "gate": "",
+      "gate": "13",
       "actualtime": "0906",
       "scheduletime": "0906",
       "city": "HOUSTON",
@@ -129,6 +115,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "9:06 AM"
+    },
+    {
+      "date": "09/09/26",
+      "claim": "6B",
+      "remarks": "Now 9:17 AM",
+      "gate": "12",
+      "actualtime": "0917",
+      "scheduletime": "0922",
+      "city": "ATLANTA",
+      "flightnumber": "2071",
+      "airlinecode": "DL",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "9:22 AM"
     },
     {
       "date": "09/09/26",
