@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-12T05:53:26.920Z",
+  "updatedAt": "2026-09-12T09:51:24.259Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -76,24 +76,10 @@
   "arrivals": [
     {
       "date": "09/12/26",
-      "claim": "3B",
-      "remarks": "Arrived",
-      "gate": "8",
-      "actualtime": "0031",
-      "scheduletime": "0023",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "6387",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "12:23 AM"
-    },
-    {
-      "date": "09/12/26",
       "claim": "4B",
-      "remarks": "Now 8:45 AM",
+      "remarks": "On Time",
       "gate": "5",
-      "actualtime": "0845",
+      "actualtime": "0840",
       "scheduletime": "0840",
       "city": "NASHVILLE",
       "flightnumber": "142",
@@ -106,7 +92,7 @@
       "date": "09/12/26",
       "claim": "6B",
       "remarks": "Now 8:45 AM",
-      "gate": "12",
+      "gate": "14",
       "actualtime": "0845",
       "scheduletime": "0848",
       "city": "ATLANTA",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "9:06 AM"
+    },
+    {
+      "date": "09/12/26",
+      "claim": "3B",
+      "remarks": "On Time",
+      "gate": "6",
+      "actualtime": "0954",
+      "scheduletime": "0954",
+      "city": "WASHINGTON",
+      "flightnumber": "4444",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "9:54 AM"
     }
   ]
 }
