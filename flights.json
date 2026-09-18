@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-18T05:10:35.071Z",
+  "updatedAt": "2026-09-18T09:45:31.658Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -76,20 +76,6 @@
   "arrivals": [
     {
       "date": "09/18/26",
-      "claim": "3B",
-      "remarks": "Canceled",
-      "gate": "8",
-      "actualtime": "0023",
-      "scheduletime": "0023",
-      "city": "CHICAGO-OHARE",
-      "flightnumber": "6387",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "12:23 AM"
-    },
-    {
-      "date": "09/18/26",
       "claim": "6B",
       "remarks": "On Time",
       "gate": "16",
@@ -134,7 +120,7 @@
       "date": "09/18/26",
       "claim": "7B",
       "remarks": "On Time",
-      "gate": "",
+      "gate": "13",
       "actualtime": "0906",
       "scheduletime": "0906",
       "city": "HOUSTON",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "9:06 AM"
+    },
+    {
+      "date": "09/18/26",
+      "claim": "7B",
+      "remarks": "On Time",
+      "gate": "9",
+      "actualtime": "0913",
+      "scheduletime": "0913",
+      "city": "RALEIGH/DURHAM",
+      "flightnumber": "1068",
+      "airlinecode": "MX",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "9:13 AM"
     }
   ]
 }
