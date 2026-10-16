@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T05:51:09.949Z",
+  "updatedAt": "2026-10-16T10:10:19.614Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
@@ -77,9 +77,9 @@
     {
       "date": "10/16/26",
       "claim": "7B",
-      "remarks": "On Time",
+      "remarks": "Now 7:14 AM",
       "gate": "10",
-      "actualtime": "0715",
+      "actualtime": "0714",
       "scheduletime": "0715",
       "city": "ORLANDO-SANFORD",
       "flightnumber": "1229",
@@ -91,9 +91,9 @@
     {
       "date": "10/16/26",
       "claim": "6B",
-      "remarks": "Now 7:47 AM",
+      "remarks": "Now 7:43 AM",
       "gate": "12",
-      "actualtime": "0747",
+      "actualtime": "0743",
       "scheduletime": "0755",
       "city": "ATLANTA",
       "flightnumber": "1798",
@@ -119,9 +119,9 @@
     {
       "date": "10/16/26",
       "claim": "7B",
-      "remarks": "On Time",
-      "gate": "",
-      "actualtime": "0907",
+      "remarks": "Now 10:25 AM",
+      "gate": "13",
+      "actualtime": "1025",
       "scheduletime": "0907",
       "city": "HOUSTON",
       "flightnumber": "5722",
