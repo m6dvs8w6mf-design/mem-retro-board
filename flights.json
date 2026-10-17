@@ -1,27 +1,13 @@
 {
-  "updatedAt": "2026-10-17T06:11:11.280Z",
+  "updatedAt": "2026-10-17T10:43:53.034Z",
   "source": "https://flymemphis.com/wp-content/flightdata/data.xml",
   "departures": [
     {
       "date": "10/17/26",
       "claim": "",
-      "remarks": "On Time",
-      "gate": "6",
-      "actualtime": "0514",
-      "scheduletime": "0514",
-      "city": "CHARLOTTE",
-      "flightnumber": "978",
-      "airlinecode": "AA",
-      "indicator": "D",
-      "type": "D",
-      "scheduled": "5:14 AM"
-    },
-    {
-      "date": "10/17/26",
-      "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "1",
-      "actualtime": "0530",
+      "actualtime": "0541",
       "scheduletime": "0530",
       "city": "CHICAGO/MIDWAY",
       "flightnumber": "3020",
@@ -33,9 +19,9 @@
     {
       "date": "10/17/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "4",
-      "actualtime": "0535",
+      "actualtime": "0539",
       "scheduletime": "0535",
       "city": "MIAMI",
       "flightnumber": "1340",
@@ -47,9 +33,9 @@
     {
       "date": "10/17/26",
       "claim": "",
-      "remarks": "On Time",
+      "remarks": "Departed",
       "gate": "2",
-      "actualtime": "0541",
+      "actualtime": "0537",
       "scheduletime": "0541",
       "city": "DALLAS FT. WORT",
       "flightnumber": "1940",
@@ -71,23 +57,23 @@
       "indicator": "D",
       "type": "D",
       "scheduled": "6:00 AM"
+    },
+    {
+      "date": "10/17/26",
+      "claim": "",
+      "remarks": "On Time",
+      "gate": "3",
+      "actualtime": "0600",
+      "scheduletime": "0600",
+      "city": "HOUSTON (HOBBY)",
+      "flightnumber": "1776",
+      "airlinecode": "WN",
+      "indicator": "D",
+      "type": "D",
+      "scheduled": "6:00 AM"
     }
   ],
   "arrivals": [
-    {
-      "date": "10/17/26",
-      "claim": " ",
-      "remarks": "Now 1:31 AM",
-      "gate": "",
-      "actualtime": "0131",
-      "scheduletime": "0055",
-      "city": "NEW ORLEANS",
-      "flightnumber": "8425",
-      "airlinecode": "SY",
-      "indicator": "D",
-      "type": "A",
-      "scheduled": "12:55 AM"
-    },
     {
       "date": "10/17/26",
       "claim": "3B",
@@ -120,7 +106,7 @@
       "date": "10/17/26",
       "claim": "7B",
       "remarks": "On Time",
-      "gate": "",
+      "gate": "13",
       "actualtime": "0907",
       "scheduletime": "0907",
       "city": "HOUSTON",
@@ -143,6 +129,20 @@
       "indicator": "D",
       "type": "A",
       "scheduled": "10:03 AM"
+    },
+    {
+      "date": "10/17/26",
+      "claim": "3B",
+      "remarks": "On Time",
+      "gate": "2",
+      "actualtime": "1007",
+      "scheduletime": "1007",
+      "city": "CHICAGO-OHARE",
+      "flightnumber": "4344",
+      "airlinecode": "AA",
+      "indicator": "D",
+      "type": "A",
+      "scheduled": "10:07 AM"
     }
   ]
 }
